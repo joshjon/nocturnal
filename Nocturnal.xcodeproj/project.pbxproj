@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D6A1022235F300100BB75EB /* CoreBrightness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6A1021235F300100BB75EB /* CoreBrightness.framework */; };
+		7D874589238BFA0F00A676F1 /* DimnessSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */; };
+		7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */; };
+		7DA5B1F4238BAC8000FE0597 /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */; };
+		7DA5B1F6238BAD6F00FE0597 /* NightShiftSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5B1F5238BAD6F00FE0597 /* NightShiftSliderView.swift */; };
+		7DA5B1F9238BAF9500FE0597 /* NightShift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5B1F8238BAF9500FE0597 /* NightShift.swift */; };
+		7DF1F92D2356AFAA0041E9CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF1F92C2356AFAA0041E9CA /* AppDelegate.swift */; };
+		7DF1F9312356AFB00041E9CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DF1F9302356AFB00041E9CA /* Assets.xcassets */; };
+		7DF1F9342356AFB00041E9CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DF1F9322356AFB00041E9CA /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7D568993235EFE4700A51FC5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7D56898C235EFC5600A51FC5 /* Nocturnal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nocturnal-Bridging-Header.h"; sourceTree = "<group>"; };
+		7D56898D235EFCAE00A51FC5 /* CBBlueLightClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBBlueLightClient.h; sourceTree = "<group>"; };
+		7D6A1021235F300100BB75EB /* CoreBrightness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBrightness.framework; path = ../../../../../System/Library/PrivateFrameworks/CoreBrightness.framework; sourceTree = "<group>"; };
+		7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimnessSliderView.swift; sourceTree = "<group>"; };
+		7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimnessWindowController.swift; sourceTree = "<group>"; };
+		7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
+		7DA5B1F5238BAD6F00FE0597 /* NightShiftSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightShiftSliderView.swift; sourceTree = "<group>"; };
+		7DA5B1F8238BAF9500FE0597 /* NightShift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightShift.swift; sourceTree = "<group>"; };
+		7DF1F9292356AFAA0041E9CA /* Nocturnal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nocturnal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DF1F92C2356AFAA0041E9CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7DF1F9302356AFB00041E9CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7DF1F9332356AFB00041E9CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7DF1F9352356AFB00041E9CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DF1F9362356AFB00041E9CA /* Nocturnal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nocturnal.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7DF1F9262356AFAA0041E9CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D6A1022235F300100BB75EB /* CoreBrightness.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D56898E235EFD7D00A51FC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D6A1021235F300100BB75EB /* CoreBrightness.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D6A1023235FADBD00BB75EB /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				7D56898C235EFC5600A51FC5 /* Nocturnal-Bridging-Header.h */,
+				7D56898D235EFCAE00A51FC5 /* CBBlueLightClient.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		7D6A1024235FAE5300BB75EB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7DF1F9322356AFB00041E9CA /* Main.storyboard */,
+				7DF1F92C2356AFAA0041E9CA /* AppDelegate.swift */,
+				7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */,
+				7DA5B1F5238BAD6F00FE0597 /* NightShiftSliderView.swift */,
+				7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */,
+				7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7D6A1025235FAEB200BB75EB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7DF1F9352356AFB00041E9CA /* Info.plist */,
+				7DF1F9362356AFB00041E9CA /* Nocturnal.entitlements */,
+				7DF1F9302356AFB00041E9CA /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		7DA5B1F7238BAF6F00FE0597 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7DA5B1F8238BAF9500FE0597 /* NightShift.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7DF1F9202356AFA90041E9CA = {
+			isa = PBXGroup;
+			children = (
+				7DF1F92B2356AFAA0041E9CA /* Nocturnal */,
+				7DF1F92A2356AFAA0041E9CA /* Products */,
+				7D56898E235EFD7D00A51FC5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7DF1F92A2356AFAA0041E9CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7DF1F9292356AFAA0041E9CA /* Nocturnal.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DF1F92B2356AFAA0041E9CA /* Nocturnal */ = {
+			isa = PBXGroup;
+			children = (
+				7D6A1023235FADBD00BB75EB /* Headers */,
+				7D6A1025235FAEB200BB75EB /* Assets */,
+				7DA5B1F7238BAF6F00FE0597 /* Utils */,
+				7D6A1024235FAE5300BB75EB /* Controllers */,
+			);
+			path = Nocturnal;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7DF1F9282356AFAA0041E9CA /* Nocturnal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DF1F9392356AFB00041E9CA /* Build configuration list for PBXNativeTarget "Nocturnal" */;
+			buildPhases = (
+				7DF1F9252356AFAA0041E9CA /* Sources */,
+				7DF1F9262356AFAA0041E9CA /* Frameworks */,
+				7DF1F9272356AFAA0041E9CA /* Resources */,
+				7D568993235EFE4700A51FC5 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nocturnal;
+			productName = Nocturnal;
+			productReference = 7DF1F9292356AFAA0041E9CA /* Nocturnal.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7DF1F9212356AFA90041E9CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Joshua Jon";
+				TargetAttributes = {
+					7DF1F9282356AFAA0041E9CA = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 7DF1F9242356AFA90041E9CA /* Build configuration list for PBXProject "Nocturnal" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7DF1F9202356AFA90041E9CA;
+			productRefGroup = 7DF1F92A2356AFAA0041E9CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DF1F9282356AFAA0041E9CA /* Nocturnal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7DF1F9272356AFAA0041E9CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DF1F9312356AFB00041E9CA /* Assets.xcassets in Resources */,
+				7DF1F9342356AFB00041E9CA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7DF1F9252356AFAA0041E9CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DA5B1F4238BAC8000FE0597 /* StatusMenu.swift in Sources */,
+				7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */,
+				7DA5B1F9238BAF9500FE0597 /* NightShift.swift in Sources */,
+				7DF1F92D2356AFAA0041E9CA /* AppDelegate.swift in Sources */,
+				7DA5B1F6238BAD6F00FE0597 /* NightShiftSliderView.swift in Sources */,
+				7D874589238BFA0F00A676F1 /* DimnessSliderView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7DF1F9322356AFB00041E9CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DF1F9332356AFB00041E9CA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7DF1F9372356AFB00041E9CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Nocturnal",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "Nocturnal/Nocturnal-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7DF1F9382356AFB00041E9CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Nocturnal",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "Nocturnal/Nocturnal-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		7DF1F93A2356AFB00041E9CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Nocturnal/Assets/Nocturnal.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 28M363UQ4A;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Nocturnal",
+				);
+				INFOPLIST_FILE = Nocturnal/Assets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/CoreBrightness.framework/Versions/A",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshua.jon.Nocturnal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Nocturnal/Headers/Nocturnal-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7DF1F93B2356AFB00041E9CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Nocturnal/Assets/Nocturnal.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 28M363UQ4A;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Nocturnal",
+				);
+				INFOPLIST_FILE = Nocturnal/Assets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/CoreBrightness.framework/Versions/A",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshua.jon.Nocturnal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Nocturnal/Headers/Nocturnal-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7DF1F9242356AFA90041E9CA /* Build configuration list for PBXProject "Nocturnal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DF1F9372356AFB00041E9CA /* Debug */,
+				7DF1F9382356AFB00041E9CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DF1F9392356AFB00041E9CA /* Build configuration list for PBXNativeTarget "Nocturnal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DF1F93A2356AFB00041E9CA /* Debug */,
+				7DF1F93B2356AFB00041E9CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7DF1F9212356AFA90041E9CA /* Project object */;
+}
