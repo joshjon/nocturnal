@@ -22,9 +22,9 @@ class DimnessSliderView: NSView {
         let event = NSApplication.shared.currentEvent
         
         if event?.type == .leftMouseUp {
-            Dimness.dimnessStrength = sender.floatValue
+            Dimness.previewDimnessStrength(sender.floatValue)
         } else {
-            Dimness.updateDimnessStrength(sender.floatValue)
+            Dimness.dimnessStrength = sender.floatValue
         }
     }
     

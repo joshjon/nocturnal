@@ -64,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D1B5C352399433E0061D0CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7DF1F9322356AFB00041E9CA /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7D56898E235EFD7D00A51FC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,10 +89,9 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
-		7D6A1024235FAE5300BB75EB /* Controllers */ = {
+		7D6A1024235FAE5300BB75EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7DF1F9322356AFB00041E9CA /* Main.storyboard */,
 				7DF1F92C2356AFAA0041E9CA /* AppDelegate.swift */,
 				7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */,
 				7DA5B1F5238BAD6F00FE0597 /* NightShiftSliderView.swift */,
@@ -92,7 +99,7 @@
 				7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */,
 				7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */,
 			);
-			path = Controllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		7D6A1025235FAEB200BB75EB /* Assets */ = {
@@ -105,13 +112,13 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		7DA5B1F7238BAF6F00FE0597 /* Utils */ = {
+		7DA5B1F7238BAF6F00FE0597 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				7DA5B1F8238BAF9500FE0597 /* NightShift.swift */,
 				7D1B5C33239934440061D0CF /* Dimness.swift */,
 			);
-			path = Utils;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7DF1F9202356AFA90041E9CA = {
@@ -136,8 +143,9 @@
 			children = (
 				7D6A1023235FADBD00BB75EB /* Headers */,
 				7D6A1025235FAEB200BB75EB /* Assets */,
-				7DA5B1F7238BAF6F00FE0597 /* Utils */,
-				7D6A1024235FAE5300BB75EB /* Controllers */,
+				7DA5B1F7238BAF6F00FE0597 /* Model */,
+				7D1B5C352399433E0061D0CF /* View */,
+				7D6A1024235FAE5300BB75EB /* Controller */,
 			);
 			path = Nocturnal;
 			sourceTree = "<group>";

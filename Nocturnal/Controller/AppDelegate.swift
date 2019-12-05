@@ -19,8 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationWillTerminate(_ notification: Notification) {
-        NightShift.disable()
-        NightShift.blueLightReductionAmount = 0
+       print("Nocturnal terminated")
     }
     
 }

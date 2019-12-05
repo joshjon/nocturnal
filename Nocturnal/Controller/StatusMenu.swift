@@ -46,11 +46,11 @@ class StatusMenu: NSMenu {
     @IBAction func disableCustomTimeClicked(_ sender: NSMenuItem) {
         let disableCustomTimeWindow = storyboard.instantiateController(withIdentifier: "Custom Time Window Controller") as! NSWindowController
         disableCustomTimeWindow.showWindow(nil)
-        
     }
     
     @IBAction func quitClicked(_ sender: NSMenuItem) {
         NightShift.disable()
+        NightShift.blueLightReductionAmount = 0
         NSApplication.shared.terminate(sender)
     }
     
