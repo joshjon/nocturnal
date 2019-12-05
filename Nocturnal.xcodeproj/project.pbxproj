@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */; };
+		7D1B5C34239934440061D0CF /* Dimness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C33239934440061D0CF /* Dimness.swift */; };
 		7D6A1022235F300100BB75EB /* CoreBrightness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6A1021235F300100BB75EB /* CoreBrightness.framework */; };
 		7D874589238BFA0F00A676F1 /* DimnessSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */; };
 		7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeViewController.swift; sourceTree = "<group>"; };
+		7D1B5C33239934440061D0CF /* Dimness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimness.swift; sourceTree = "<group>"; };
 		7D56898C235EFC5600A51FC5 /* Nocturnal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nocturnal-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D56898D235EFCAE00A51FC5 /* CBBlueLightClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBBlueLightClient.h; sourceTree = "<group>"; };
 		7D6A1021235F300100BB75EB /* CoreBrightness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBrightness.framework; path = ../../../../../System/Library/PrivateFrameworks/CoreBrightness.framework; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				7DA5B1F8238BAF9500FE0597 /* NightShift.swift */,
+				7D1B5C33239934440061D0CF /* Dimness.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				7DA5B1F4238BAC8000FE0597 /* StatusMenu.swift in Sources */,
 				7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */,
 				7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */,
+				7D1B5C34239934440061D0CF /* Dimness.swift in Sources */,
 				7DA5B1F9238BAF9500FE0597 /* NightShift.swift in Sources */,
 				7DF1F92D2356AFAA0041E9CA /* AppDelegate.swift in Sources */,
 				7DA5B1F6238BAD6F00FE0597 /* NightShiftSliderView.swift in Sources */,
