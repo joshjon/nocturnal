@@ -18,4 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NightShift.enable()
     }
     
+    func applicationWillTerminate(_ notification: Notification) {
+        NightShift.disable()
+    }
+    
 }
