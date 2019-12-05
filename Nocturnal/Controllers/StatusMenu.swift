@@ -13,6 +13,7 @@ class StatusMenu: NSMenu {
     @IBOutlet weak var dimnessSliderView: DimnessSliderView!
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    var storyboard = NSStoryboard(name: "Main", bundle: nil)
     var nightShiftSliderMenuItem: NSMenuItem!
     var dimnessSliderMenuItem: NSMenuItem!
     
@@ -40,6 +41,12 @@ class StatusMenu: NSMenu {
         dimnessSliderView.setup()
         dimnessSliderMenuItem = self.item(withTitle: "Dimness Slider")
         dimnessSliderMenuItem.view = dimnessSliderView
+    }
+    
+    @IBAction func disableCustomTimeClicked(_ sender: NSMenuItem) {
+        let disableCustomTimeWindow = storyboard.instantiateController(withIdentifier: "Custom Time Window Controller") as! NSWindowController
+        disableCustomTimeWindow.showWindow(nil)
+        
     }
     
     @IBAction func quitClicked(_ sender: NSMenuItem) {

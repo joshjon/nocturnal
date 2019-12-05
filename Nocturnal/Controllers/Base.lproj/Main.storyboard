@@ -5,6 +5,91 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Custom Time WIndow Controller-->
+        <scene sceneID="tQs-Mu-yMH">
+            <objects>
+                <windowController storyboardIdentifier="Custom Time Window Controller" id="8s1-dM-aK7" userLabel="Custom Time WIndow Controller" sceneMemberID="viewController">
+                    <window key="window" identifier="Custom Time Window Controller" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="pf3-mK-YdK">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="301" width="427" height="238"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="8s1-dM-aK7" id="sQT-rS-IKS"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="KWV-uX-aQb" kind="relationship" relationship="window.shadowedContentViewController" id="pjY-JO-Hzo"/>
+                    </connections>
+                </windowController>
+                <customObject id="zs5-4R-SyD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="625" y="710"/>
+        </scene>
+        <!--Custom Time View Controller-->
+        <scene sceneID="6W6-9m-4ln">
+            <objects>
+                <viewController id="KWV-uX-aQb" customClass="CustomTimeViewController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="pZZ-jc-a75">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RXw-zu-4QZ">
+                                <rect key="frame" x="192" y="124" width="96" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="ze3-D5-qwU">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r8m-5G-E3Q">
+                                <rect key="frame" x="214" y="153" width="53" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="minutes" id="Tzt-7i-abA">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qVX-0A-WkN">
+                                <rect key="frame" x="269" y="65" width="75" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Apply" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OHJ-x1-DaU">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="applyButtonClicked:" target="KWV-uX-aQb" id="qZh-nb-IlN"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q5k-Yx-8bv">
+                                <rect key="frame" x="147" y="65" width="82" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IEt-23-fdu">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cancelButtonClicked:" target="KWV-uX-aQb" id="kGs-vq-eGc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="minutesTextField" destination="RXw-zu-4QZ" id="nua-HZ-Kce"/>
+                    </connections>
+                </viewController>
+                <customObject id="Ojp-NP-A0U" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="624" y="1120"/>
+        </scene>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
             <objects>
@@ -702,6 +787,9 @@
                         </menuItem>
                         <menuItem title="Disable for custom time" id="3VP-Nv-qsM">
                             <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="disableCustomTimeClicked:" target="BYB-lu-Avz" id="Sd7-ux-g0e"/>
+                            </connections>
                         </menuItem>
                         <menuItem title="Disable for current app" id="jLA-Dh-IH1">
                             <modifierMask key="keyEquivalentModifierMask"/>

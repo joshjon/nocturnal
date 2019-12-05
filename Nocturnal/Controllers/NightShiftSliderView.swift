@@ -19,7 +19,13 @@ class NightShiftSliderView: NSView {
     }
     
     @IBAction func nightShiftSliderMoved(_ sender: NSSlider) {
-        NightShift.setBlueLightReductionAmount(sender.floatValue)
+        let event = NSApplication.shared.currentEvent
+        
+        if event?.type == .leftMouseUp {
+            NightShift.blueLightReductionAmount = sender.floatValue
+        } else {
+            NightShift.previewBlueLightReductionAmount(sender.floatValue)
+        }
     }
     
 }
