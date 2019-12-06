@@ -32,16 +32,17 @@ class StatusMenu: NSMenu, NSMenuDelegate{
     
     func updateMenu() {
         
-        if NightShift.isNightShiftEnabled {
-            nightShiftSliderView.nightShiftSlider.isEnabled = true
-        } else {
-            nightShiftSliderView.nightShiftSlider.isEnabled = false
-        }
-
-        if Dimness.isDimnessEnabled {
-            dimnessSliderView.dimnessSlider.isEnabled = true
-        } else {
-           dimnessSliderView.dimnessSlider.isEnabled = false
+        // MARK: disable timer
+        switch StateManager.disableTimer {
+        case .off:
+            disableCustomMenuItem.state = .off
+            disableCustomMenuItem.isEnabled = true
+        case .hour(timer: _):
+            disableCustomMenuItem.state = .off
+            disableCustomMenuItem.isEnabled = false
+        case .custom(timer: _):
+            disableCustomMenuItem.state = .on
+            disableCustomMenuItem.isEnabled = true
         }
     }
     
@@ -70,7 +71,14 @@ class StatusMenu: NSMenu, NSMenuDelegate{
     
     @IBAction func disableCustomTimeClicked(_ sender: NSMenuItem) {
         let disableCustomTimeWindow = storyboard.instantiateController(withIdentifier: "Custom Time Window Controller") as! NSWindowController
-        disableCustomTimeWindow.showWindow(nil)
+        if disableCustomMenuItem.state == .off {
+            NSApp.activate(ignoringOtherApps: true)
+            disableCustomTimeWindow.showWindow(nil)
+            disableCustomTimeWindow.window?.orderFrontRegardless()
+        } else {
+            StateManager.disableTimer = .off
+            StateManager.respond(to: .nightShiftDisableTimerEnded)
+        }
     }
     
     @IBAction func quitClicked(_ sender: NSMenuItem) {

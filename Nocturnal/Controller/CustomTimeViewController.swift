@@ -12,6 +12,7 @@ class CustomTimeViewController: NSViewController {
     
     var disableCustomTime: ((Int) -> Void)?
     var timer: Timer?
+    let calendar = NSCalendar(identifier: .gregorian)!
     
     @IBOutlet weak var minutesTextField: NSTextField!
     
@@ -20,14 +21,27 @@ class CustomTimeViewController: NSViewController {
     }
     
     @IBAction func applyButtonClicked(_ sender: NSButton) {
-        let minutes = minutesTextField.intValue
-        disableCustomTime?(Int(minutes * 60))
-        NightShift.disable()
-        Dimness.disable()
+        disableCustomTime = { (timeIntervalInSeconds) in
+            let disableTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeIntervalInSeconds),
+                                                    repeats: false,
+                                                    block: { _ in
+                                                        StateManager.disableTimer = .off
+                                                        StateManager.respond(to: .nightShiftDisableTimerEnded)
+            })
+            disableTimer.tolerance = 60
+            
+            let currentDate = Date()
+            var addComponents = DateComponents()
+            addComponents.second = timeIntervalInSeconds
+            let disabledUntilDate = self.calendar.date(byAdding: addComponents, to: currentDate, options: [])
+            
+            StateManager.disableTimer = .custom(timer: disableTimer, endDate: disabledUntilDate!)
+            StateManager.respond(to: .nightShiftDisableTimerStarted)
+        }
         
-        Timer.scheduledTimer(withTimeInterval: 15, repeats: false, block: {
-            timer in NightShift.enable(); Dimness.enable()
-        })
+        let minutes = minutesTextField.intValue
+        let timeIntervalInSeconds = minutes
+        disableCustomTime?(Int(timeIntervalInSeconds))
         
         self.view.window?.close()
     }
