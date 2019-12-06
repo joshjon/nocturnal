@@ -25,7 +25,7 @@ class CustomTimeViewController: NSViewController {
         NightShift.disable()
         Dimness.disable()
         
-        Timer.scheduledTimer(withTimeInterval: 6, repeats: false, block: {
+        Timer.scheduledTimer(withTimeInterval: 15, repeats: false, block: {
             timer in NightShift.enable(); Dimness.enable()
         })
         

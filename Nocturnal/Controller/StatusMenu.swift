@@ -8,9 +8,10 @@
 
 import Cocoa
 
-class StatusMenu: NSMenu {
+class StatusMenu: NSMenu, NSMenuDelegate{
     @IBOutlet weak var nightShiftSliderView: NightShiftSliderView!
     @IBOutlet weak var dimnessSliderView: DimnessSliderView!
+    @IBOutlet weak var disableCustomMenuItem: NSMenuItem!
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var storyboard = NSStoryboard(name: "Main", bundle: nil)
@@ -18,10 +19,34 @@ class StatusMenu: NSMenu {
     var dimnessSliderMenuItem: NSMenuItem!
     
     override func awakeFromNib() {
+        delegate = self
         setStatusMenuIcon()
         statusItem.menu = self
         setupNightShiftSliderMenuItem()
         setupDimnessSliderMenuItem()
+    }
+    
+    func menuWillOpen(_ menu: NSMenu) {
+        updateMenu()
+    }
+    
+    func updateMenu() {
+        
+        if NightShift.isNightShiftEnabled {
+            nightShiftSliderView.nightShiftSlider.isEnabled = true
+        } else {
+            nightShiftSliderView.nightShiftSlider.isEnabled = false
+        }
+
+        if Dimness.isDimnessEnabled {
+            dimnessSliderView.dimnessSlider.isEnabled = true
+        } else {
+           dimnessSliderView.dimnessSlider.isEnabled = false
+        }
+    }
+    
+    func menuDidClose(_ menu: NSMenu) {
+        print("closed")
     }
     
     func setStatusMenuIcon() {

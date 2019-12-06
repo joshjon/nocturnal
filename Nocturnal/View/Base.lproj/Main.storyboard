@@ -762,7 +762,7 @@ Gw
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Nocturnal" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <menu id="BYB-lu-Avz" userLabel="StatusMenu" customClass="StatusMenu" customModule="Nocturnal" customModuleProvider="target">
+                <menu autoenablesItems="NO" id="BYB-lu-Avz" userLabel="StatusMenu" customClass="StatusMenu" customModule="Nocturnal" customModuleProvider="target">
                     <items>
                         <menuItem title="Disable Nocturnal" id="NLh-V4-4lh" userLabel="Disable Nocturnal">
                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -808,6 +808,7 @@ Gw
                     </items>
                     <connections>
                         <outlet property="dimnessSliderView" destination="dQw-1Q-mAH" id="8qH-ba-W9s"/>
+                        <outlet property="disableCustomMenuItem" destination="3VP-Nv-qsM" id="fGY-DY-qZg"/>
                         <outlet property="nightShiftSliderView" destination="Jv1-B4-R4m" id="1kG-ef-92i"/>
                     </connections>
                 </menu>
