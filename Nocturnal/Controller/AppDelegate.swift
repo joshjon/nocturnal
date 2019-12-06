@@ -19,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationWillTerminate(_ notification: Notification) {
-       print("Nocturnal terminated")
+        print("Nocturnal terminated")
     }
     
 }

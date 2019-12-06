@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */; };
 		7D1B5C34239934440061D0CF /* Dimness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C33239934440061D0CF /* Dimness.swift */; };
+		7D1B5C372399AE770061D0CF /* NSWindowFade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C362399AE770061D0CF /* NSWindowFade.swift */; };
 		7D6A1022235F300100BB75EB /* CoreBrightness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6A1021235F300100BB75EB /* CoreBrightness.framework */; };
 		7D874589238BFA0F00A676F1 /* DimnessSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */; };
 		7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeViewController.swift; sourceTree = "<group>"; };
 		7D1B5C33239934440061D0CF /* Dimness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimness.swift; sourceTree = "<group>"; };
+		7D1B5C362399AE770061D0CF /* NSWindowFade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSWindowFade.swift; path = Nocturnal/Controller/NSWindowFade.swift; sourceTree = SOURCE_ROOT; };
 		7D56898C235EFC5600A51FC5 /* Nocturnal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nocturnal-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D56898D235EFCAE00A51FC5 /* CBBlueLightClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBBlueLightClient.h; sourceTree = "<group>"; };
 		7D6A1021235F300100BB75EB /* CoreBrightness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBrightness.framework; path = ../../../../../System/Library/PrivateFrameworks/CoreBrightness.framework; sourceTree = "<group>"; };
@@ -93,11 +95,12 @@
 			isa = PBXGroup;
 			children = (
 				7DF1F92C2356AFAA0041E9CA /* AppDelegate.swift */,
-				7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */,
-				7DA5B1F5238BAD6F00FE0597 /* NightShiftSliderView.swift */,
+				7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */,
 				7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */,
 				7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */,
-				7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */,
+				7DA5B1F5238BAD6F00FE0597 /* NightShiftSliderView.swift */,
+				7D1B5C362399AE770061D0CF /* NSWindowFade.swift */,
+				7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				7DA5B1F4238BAC8000FE0597 /* StatusMenu.swift in Sources */,
 				7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */,
 				7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */,
+				7D1B5C372399AE770061D0CF /* NSWindowFade.swift in Sources */,
 				7D1B5C34239934440061D0CF /* Dimness.swift in Sources */,
 				7DA5B1F9238BAF9500FE0597 /* NightShift.swift in Sources */,
 				7DF1F92D2356AFAA0041E9CA /* AppDelegate.swift in Sources */,
@@ -381,6 +385,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 28M363UQ4A;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -413,6 +418,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 28M363UQ4A;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (

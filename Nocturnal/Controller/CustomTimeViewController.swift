@@ -12,7 +12,7 @@ class CustomTimeViewController: NSViewController {
     
     var disableCustomTime: ((Int) -> Void)?
     var timer: Timer?
-
+    
     @IBOutlet weak var minutesTextField: NSTextField!
     
     override func viewDidLoad() {
@@ -25,9 +25,8 @@ class CustomTimeViewController: NSViewController {
         NightShift.disable()
         Dimness.disable()
         
-        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { timer in
-            NightShift.enable()
-            Dimness.enable()
+        Timer.scheduledTimer(withTimeInterval: 6, repeats: false, block: {
+            timer in NightShift.enable(); Dimness.enable()
         })
         
         self.view.window?.close()
