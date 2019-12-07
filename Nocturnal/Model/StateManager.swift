@@ -9,6 +9,7 @@
 import Foundation
 
 enum NocturnalEvent {
+    
     case disableTimerStarted
     case disableTimerEnded
 //    case nightShiftDisableRuleActivated
@@ -86,6 +87,7 @@ enum StateManager {
         case .disableTimerStarted:
             NightShift.disable()
             Dimness.disable()
+            
         case .disableTimerEnded:
             if !disableRuleIsActive {
                 NightShift.enable()
