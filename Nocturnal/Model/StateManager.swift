@@ -9,14 +9,12 @@
 import Foundation
 
 enum NocturnalEvent {
-    case userEnabledNightShift
-    case userDisabledNightShift
-    case nightShiftDisableTimerStarted
-    case nightShiftDisableTimerEnded
-    case nightShiftDisableRuleActivated
-    case nightShiftDisableRuleDeactivated
-    case nightShiftEnableRuleActivated
-    case nightShiftEnableRuleDeactivated
+    case disableTimerStarted
+    case disableTimerEnded
+//    case nightShiftDisableRuleActivated
+//    case nightShiftDisableRuleDeactivated
+//    case nightShiftEnableRuleActivated
+//    case nightShiftEnableRuleDeactivated
 }
 
 enum DisableTimer: Equatable {
@@ -45,7 +43,7 @@ enum SubdomainRuleType: String, Codable {
 
 enum StateManager {
     
-    static var userSet: Bool?
+//    static var userSet: Bool?
     static var userInitiatedShift = false
     static var disabled = false
     
@@ -73,35 +71,25 @@ enum StateManager {
     
     static func respond(to event: NocturnalEvent) {
         switch event {
-        case .userEnabledNightShift:
-            userSet = true
-            disableTimer = .off
-            if disableRuleIsActive {
-                removeRulesForCurrentState()
-            }
-            NightShift.isNightShiftEnabled = true
-        case .userDisabledNightShift:
-            userSet = false
-            NightShift.isNightShiftEnabled = false
-        case .nightShiftDisableRuleActivated:
-            NightShift.isNightShiftEnabled = false
-        case .nightShiftDisableRuleDeactivated:
-            if !disabledTimer && !disableRuleIsActive {
-                if userSet != nil {
-                    NightShift.isNightShiftEnabled = userSet!
-                }
-            }
-        case .nightShiftEnableRuleActivated:
-            NightShift.isNightShiftEnabled = userSet ?? true
-        case .nightShiftEnableRuleDeactivated:
-            if disabledTimer || disableRuleIsActive {
-                NightShift.isNightShiftEnabled = false
-            }
-        case .nightShiftDisableTimerStarted:
-            NightShift.isNightShiftEnabled = false
-        case .nightShiftDisableTimerEnded:
+//        case .nightShiftDisableRuleActivated:
+//            NightShift.isNightShiftEnabled = false
+//        case .nightShiftDisableRuleDeactivated:
+//            if !disabledTimer && !disableRuleIsActive {
+//                    NightShift.isNightShiftEnabled = true
+//            }
+//        case .nightShiftEnableRuleActivated:
+//            NightShift.isNightShiftEnabled = true
+//        case .nightShiftEnableRuleDeactivated:
+//            if disabledTimer || disableRuleIsActive {
+//                NightShift.isNightShiftEnabled = false
+//            }
+        case .disableTimerStarted:
+            NightShift.disable()
+            Dimness.disable()
+        case .disableTimerEnded:
             if !disableRuleIsActive {
-                NightShift.isNightShiftEnabled = true
+                NightShift.enable()
+                Dimness.enable()
             }
         }
     }

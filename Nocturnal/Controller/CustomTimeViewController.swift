@@ -26,7 +26,7 @@ class CustomTimeViewController: NSViewController {
                                                     repeats: false,
                                                     block: { _ in
                                                         StateManager.disableTimer = .off
-                                                        StateManager.respond(to: .nightShiftDisableTimerEnded)
+                                                        StateManager.respond(to: .disableTimerEnded)
             })
             disableTimer.tolerance = 60
             
@@ -36,7 +36,7 @@ class CustomTimeViewController: NSViewController {
             let disabledUntilDate = self.calendar.date(byAdding: addComponents, to: currentDate, options: [])
             
             StateManager.disableTimer = .custom(timer: disableTimer, endDate: disabledUntilDate!)
-            StateManager.respond(to: .nightShiftDisableTimerStarted)
+            StateManager.respond(to: .disableTimerStarted)
         }
         
         let minutes = minutesTextField.intValue

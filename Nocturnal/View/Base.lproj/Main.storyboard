@@ -764,17 +764,6 @@ Gw
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu autoenablesItems="NO" id="BYB-lu-Avz" userLabel="StatusMenu" customClass="StatusMenu" customModule="Nocturnal" customModuleProvider="target">
                     <items>
-                        <menuItem title="Disable Nocturnal" id="NLh-V4-4lh" userLabel="Disable Nocturnal">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                        </menuItem>
-                        <menuItem isSeparatorItem="YES" id="woz-qq-dag"/>
-                        <menuItem title="Night Shift:" enabled="NO" id="pXC-WU-Jc8" userLabel="Night Shift">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                        </menuItem>
-                        <menuItem title="Night Shift Slider" id="LnF-zf-yzn">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                        </menuItem>
-                        <menuItem isSeparatorItem="YES" id="gPp-ey-kge"/>
                         <menuItem title="Dimness:" enabled="NO" id="sPV-BF-rsJ" userLabel="Dimness">
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
@@ -782,6 +771,16 @@ Gw
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="0X9-gw-9nz"/>
+                        <menuItem title="Night Shift:" enabled="NO" id="pXC-WU-Jc8" userLabel="Night Shift">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Night Shift Slider" id="LnF-zf-yzn">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="gPp-ey-kge"/>
+                        <menuItem title="Disable Nocturnal" id="NLh-V4-4lh" userLabel="Disable Nocturnal">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
                         <menuItem title="Disable for an hour" id="af8-VH-x6c">
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
@@ -790,9 +789,6 @@ Gw
                             <connections>
                                 <action selector="disableCustomTimeClicked:" target="BYB-lu-Avz" id="Sd7-ux-g0e"/>
                             </connections>
-                        </menuItem>
-                        <menuItem title="Disable for current app" id="jLA-Dh-IH1">
-                            <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="wQ6-SP-edZ"/>
                         <menuItem title="Preferences" id="bSe-cz-dnn">

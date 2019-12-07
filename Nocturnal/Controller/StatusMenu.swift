@@ -47,7 +47,6 @@ class StatusMenu: NSMenu, NSMenuDelegate{
     }
     
     func menuDidClose(_ menu: NSMenu) {
-        print("closed")
     }
     
     func setStatusMenuIcon() {
@@ -77,7 +76,7 @@ class StatusMenu: NSMenu, NSMenuDelegate{
             disableCustomTimeWindow.window?.orderFrontRegardless()
         } else {
             StateManager.disableTimer = .off
-            StateManager.respond(to: .nightShiftDisableTimerEnded)
+            StateManager.respond(to: .disableTimerEnded)
         }
     }
     
