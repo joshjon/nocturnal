@@ -18,7 +18,18 @@ enum NightShift {
         return status
     }
     
-    static func setBlueLightReductionAmount(_ value: Float) {
+    static var blueLightReductionAmount: Float {
+        get {
+            var strength: Float = 0
+            client.getStrength(&strength)
+            return strength
+        }
+        set {
+            client.setStrength(newValue, commit: true)
+        }
+    }
+    
+    static func previewBlueLightReductionAmount(_ value: Float) {
         client.setStrength(value, commit: false)
     }
     
@@ -32,10 +43,7 @@ enum NightShift {
     }
     
     public static func disable() {
-        setBlueLightReductionAmount(0)
         isNightShiftEnabled = false
     }
     
 }
-
-
