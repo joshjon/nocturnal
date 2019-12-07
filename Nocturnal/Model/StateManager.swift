@@ -70,9 +70,9 @@ enum StateManager {
         return disableTimer != .off
     }
     
-    static func removeRulesForCurrentState() {
-        disabled = false
-    }
+//    static func removeRulesForCurrentState() {
+//        disabled = false
+//    }
     
     static func respond(to event: NocturnalEvent) {
         switch event {
@@ -89,14 +89,14 @@ enum StateManager {
 //                NightShift.isNightShiftEnabled = false
 //            }
         case .disableTimerStarted:
+            disabled = true
             NightShift.disable()
             Dimness.disable()
             
         case .disableTimerEnded:
-            if !disableRuleIsActive {
-                NightShift.enable()
-                Dimness.enable()
-            }
+            disabled = false
+            NightShift.enable()
+            Dimness.enable()
         }
     }
 }

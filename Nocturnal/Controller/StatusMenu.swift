@@ -31,8 +31,16 @@ class StatusMenu: NSMenu, NSMenuDelegate{
     }
     
     func updateMenu() {
+        // Sliders
+        if StateManager.disableRuleIsActive {
+            nightShiftSliderView.nightShiftSlider.isEnabled = false
+            dimnessSliderView.dimnessSlider.isEnabled = false
+        } else {
+            nightShiftSliderView.nightShiftSlider.isEnabled = true
+            dimnessSliderView.dimnessSlider.isEnabled = true
+        }
         
-        // MARK: disable timer
+        // Button toggles
         switch StateManager.disableTimer {
         case .off:
             disableCustomMenuItem.state = .off
@@ -44,9 +52,6 @@ class StatusMenu: NSMenu, NSMenuDelegate{
             disableCustomMenuItem.state = .on
             disableCustomMenuItem.isEnabled = true
         }
-    }
-    
-    func menuDidClose(_ menu: NSMenu) {
     }
     
     func setStatusMenuIcon() {
