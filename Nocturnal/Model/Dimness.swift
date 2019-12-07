@@ -11,7 +11,7 @@ import Cocoa
 enum Dimness {
     
     private static let dimnessWindow = NSApplication.shared.windows[1]
-    private static let fadeDuration = 3.5
+    private static let fadeDuration = 2.5
     private static var strengthBeforeDisable: CGFloat = 0
     
     static var dimnessStrength: Float {
@@ -37,18 +37,11 @@ enum Dimness {
     }
     
     static func enable() {
-        dimnessWindow.fadeInNew()
-//        isDimnessEnabled = true
-//        dimnessWindow.fadeInNew()
-//        dimnessWindow.fadeIn(sender: self, duration: fadeDuration, targetAlpha: CGFloat(dimnessStrength))
+        dimnessWindow.fadeInNew(duration: fadeDuration)
     }
     
     static func disable() {
-//        dimnessWindow.fadeOutNew()
-        dimnessWindow.fadeOutNew()
-        
-//        dimnessWindow.fadeOut(sender: nil, duration: fadeDuration)
-//        Timer.scheduledTimer(withTimeInterval: fadeDuration, repeats: false, block: { timer in isDimnessEnabled = false })
+        dimnessWindow.fadeOutNew(duration: fadeDuration)
     }
     
 }

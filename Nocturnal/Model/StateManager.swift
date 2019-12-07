@@ -9,7 +9,6 @@
 import Foundation
 
 enum NocturnalEvent {
-    
     case disableTimerStarted
     case disableTimerEnded
 //    case nightShiftDisableRuleActivated
@@ -43,10 +42,10 @@ enum SubdomainRuleType: String, Codable {
 }
 
 enum StateManager {
-    
 //    static var userSet: Bool?
     static var userInitiatedShift = false
     static var disabled = false
+    static var fadeInAnimationActive = false
     
     static var disableTimer = DisableTimer.off {
         willSet {
@@ -56,6 +55,11 @@ enum StateManager {
             default: break
             }
         }
+    }
+    
+    static var isFadeInAnimationActive: Bool {
+        get { return fadeInAnimationActive }
+        set { fadeInAnimationActive = newValue}
     }
     
     static var disableRuleIsActive: Bool {
