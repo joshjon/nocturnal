@@ -12,7 +12,7 @@
                     <window key="window" identifier="Custom Time Window Controller" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="pf3-mK-YdK">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="245" y="301" width="427" height="238"/>
+                        <rect key="contentRect" x="229" y="301" width="458" height="230"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="8s1-dM-aK7" id="sQT-rS-IKS"/>
@@ -24,7 +24,7 @@
                 </windowController>
                 <customObject id="zs5-4R-SyD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="625" y="710"/>
+            <point key="canvasLocation" x="624" y="706"/>
         </scene>
         <!--Custom Time View Controller-->
         <scene sceneID="6W6-9m-4ln">
@@ -780,6 +780,9 @@ Gw
                         <menuItem isSeparatorItem="YES" id="gPp-ey-kge"/>
                         <menuItem title="Disable Nocturnal" id="NLh-V4-4lh" userLabel="Disable Nocturnal">
                             <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="disableClicked:" target="BYB-lu-Avz" id="1Rj-R5-2mu"/>
+                            </connections>
                         </menuItem>
                         <menuItem title="Disable for an hour" id="af8-VH-x6c">
                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -805,6 +808,7 @@ Gw
                     <connections>
                         <outlet property="dimnessSliderView" destination="dQw-1Q-mAH" id="8qH-ba-W9s"/>
                         <outlet property="disableCustomMenuItem" destination="3VP-Nv-qsM" id="fGY-DY-qZg"/>
+                        <outlet property="disableMenuItem" destination="NLh-V4-4lh" id="Q9o-gZ-wO7"/>
                         <outlet property="nightShiftSliderView" destination="Jv1-B4-R4m" id="1kG-ef-92i"/>
                     </connections>
                 </menu>

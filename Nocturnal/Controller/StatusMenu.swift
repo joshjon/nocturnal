@@ -11,6 +11,7 @@ import Cocoa
 class StatusMenu: NSMenu, NSMenuDelegate{
     @IBOutlet weak var nightShiftSliderView: NightShiftSliderView!
     @IBOutlet weak var dimnessSliderView: DimnessSliderView!
+    @IBOutlet weak var disableMenuItem: NSMenuItem!
     @IBOutlet weak var disableCustomMenuItem: NSMenuItem!
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -32,12 +33,14 @@ class StatusMenu: NSMenu, NSMenuDelegate{
     
     func updateMenu() {
         // Sliders
-        if StateManager.disableRuleIsActive {
-            nightShiftSliderView.nightShiftSlider.isEnabled = false
-            dimnessSliderView.dimnessSlider.isEnabled = false
-        } else {
+        if StateManager.isNocturnalEnabled {
             nightShiftSliderView.nightShiftSlider.isEnabled = true
+            disableMenuItem.title = "Disable Nocturnal"
             dimnessSliderView.dimnessSlider.isEnabled = true
+        } else {
+            nightShiftSliderView.nightShiftSlider.isEnabled = false
+            disableMenuItem.title = "Enable Nocturnal"
+            dimnessSliderView.dimnessSlider.isEnabled = false
         }
         
         // Button toggles
@@ -73,6 +76,14 @@ class StatusMenu: NSMenu, NSMenuDelegate{
         dimnessSliderMenuItem.view = dimnessSliderView
     }
     
+    @IBAction func disableClicked(_ sender: NSMenuItem) {
+       if StateManager.isNocturnalEnabled {
+            StateManager.respond(to: .userDisabledNocturnal)
+        } else {
+            StateManager.respond(to: .userEnabledNocturnal)
+        }
+    }
+    
     @IBAction func disableCustomTimeClicked(_ sender: NSMenuItem) {
         let disableCustomTimeWindow = storyboard.instantiateController(withIdentifier: "Custom Time Window Controller") as! NSWindowController
         if disableCustomMenuItem.state == .off {
@@ -86,7 +97,7 @@ class StatusMenu: NSMenu, NSMenuDelegate{
     }
     
     @IBAction func quitClicked(_ sender: NSMenuItem) {
-        NightShift.disable()
+        StateManager.isNocturnalEnabled = false
         NightShift.blueLightReductionAmount = 0
         NSApplication.shared.terminate(sender)
     }
