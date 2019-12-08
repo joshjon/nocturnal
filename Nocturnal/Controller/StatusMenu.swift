@@ -47,14 +47,18 @@ class StatusMenu: NSMenu, NSMenuDelegate{
         // Button toggles
         switch StateManager.disableTimer {
         case .off:
+            disableHourMenuItem.state = .off
+            disableHourMenuItem.isEnabled = true
             disableCustomMenuItem.state = .off
             disableCustomMenuItem.isEnabled = true
         case .hour(timer: _):
-            disableCustomMenuItem.state = .off
+            disableHourMenuItem.state = .on
+            disableHourMenuItem.isEnabled = true
             disableCustomMenuItem.isEnabled = false
         case .custom(timer: _):
             disableCustomMenuItem.state = .on
             disableCustomMenuItem.isEnabled = true
+            disableHourMenuItem.isEnabled = false
         }
     }
     
