@@ -8,7 +8,7 @@
         <!--Custom Time WIndow Controller-->
         <scene sceneID="tQs-Mu-yMH">
             <objects>
-                <windowController storyboardIdentifier="Custom Time Window Controller" showSeguePresentationStyle="single" id="8s1-dM-aK7" userLabel="Custom Time WIndow Controller" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="Custom Time Window Controller" showSeguePresentationStyle="single" id="8s1-dM-aK7" userLabel="Custom Time WIndow Controller" customClass="CustomTimeWindowController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" identifier="Custom Time Window Controller" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" titleVisibility="hidden" id="pf3-mK-YdK">
                         <windowStyleMask key="styleMask" titled="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>

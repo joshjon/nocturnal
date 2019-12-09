@@ -118,9 +118,6 @@ class StatusMenu: NSMenu, NSMenuDelegate{
             NSApp.activate(ignoringOtherApps: true)
             if !StateManager.isCustomTimeWindowOpen {
                 StateManager.isCustomTimeWindowOpen = true
-                disableCustomTimeWindow.window?.orderFrontRegardless()
-                disableCustomTimeWindow.window?.level = .floating
-                disableCustomTimeWindow.window?.center()
                 disableCustomTimeWindow.showWindow(nil)
             }
         } else {

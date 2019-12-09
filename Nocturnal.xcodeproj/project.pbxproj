@@ -20,6 +20,7 @@
 		7DF1F92D2356AFAA0041E9CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF1F92C2356AFAA0041E9CA /* AppDelegate.swift */; };
 		7DF1F9312356AFB00041E9CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DF1F9302356AFB00041E9CA /* Assets.xcassets */; };
 		7DF1F9342356AFB00041E9CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DF1F9322356AFB00041E9CA /* Main.storyboard */; };
+		7DF36EA5239E5377000CFB5A /* CustomTimeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EA4239E5377000CFB5A /* CustomTimeWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,6 +55,7 @@
 		7DF1F9332356AFB00041E9CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7DF1F9352356AFB00041E9CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DF1F9362356AFB00041E9CA /* Nocturnal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nocturnal.entitlements; sourceTree = "<group>"; };
+		7DF36EA4239E5377000CFB5A /* CustomTimeWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */,
+				7DF36EA4239E5377000CFB5A /* CustomTimeWindowController.swift */,
 			);
 			path = "Custom Time";
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				7DA5B1F4238BAC8000FE0597 /* StatusMenu.swift in Sources */,
 				7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */,
 				7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */,
+				7DF36EA5239E5377000CFB5A /* CustomTimeWindowController.swift in Sources */,
 				7D1B5C39239A39BB0061D0CF /* StateManager.swift in Sources */,
 				7D1B5C372399AE770061D0CF /* NSWindow+Fade.swift in Sources */,
 				7D1B5C34239934440061D0CF /* Dimness.swift in Sources */,
