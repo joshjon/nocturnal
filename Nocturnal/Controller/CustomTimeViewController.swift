@@ -48,10 +48,12 @@ class CustomTimeViewController: NSViewController {
         let timeInSeconds = hours * 3600 + minutes * 60
         disableCustomTime?(Int(timeInSeconds))
         
+        StateManager.isCustomTimeWindowOpen = false
         self.view.window?.close()
     }
     
     @IBAction func cancelButtonClicked(_ sender: NSButton) {
+        StateManager.isCustomTimeWindowOpen = false
         self.view.window?.close()
     }
     

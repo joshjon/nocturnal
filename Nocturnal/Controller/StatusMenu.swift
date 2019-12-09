@@ -116,8 +116,11 @@ class StatusMenu: NSMenu, NSMenuDelegate{
         let disableCustomTimeWindow = storyboard.instantiateController(withIdentifier: "Custom Time Window Controller") as! NSWindowController
         if disableCustomMenuItem.state == .off {
             NSApp.activate(ignoringOtherApps: true)
-            disableCustomTimeWindow.showWindow(nil)
-            disableCustomTimeWindow.window?.orderFrontRegardless()
+            if !StateManager.isCustomTimeWindowOpen {
+                StateManager.isCustomTimeWindowOpen = true
+                disableCustomTimeWindow.showWindow(nil)
+                disableCustomTimeWindow.window?.orderFrontRegardless()
+            }
         } else {
             StateManager.disableTimer = .off
             StateManager.respond(to: .disableTimerEnded)
