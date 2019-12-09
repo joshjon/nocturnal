@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */; };
 		7D1B5C34239934440061D0CF /* Dimness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C33239934440061D0CF /* Dimness.swift */; };
-		7D1B5C372399AE770061D0CF /* NSWindowFade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C362399AE770061D0CF /* NSWindowFade.swift */; };
+		7D1B5C372399AE770061D0CF /* NSWindow+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C362399AE770061D0CF /* NSWindow+Fade.swift */; };
 		7D1B5C39239A39BB0061D0CF /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C38239A39BB0061D0CF /* StateManager.swift */; };
 		7D6A1022235F300100BB75EB /* CoreBrightness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6A1021235F300100BB75EB /* CoreBrightness.framework */; };
 		7D874589238BFA0F00A676F1 /* DimnessSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */; };
@@ -38,7 +38,7 @@
 /* Begin PBXFileReference section */
 		7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeViewController.swift; sourceTree = "<group>"; };
 		7D1B5C33239934440061D0CF /* Dimness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimness.swift; sourceTree = "<group>"; };
-		7D1B5C362399AE770061D0CF /* NSWindowFade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSWindowFade.swift; path = Nocturnal/Controller/NSWindowFade.swift; sourceTree = SOURCE_ROOT; };
+		7D1B5C362399AE770061D0CF /* NSWindow+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSWindow+Fade.swift"; path = "Nocturnal/Application/Extensions/NSWindow+Fade.swift"; sourceTree = SOURCE_ROOT; };
 		7D1B5C38239A39BB0061D0CF /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		7D56898C235EFC5600A51FC5 /* Nocturnal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nocturnal-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D56898D235EFCAE00A51FC5 /* CBBlueLightClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBBlueLightClient.h; sourceTree = "<group>"; };
@@ -68,14 +68,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7D1B5C352399433E0061D0CF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7DF1F9322356AFB00041E9CA /* Main.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		7D56898E235EFD7D00A51FC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,44 +85,23 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
-		7D6A1024235FAE5300BB75EB /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				7DF1F92C2356AFAA0041E9CA /* AppDelegate.swift */,
-				7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */,
-				7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */,
-				7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */,
-				7DA5B1F5238BAD6F00FE0597 /* NightShiftSliderView.swift */,
-				7D1B5C362399AE770061D0CF /* NSWindowFade.swift */,
-				7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		7D6A1025235FAEB200BB75EB /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				7DF1F9352356AFB00041E9CA /* Info.plist */,
-				7DF1F9362356AFB00041E9CA /* Nocturnal.entitlements */,
-				7DF1F9302356AFB00041E9CA /* Assets.xcassets */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		7DA5B1F7238BAF6F00FE0597 /* Model */ = {
+		7DA5B1F7238BAF6F00FE0597 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				7DA5B1F8238BAF9500FE0597 /* NightShift.swift */,
 				7D1B5C33239934440061D0CF /* Dimness.swift */,
 				7D1B5C38239A39BB0061D0CF /* StateManager.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		7DF1F9202356AFA90041E9CA = {
 			isa = PBXGroup;
 			children = (
 				7DF1F92B2356AFAA0041E9CA /* Nocturnal */,
+				7DF1F9352356AFB00041E9CA /* Info.plist */,
+				7DF1F9362356AFB00041E9CA /* Nocturnal.entitlements */,
+				7DF1F9302356AFB00041E9CA /* Assets.xcassets */,
 				7DF1F92A2356AFAA0041E9CA /* Products */,
 				7D56898E235EFD7D00A51FC5 /* Frameworks */,
 			);
@@ -148,12 +119,65 @@
 			isa = PBXGroup;
 			children = (
 				7D6A1023235FADBD00BB75EB /* Headers */,
-				7D6A1025235FAEB200BB75EB /* Assets */,
-				7DA5B1F7238BAF6F00FE0597 /* Model */,
-				7D1B5C352399433E0061D0CF /* View */,
-				7D6A1024235FAE5300BB75EB /* Controller */,
+				7DA5B1F7238BAF6F00FE0597 /* Models */,
+				7DF36E9E239E4FA9000CFB5A /* Application */,
 			);
 			path = Nocturnal;
+			sourceTree = "<group>";
+		};
+		7DF36E9E239E4FA9000CFB5A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				7DF36E9F239E4FD1000CFB5A /* Main */,
+				7DF36EA2239E5053000CFB5A /* Menu */,
+				7DF36EA1239E501F000CFB5A /* Dimness */,
+				7DF36EA0239E4FF8000CFB5A /* Custom Time */,
+				7DF36EA3239E50A6000CFB5A /* Extensions */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		7DF36E9F239E4FD1000CFB5A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7DF1F92C2356AFAA0041E9CA /* AppDelegate.swift */,
+				7DF1F9322356AFB00041E9CA /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7DF36EA0239E4FF8000CFB5A /* Custom Time */ = {
+			isa = PBXGroup;
+			children = (
+				7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */,
+			);
+			path = "Custom Time";
+			sourceTree = "<group>";
+		};
+		7DF36EA1239E501F000CFB5A /* Dimness */ = {
+			isa = PBXGroup;
+			children = (
+				7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */,
+			);
+			path = Dimness;
+			sourceTree = "<group>";
+		};
+		7DF36EA2239E5053000CFB5A /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */,
+				7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */,
+				7DA5B1F5238BAD6F00FE0597 /* NightShiftSliderView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		7DF36EA3239E50A6000CFB5A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7D1B5C362399AE770061D0CF /* NSWindow+Fade.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +255,7 @@
 				7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */,
 				7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */,
 				7D1B5C39239A39BB0061D0CF /* StateManager.swift in Sources */,
-				7D1B5C372399AE770061D0CF /* NSWindowFade.swift in Sources */,
+				7D1B5C372399AE770061D0CF /* NSWindow+Fade.swift in Sources */,
 				7D1B5C34239934440061D0CF /* Dimness.swift in Sources */,
 				7DA5B1F9238BAF9500FE0597 /* NightShift.swift in Sources */,
 				7DF1F92D2356AFAA0041E9CA /* AppDelegate.swift in Sources */,
@@ -385,7 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Nocturnal/Assets/Nocturnal.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Nocturnal.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -398,7 +422,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Nocturnal",
 				);
-				INFOPLIST_FILE = Nocturnal/Assets/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -418,7 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Nocturnal/Assets/Nocturnal.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Nocturnal.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -431,7 +455,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Nocturnal",
 				);
-				INFOPLIST_FILE = Nocturnal/Assets/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

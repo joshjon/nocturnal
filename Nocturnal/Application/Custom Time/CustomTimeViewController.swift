@@ -55,15 +55,15 @@ class CustomTimeViewController: NSViewController {
         closeWindow()
     }
     
-    func closeWindow() {
-        StateManager.isCustomTimeWindowOpen = false
-        self.view.window?.close()
-    }
-    
     func setupWindow() {
         guard let window = self.view.window else { return }
         window.level = .floating
         window.orderFrontRegardless()
+    }
+    
+    func closeWindow() {
+        StateManager.isCustomTimeWindowOpen = false
+        self.view.window?.close()
     }
     
 }
