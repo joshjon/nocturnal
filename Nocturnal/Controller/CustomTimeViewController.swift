@@ -18,10 +18,10 @@ class CustomTimeViewController: NSViewController {
     @IBOutlet weak var minutesTextField: NSTextField!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         // only allow numbers
         hoursTextField.formatter = NumberFormatter()
         minutesTextField.formatter = NumberFormatter()
-        super.viewDidLoad()
     }
     
     @IBAction func applyButtonClicked(_ sender: NSButton) {
@@ -47,14 +47,23 @@ class CustomTimeViewController: NSViewController {
         let minutes = minutesTextField.intValue
         let timeInSeconds = hours * 3600 + minutes * 60
         disableCustomTime?(Int(timeInSeconds))
-        
-        StateManager.isCustomTimeWindowOpen = false
-        self.view.window?.close()
+        closeWindow()
     }
     
     @IBAction func cancelButtonClicked(_ sender: NSButton) {
         StateManager.isCustomTimeWindowOpen = false
+        closeWindow()
+    }
+    
+    func closeWindow() {
+        StateManager.isCustomTimeWindowOpen = false
         self.view.window?.close()
+    }
+    
+    func setupWindow() {
+        guard let window = self.view.window else { return }
+        window.level = .floating
+        window.orderFrontRegardless()
     }
     
 }
