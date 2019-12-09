@@ -12,6 +12,7 @@ class StatusMenu: NSMenu, NSMenuDelegate{
     @IBOutlet weak var nightShiftSliderView: NightShiftSliderView!
     @IBOutlet weak var dimnessSliderView: DimnessSliderView!
     @IBOutlet weak var disableMenuItem: NSMenuItem!
+    @IBOutlet weak var disableHourMenuItem: NSMenuItem!
     @IBOutlet weak var disableCustomMenuItem: NSMenuItem!
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -46,14 +47,18 @@ class StatusMenu: NSMenu, NSMenuDelegate{
         // Button toggles
         switch StateManager.disableTimer {
         case .off:
+            disableHourMenuItem.state = .off
+            disableHourMenuItem.isEnabled = true
             disableCustomMenuItem.state = .off
             disableCustomMenuItem.isEnabled = true
         case .hour(timer: _):
-            disableCustomMenuItem.state = .off
+            disableHourMenuItem.state = .on
+            disableHourMenuItem.isEnabled = true
             disableCustomMenuItem.isEnabled = false
         case .custom(timer: _):
             disableCustomMenuItem.state = .on
             disableCustomMenuItem.isEnabled = true
+            disableHourMenuItem.isEnabled = false
         }
     }
     
@@ -77,10 +82,33 @@ class StatusMenu: NSMenu, NSMenuDelegate{
     }
     
     @IBAction func disableClicked(_ sender: NSMenuItem) {
-       if StateManager.isNocturnalEnabled {
+        if StateManager.isNocturnalEnabled {
             StateManager.respond(to: .userDisabledNocturnal)
         } else {
             StateManager.respond(to: .userEnabledNocturnal)
+        }
+    }
+    
+    @IBAction func disableHourClicked(_ sender: Any) {
+        if disableHourMenuItem.state == .off {
+            let disableTimer = Timer.scheduledTimer(withTimeInterval: 3600, repeats: false, block: { _ in
+                StateManager.disableTimer = .off
+                StateManager.respond(to: .disableTimerEnded)
+            })
+            
+            disableTimer.tolerance = 60
+            
+            let calendar = NSCalendar(identifier: .gregorian)!
+            let currentDate = Date()
+            var addComponents = DateComponents()
+            addComponents.hour = 1
+            let disabledUntilDate = calendar.date(byAdding: addComponents, to: currentDate, options: [])!
+            
+            StateManager.disableTimer = .hour(timer: disableTimer, endDate: disabledUntilDate)
+            StateManager.respond(to: .disableTimerStarted)
+        } else {
+            StateManager.disableTimer = .off
+            StateManager.respond(to: .disableTimerEnded)
         }
     }
     

@@ -47,7 +47,7 @@
                                 <rect key="frame" x="214" y="153" width="53" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="minutes" id="Tzt-7i-abA">
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="label" size="13"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -57,7 +57,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Apply" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OHJ-x1-DaU">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="label" size="13"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
@@ -71,7 +71,7 @@ DQ
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IEt-23-fdu">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="label" size="13"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
 Gw
 </string>
@@ -786,6 +786,9 @@ Gw
                         </menuItem>
                         <menuItem title="Disable for an hour" id="af8-VH-x6c">
                             <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="disableHourClicked:" target="BYB-lu-Avz" id="UoX-Jm-vMX"/>
+                            </connections>
                         </menuItem>
                         <menuItem title="Disable for custom time" id="3VP-Nv-qsM">
                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -808,6 +811,7 @@ Gw
                     <connections>
                         <outlet property="dimnessSliderView" destination="dQw-1Q-mAH" id="8qH-ba-W9s"/>
                         <outlet property="disableCustomMenuItem" destination="3VP-Nv-qsM" id="fGY-DY-qZg"/>
+                        <outlet property="disableHourMenuItem" destination="af8-VH-x6c" id="84a-9w-YY7"/>
                         <outlet property="disableMenuItem" destination="NLh-V4-4lh" id="Q9o-gZ-wO7"/>
                         <outlet property="nightShiftSliderView" destination="Jv1-B4-R4m" id="1kG-ef-92i"/>
                     </connections>
@@ -820,7 +824,7 @@ Gw
                             <rect key="frame" x="-6" y="-7" width="236" height="32"/>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="atd-71-vWH">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
+                                <font key="font" metaFont="label" size="13"/>
                             </buttonCell>
                         </button>
                         <stackView distribution="fillProportionally" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-kG-fRJ">
@@ -888,7 +892,7 @@ Gw
                             <rect key="frame" x="-6" y="-7" width="236" height="32"/>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="tr8-NX-iDW">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
+                                <font key="font" metaFont="label" size="13"/>
                             </buttonCell>
                         </button>
                         <stackView distribution="fillProportionally" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pz8-rr-L0g">

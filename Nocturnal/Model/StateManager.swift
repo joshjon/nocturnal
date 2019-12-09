@@ -73,15 +73,18 @@ enum StateManager {
     
     static func respond(to event: NocturnalEvent) {
         switch event {
-        case .disableTimerStarted:
-            isNocturnalEnabled = false
-        case .disableTimerEnded:
-            isNocturnalEnabled = true
         case .userEnabledNocturnal:
             disableTimer = .off
             isNocturnalEnabled = true
         case .userDisabledNocturnal:
             isNocturnalEnabled = false
+        case .disableTimerStarted:
+            // check is required as Nocturnal can already be disabled when a timer starts
+            if isNocturnalEnabled {
+                isNocturnalEnabled = false
+            }
+        case .disableTimerEnded:
+            isNocturnalEnabled = true
         }
     }
 }
