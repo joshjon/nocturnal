@@ -814,6 +814,9 @@ Gw
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu autoenablesItems="NO" id="BYB-lu-Avz" userLabel="StatusMenu" customClass="StatusMenu" customModule="Nocturnal" customModuleProvider="target">
                     <items>
+                        <menuItem title="Timer" id="ElC-uX-aHD">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
                         <menuItem title="Disable Nocturnal" id="NLh-V4-4lh" userLabel="Disable Nocturnal">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
@@ -865,6 +868,7 @@ Gw
                         <outlet property="disableHourMenuItem" destination="af8-VH-x6c" id="84a-9w-YY7"/>
                         <outlet property="disableMenuItem" destination="NLh-V4-4lh" id="Q9o-gZ-wO7"/>
                         <outlet property="nightShiftSliderView" destination="Jv1-B4-R4m" id="1kG-ef-92i"/>
+                        <outlet property="timerMenuItem" destination="ElC-uX-aHD" id="ZIf-D5-A0p"/>
                     </connections>
                 </menu>
                 <customView id="Jv1-B4-R4m" userLabel="Night Shift Slider View" customClass="NightShiftSliderView" customModule="Nocturnal" customModuleProvider="target">
