@@ -12,7 +12,7 @@
                     <window key="window" identifier="Custom Time Window Controller" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" titleVisibility="hidden" id="pf3-mK-YdK">
                         <windowStyleMask key="styleMask" titled="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="229" y="301" width="458" height="230"/>
+                        <rect key="contentRect" x="319" y="301" width="253" height="88"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="8s1-dM-aK7" id="sQT-rS-IKS"/>
@@ -24,7 +24,7 @@
                 </windowController>
                 <customObject id="zs5-4R-SyD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="624" y="706"/>
+            <point key="canvasLocation" x="270" y="618"/>
         </scene>
         <!--Custom Time View Controller-->
         <scene sceneID="6W6-9m-4ln">
@@ -138,7 +138,7 @@ Gw
                 </viewController>
                 <customObject id="Ojp-NP-A0U" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="615.5" y="1046.5"/>
+            <point key="canvasLocation" x="270" y="890"/>
         </scene>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
@@ -1016,7 +1016,7 @@ Gw
                 <windowController storyboardIdentifier="WindowController" id="qlV-0d-Pw7" userLabel="Dimness Window Controller" customClass="DimnessWindowController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="BVT-1q-Wuc">
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="245" y="301" width="480" height="270"/>
+                        <rect key="contentRect" x="403" y="296" width="255" height="122"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="qlV-0d-Pw7" id="tko-Y0-pUa"/>
@@ -1028,7 +1028,7 @@ Gw
                 </windowController>
                 <customObject id="c5s-9N-8I8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="694"/>
+            <point key="canvasLocation" x="-16.5" y="612"/>
         </scene>
         <!--Dimness View Controller-->
         <scene sceneID="dRg-lP-Vt9">
@@ -1036,12 +1036,12 @@ Gw
                 <customObject id="Rhc-az-EaU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ViewController" id="KT8-VA-bZ6" userLabel="Dimness View Controller" sceneMemberID="viewController">
                     <view key="view" id="qAQ-HP-OtS">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="255" height="123"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="75" y="1109"/>
+            <point key="canvasLocation" x="-17" y="890"/>
         </scene>
     </scenes>
     <resources>
