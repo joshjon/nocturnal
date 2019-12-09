@@ -21,6 +21,7 @@
 		7DF1F9312356AFB00041E9CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DF1F9302356AFB00041E9CA /* Assets.xcassets */; };
 		7DF1F9342356AFB00041E9CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DF1F9322356AFB00041E9CA /* Main.storyboard */; };
 		7DF36EA5239E5377000CFB5A /* CustomTimeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EA4239E5377000CFB5A /* CustomTimeWindowController.swift */; };
+		7DF36EA7239E730C000CFB5A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EA6239E730C000CFB5A /* Preferences.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +57,7 @@
 		7DF1F9352356AFB00041E9CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DF1F9362356AFB00041E9CA /* Nocturnal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nocturnal.entitlements; sourceTree = "<group>"; };
 		7DF36EA4239E5377000CFB5A /* CustomTimeWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeWindowController.swift; sourceTree = "<group>"; };
+		7DF36EA6239E730C000CFB5A /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +92,9 @@
 		7DA5B1F7238BAF6F00FE0597 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7DA5B1F8238BAF9500FE0597 /* NightShift.swift */,
 				7D1B5C33239934440061D0CF /* Dimness.swift */,
+				7DA5B1F8238BAF9500FE0597 /* NightShift.swift */,
+				7DF36EA6239E730C000CFB5A /* Preferences.swift */,
 				7D1B5C38239A39BB0061D0CF /* StateManager.swift */,
 			);
 			path = Models;
@@ -168,9 +171,9 @@
 		7DF36EA2239E5053000CFB5A /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */,
 				7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */,
 				7DA5B1F5238BAD6F00FE0597 /* NightShiftSliderView.swift */,
+				7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			files = (
 				7DA5B1F4238BAC8000FE0597 /* StatusMenu.swift in Sources */,
 				7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */,
+				7DF36EA7239E730C000CFB5A /* Preferences.swift in Sources */,
 				7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */,
 				7DF36EA5239E5377000CFB5A /* CustomTimeWindowController.swift in Sources */,
 				7D1B5C39239A39BB0061D0CF /* StateManager.swift in Sources */,
