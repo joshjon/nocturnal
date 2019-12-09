@@ -34,9 +34,10 @@ enum DisableTimer: Equatable {
 }
 
 enum StateManager {
-    static var userInitiatedShift = false
-    static var enabled = true
-    static var fadeInAnimationActive = false
+    private static var userInitiatedShift = false
+    private static var enabled = true
+    private static var fadeInAnimationActive = false
+    private static var customTimeWindowOpen = false
     
     static var disableTimer = DisableTimer.off {
         willSet {
@@ -51,6 +52,11 @@ enum StateManager {
     static var isFadeInAnimationActive: Bool {
         get { return fadeInAnimationActive }
         set { fadeInAnimationActive = newValue}
+    }
+    
+    static var isCustomTimeWindowOpen: Bool {
+        get { return customTimeWindowOpen }
+        set { customTimeWindowOpen = newValue}
     }
     
     static var disabledTimer: Bool {
