@@ -14,9 +14,13 @@ class CustomTimeViewController: NSViewController {
     var timer: Timer?
     let calendar = NSCalendar(identifier: .gregorian)!
     
+    @IBOutlet weak var hoursTextField: NSTextField!
     @IBOutlet weak var minutesTextField: NSTextField!
     
     override func viewDidLoad() {
+        // only allow numbers
+        hoursTextField.formatter = NumberFormatter()
+        minutesTextField.formatter = NumberFormatter()
         super.viewDidLoad()
     }
     
@@ -39,9 +43,10 @@ class CustomTimeViewController: NSViewController {
             StateManager.respond(to: .disableTimerStarted)
         }
         
+        let hours = hoursTextField.intValue
         let minutes = minutesTextField.intValue
-        let timeIntervalInSeconds = minutes
-        disableCustomTime?(Int(timeIntervalInSeconds))
+        let timeInSeconds = hours * 3600 + minutes * 60
+        disableCustomTime?(Int(timeInSeconds))
         
         self.view.window?.close()
     }
