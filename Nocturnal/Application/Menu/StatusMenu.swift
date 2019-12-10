@@ -9,12 +9,13 @@
 import Cocoa
 
 class StatusMenu: NSMenu, NSMenuDelegate{
+    @IBOutlet weak var timerMenuItem: NSMenuItem!
     @IBOutlet weak var nightShiftSliderView: NightShiftSliderView!
     @IBOutlet weak var dimnessSliderView: DimnessSliderView!
     @IBOutlet weak var disableMenuItem: NSMenuItem!
     @IBOutlet weak var disableHourMenuItem: NSMenuItem!
     @IBOutlet weak var disableCustomMenuItem: NSMenuItem!
-    @IBOutlet weak var timerMenuItem: NSMenuItem!
+    @IBOutlet weak var preferencesMenuItem: NSMenuItem!
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var storyboard = NSStoryboard(name: "Main", bundle: nil)
@@ -167,12 +168,19 @@ class StatusMenu: NSMenu, NSMenuDelegate{
         if disableCustomMenuItem.state == .off {
             NSApp.activate(ignoringOtherApps: true)
             if !StateManager.isCustomTimeWindowOpen {
-                StateManager.isCustomTimeWindowOpen = true
                 disableCustomTimeWindow.showWindow(nil)
             }
         } else {
             StateManager.disableTimer = .off
             StateManager.respond(to: .disableTimerEnded)
+        }
+    }
+    
+    @IBAction func preferencesClicked(_ sender: NSMenuItem) {
+        let preferencesWindow = storyboard.instantiateController(withIdentifier: "Preferences Window Controller") as! NSWindowController
+        NSApp.activate(ignoringOtherApps: true)
+        if !StateManager.isPreferencesWindowOpen {
+            preferencesWindow.showWindow(nil)
         }
     }
     

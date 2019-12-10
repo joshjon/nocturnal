@@ -24,6 +24,14 @@ class CustomTimeViewController: NSViewController {
         minutesTextField.formatter = NumberFormatter()
     }
     
+    override func viewWillAppear() {
+        StateManager.isCustomTimeWindowOpen = true
+    }
+    
+    override func viewWillDisappear() {
+        StateManager.isCustomTimeWindowOpen = false
+    }
+    
     @IBAction func applyButtonClicked(_ sender: NSButton) {
         disableCustomTime = { (timeIntervalInSeconds) in
             let disableTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeIntervalInSeconds),
@@ -47,23 +55,17 @@ class CustomTimeViewController: NSViewController {
         let minutes = minutesTextField.intValue
         let timeInSeconds = hours * 3600 + minutes * 60
         disableCustomTime?(Int(timeInSeconds))
-        closeWindow()
+        self.view.window?.close()
     }
     
     @IBAction func cancelButtonClicked(_ sender: NSButton) {
-        StateManager.isCustomTimeWindowOpen = false
-        closeWindow()
+         self.view.window?.close()
     }
     
     func setupWindow() {
         guard let window = self.view.window else { return }
         window.level = .floating
         window.orderFrontRegardless()
-    }
-    
-    func closeWindow() {
-        StateManager.isCustomTimeWindowOpen = false
-        self.view.window?.close()
     }
     
 }

@@ -22,6 +22,9 @@
 		7DF1F9342356AFB00041E9CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DF1F9322356AFB00041E9CA /* Main.storyboard */; };
 		7DF36EA5239E5377000CFB5A /* CustomTimeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EA4239E5377000CFB5A /* CustomTimeWindowController.swift */; };
 		7DF36EA7239E730C000CFB5A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EA6239E730C000CFB5A /* Preferences.swift */; };
+		7DF36EAA239EFB29000CFB5A /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EA9239EFB29000CFB5A /* PreferencesViewController.swift */; };
+		7DF36EAC239F5793000CFB5A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EAB239F5793000CFB5A /* PreferencesWindowController.swift */; };
+		7DF36EAE239F6AED000CFB5A /* HyperLinkTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EAD239F6AED000CFB5A /* HyperLinkTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +61,9 @@
 		7DF1F9362356AFB00041E9CA /* Nocturnal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nocturnal.entitlements; sourceTree = "<group>"; };
 		7DF36EA4239E5377000CFB5A /* CustomTimeWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeWindowController.swift; sourceTree = "<group>"; };
 		7DF36EA6239E730C000CFB5A /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		7DF36EA9239EFB29000CFB5A /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		7DF36EAB239F5793000CFB5A /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		7DF36EAD239F6AED000CFB5A /* HyperLinkTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HyperLinkTextField.swift; path = Nocturnal/Application/Preferences/HyperLinkTextField.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,7 @@
 				7DF36EA2239E5053000CFB5A /* Menu */,
 				7DF36EA1239E501F000CFB5A /* Dimness */,
 				7DF36EA0239E4FF8000CFB5A /* Custom Time */,
+				7DF36EA8239EFAEB000CFB5A /* Preferences */,
 				7DF36EA3239E50A6000CFB5A /* Extensions */,
 			);
 			path = Application;
@@ -156,6 +163,7 @@
 			children = (
 				7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */,
 				7DF36EA4239E5377000CFB5A /* CustomTimeWindowController.swift */,
+				7DF36EAD239F6AED000CFB5A /* HyperLinkTextField.swift */,
 			);
 			path = "Custom Time";
 			sourceTree = "<group>";
@@ -184,6 +192,15 @@
 				7D1B5C362399AE770061D0CF /* NSWindow+Fade.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7DF36EA8239EFAEB000CFB5A /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				7DF36EAB239F5793000CFB5A /* PreferencesWindowController.swift */,
+				7DF36EA9239EFB29000CFB5A /* PreferencesViewController.swift */,
+			);
+			path = Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +278,13 @@
 				7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */,
 				7DF36EA7239E730C000CFB5A /* Preferences.swift in Sources */,
 				7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */,
+				7DF36EAC239F5793000CFB5A /* PreferencesWindowController.swift in Sources */,
 				7DF36EA5239E5377000CFB5A /* CustomTimeWindowController.swift in Sources */,
 				7D1B5C39239A39BB0061D0CF /* StateManager.swift in Sources */,
+				7DF36EAA239EFB29000CFB5A /* PreferencesViewController.swift in Sources */,
 				7D1B5C372399AE770061D0CF /* NSWindow+Fade.swift in Sources */,
 				7D1B5C34239934440061D0CF /* Dimness.swift in Sources */,
+				7DF36EAE239F6AED000CFB5A /* HyperLinkTextField.swift in Sources */,
 				7DA5B1F9238BAF9500FE0597 /* NightShift.swift in Sources */,
 				7DF1F92D2356AFAA0041E9CA /* AppDelegate.swift in Sources */,
 				7DA5B1F6238BAD6F00FE0597 /* NightShiftSliderView.swift in Sources */,

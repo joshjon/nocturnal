@@ -26,6 +26,114 @@
             </objects>
             <point key="canvasLocation" x="270" y="618"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="Tvt-ak-Ddu">
+            <objects>
+                <windowController storyboardIdentifier="Preferences Window Controller" id="t0U-i3-kkl" customClass="PreferencesWindowController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" identifier="Preferences Window Controller" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="evA-Mp-ali">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="269" y="301" width="194" height="88"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="t0U-i3-kkl" id="iSU-3H-leT"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="pTt-Qm-3L9" kind="relationship" relationship="window.shadowedContentViewController" id="K8u-nn-Xns"/>
+                    </connections>
+                </windowController>
+                <customObject id="hTD-20-PmB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="539" y="618"/>
+        </scene>
+        <!--Preferences View Controller-->
+        <scene sceneID="Ikf-jW-tuJ">
+            <objects>
+                <viewController id="pTt-Qm-3L9" customClass="PreferencesViewController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="ccj-LX-Sn4">
+                        <rect key="frame" x="0.0" y="0.0" width="204" height="242"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9YM-z4-ygx">
+                                <rect key="frame" x="78" y="94" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSInfo" id="7yd-Dg-nMB"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Umx-nU-vQQ">
+                                <rect key="frame" x="68" y="77" width="68" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Nocturnal" id="dFE-bl-2SB">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I4j-zD-srL">
+                                <rect key="frame" x="68" y="61" width="64" height="13"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Version 1.1.2" id="kkj-Sc-iYH">
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cZB-CZ-3LA">
+                                <rect key="frame" x="28" y="10" width="148" height="13"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Copyright © 2019 Joshua Jon" id="P1r-VP-Nes">
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGn-a5-XjO">
+                                <rect key="frame" x="16" y="39" width="139" height="14"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Source code available on " id="O6G-bp-h58">
+                                    <font key="font" metaFont="menu" size="11"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fBK-Fj-PMs" customClass="HyperlinkTextField" customModule="Nocturnal" customModuleProvider="target">
+                                <rect key="frame" x="151" y="39" width="41" height="14"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="GitHub" id="aEJ-aV-IBt">
+                                    <font key="font" metaFont="menu" size="11"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://github.com/joshjon/nocturnal"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Kx-1x-ccv">
+                                <rect key="frame" x="18" y="194" width="158" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="When computer starts" bezelStyle="regularSquare" imagePosition="left" inset="2" id="oOz-Zl-Tr0">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U1P-hf-FE3">
+                                <rect key="frame" x="18" y="161" width="168" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Dynamic menu bar icon" bezelStyle="regularSquare" imagePosition="left" inset="2" id="nLg-RZ-gT8">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="sourceCodeLabel" destination="lGn-a5-XjO" id="1tx-6j-ntb"/>
+                    </connections>
+                </viewController>
+                <customObject id="hRa-9L-cbJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="539" y="949"/>
+        </scene>
         <!--Custom Time View Controller-->
         <scene sceneID="6W6-9m-4ln">
             <objects>
@@ -853,6 +961,9 @@ Gw
                         <menuItem isSeparatorItem="YES" id="wQ6-SP-edZ"/>
                         <menuItem title="Preferences..." id="bSe-cz-dnn">
                             <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="preferencesClicked:" target="BYB-lu-Avz" id="hVu-Nv-ezj"/>
+                            </connections>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="MFU-6l-rf7"/>
                         <menuItem title="Quit Nocturnal" id="bep-rB-Jve">
@@ -868,6 +979,7 @@ Gw
                         <outlet property="disableHourMenuItem" destination="af8-VH-x6c" id="84a-9w-YY7"/>
                         <outlet property="disableMenuItem" destination="NLh-V4-4lh" id="Q9o-gZ-wO7"/>
                         <outlet property="nightShiftSliderView" destination="Jv1-B4-R4m" id="1kG-ef-92i"/>
+                        <outlet property="preferencesMenuItem" destination="bSe-cz-dnn" id="EPR-dX-1pV"/>
                         <outlet property="timerMenuItem" destination="ElC-uX-aHD" id="ZIf-D5-A0p"/>
                     </connections>
                 </menu>
@@ -1047,5 +1159,6 @@ Gw
     <resources>
         <image name="NSGoBackTemplate" width="9" height="12"/>
         <image name="NSGoForwardTemplate" width="9" height="12"/>
+        <image name="NSInfo" width="32" height="32"/>
     </resources>
 </document>
