@@ -11,7 +11,11 @@
 		7D1B5C34239934440061D0CF /* Dimness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C33239934440061D0CF /* Dimness.swift */; };
 		7D1B5C372399AE770061D0CF /* NSWindow+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C362399AE770061D0CF /* NSWindow+Fade.swift */; };
 		7D1B5C39239A39BB0061D0CF /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C38239A39BB0061D0CF /* StateManager.swift */; };
+		7D3E6F2723A0902700D88A16 /* LaunchAtLogin.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D3E6F2623A0902700D88A16 /* LaunchAtLogin.framework.dSYM */; };
 		7D6A1022235F300100BB75EB /* CoreBrightness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6A1021235F300100BB75EB /* CoreBrightness.framework */; };
+		7D6EE5DA23A088C60011D52C /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 7D6EE5D923A088C60011D52C /* Cartfile */; };
+		7D6EE5DC23A088FB0011D52C /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6EE5DB23A088FB0011D52C /* LaunchAtLogin.framework */; };
+		7D6EE5DD23A088FB0011D52C /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6EE5DB23A088FB0011D52C /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D874589238BFA0F00A676F1 /* DimnessSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */; };
 		7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */; };
 		7DA5B1F4238BAC8000FE0597 /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */; };
@@ -34,8 +38,19 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7D6EE5DD23A088FB0011D52C /* LaunchAtLogin.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D6EE5DE23A089070011D52C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				7D3E6F2723A0902700D88A16 /* LaunchAtLogin.framework.dSYM in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -45,9 +60,12 @@
 		7D1B5C33239934440061D0CF /* Dimness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimness.swift; sourceTree = "<group>"; };
 		7D1B5C362399AE770061D0CF /* NSWindow+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSWindow+Fade.swift"; path = "Nocturnal/Application/Extensions/NSWindow+Fade.swift"; sourceTree = SOURCE_ROOT; };
 		7D1B5C38239A39BB0061D0CF /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
+		7D3E6F2623A0902700D88A16 /* LaunchAtLogin.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = LaunchAtLogin.framework.dSYM; path = Carthage/Build/Mac/LaunchAtLogin.framework.dSYM; sourceTree = "<group>"; };
 		7D56898C235EFC5600A51FC5 /* Nocturnal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nocturnal-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D56898D235EFCAE00A51FC5 /* CBBlueLightClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBBlueLightClient.h; sourceTree = "<group>"; };
 		7D6A1021235F300100BB75EB /* CoreBrightness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBrightness.framework; path = ../../../../../System/Library/PrivateFrameworks/CoreBrightness.framework; sourceTree = "<group>"; };
+		7D6EE5D923A088C60011D52C /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		7D6EE5DB23A088FB0011D52C /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimnessSliderView.swift; sourceTree = "<group>"; };
 		7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimnessWindowController.swift; sourceTree = "<group>"; };
 		7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
@@ -71,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D6EE5DC23A088FB0011D52C /* LaunchAtLogin.framework in Frameworks */,
 				7D6A1022235F300100BB75EB /* CoreBrightness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +100,8 @@
 		7D56898E235EFD7D00A51FC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D3E6F2623A0902700D88A16 /* LaunchAtLogin.framework.dSYM */,
+				7D6EE5DB23A088FB0011D52C /* LaunchAtLogin.framework */,
 				7D6A1021235F300100BB75EB /* CoreBrightness.framework */,
 			);
 			name = Frameworks;
@@ -113,6 +134,7 @@
 				7DF1F9352356AFB00041E9CA /* Info.plist */,
 				7DF1F9362356AFB00041E9CA /* Nocturnal.entitlements */,
 				7DF1F9302356AFB00041E9CA /* Assets.xcassets */,
+				7D6EE5D923A088C60011D52C /* Cartfile */,
 				7DF1F92A2356AFAA0041E9CA /* Products */,
 				7D56898E235EFD7D00A51FC5 /* Frameworks */,
 			);
@@ -214,6 +236,8 @@
 				7DF1F9262356AFAA0041E9CA /* Frameworks */,
 				7DF1F9272356AFAA0041E9CA /* Resources */,
 				7D568993235EFE4700A51FC5 /* Embed Frameworks */,
+				7D6EE5DE23A089070011D52C /* CopyFiles */,
+				7D6EE5E223A089F00011D52C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -262,12 +286,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D6EE5DA23A088C60011D52C /* Cartfile in Resources */,
 				7DF1F9312356AFB00041E9CA /* Assets.xcassets in Resources */,
 				7DF1F9342356AFB00041E9CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D6EE5E223A089F00011D52C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7DF1F9252356AFAA0041E9CA /* Sources */ = {
@@ -449,6 +494,7 @@
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Nocturnal",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -482,6 +528,7 @@
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Nocturnal",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
