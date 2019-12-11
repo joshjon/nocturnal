@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Icon-Menu-Bar-16x16@1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "StatusBarButtonImage@2x.png",
+      "filename" : "Icon-Menu-Bar-32x32@1x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Icon-Menu-Bar-64x64@1x.png",
       "scale" : "3x"
     }
   ],
