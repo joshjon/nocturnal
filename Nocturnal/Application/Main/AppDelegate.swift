@@ -15,11 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         dimnessWindow.showWindow(nil)
+        NightShift.blueLightReductionAmount = 0
         NightShift.enable()
-    }
-    
-    func applicationWillTerminate(_ notification: Notification) {
-        print("Nocturnal terminated")
     }
     
 }

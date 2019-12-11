@@ -38,6 +38,7 @@ enum StateManager {
     private static var enabled = true
     private static var fadeInAnimationActive = false
     private static var customTimeWindowOpen = false
+    private static var preferencesWindowOpen = false
     
     static var disableTimer = DisableTimer.off {
         willSet {
@@ -57,6 +58,11 @@ enum StateManager {
     static var isCustomTimeWindowOpen: Bool {
         get { return customTimeWindowOpen }
         set { customTimeWindowOpen = newValue}
+    }
+    
+    static var isPreferencesWindowOpen: Bool {
+        get { return preferencesWindowOpen }
+        set { preferencesWindowOpen = newValue}
     }
     
     static var disabledTimer: Bool {
