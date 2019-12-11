@@ -164,7 +164,7 @@ class StatusMenu: NSMenu, NSMenuDelegate{
     }
     
     @IBAction func disableCustomTimeClicked(_ sender: NSMenuItem) {
-        let disableCustomTimeWindow = storyboard.instantiateController(withIdentifier: "Custom Time Window Controller") as! NSWindowController
+        let disableCustomTimeWindow = storyboard.instantiateController(withIdentifier: "Custom Time Window Controller") as! CustomTimeWindowController
         if disableCustomMenuItem.state == .off {
             NSApp.activate(ignoringOtherApps: true)
             if !StateManager.isCustomTimeWindowOpen {
@@ -177,7 +177,7 @@ class StatusMenu: NSMenu, NSMenuDelegate{
     }
     
     @IBAction func preferencesClicked(_ sender: NSMenuItem) {
-        let preferencesWindow = storyboard.instantiateController(withIdentifier: "Preferences Window Controller") as! NSWindowController
+        let preferencesWindow = storyboard.instantiateController(withIdentifier: "Preferences Window Controller") as! PreferencesWindowController
         NSApp.activate(ignoringOtherApps: true)
         if !StateManager.isPreferencesWindowOpen {
             preferencesWindow.showWindow(nil)
