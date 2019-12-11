@@ -20,9 +20,6 @@ class HyperlinkTextField: NSTextField {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        // TODO:  Fix this and get the hover click to work.
-
         let attributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.foregroundColor: NSColor.linkColor,
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue as AnyObject
