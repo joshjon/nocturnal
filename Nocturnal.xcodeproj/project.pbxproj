@@ -131,9 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				7DF1F92B2356AFAA0041E9CA /* Nocturnal */,
-				7DF1F9352356AFB00041E9CA /* Info.plist */,
-				7DF1F9362356AFB00041E9CA /* Nocturnal.entitlements */,
-				7DF1F9302356AFB00041E9CA /* Assets.xcassets */,
 				7D6EE5D923A088C60011D52C /* Cartfile */,
 				7DF1F92A2356AFAA0041E9CA /* Products */,
 				7D56898E235EFD7D00A51FC5 /* Frameworks */,
@@ -154,6 +151,9 @@
 				7D6A1023235FADBD00BB75EB /* Headers */,
 				7DA5B1F7238BAF6F00FE0597 /* Models */,
 				7DF36E9E239E4FA9000CFB5A /* Application */,
+				7DF1F9352356AFB00041E9CA /* Info.plist */,
+				7DF1F9362356AFB00041E9CA /* Nocturnal.entitlements */,
+				7DF1F9302356AFB00041E9CA /* Assets.xcassets */,
 			);
 			path = Nocturnal;
 			sourceTree = "<group>";
@@ -482,7 +482,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Nocturnal.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Nocturnal/Nocturnal.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -496,7 +496,7 @@
 					"$(PROJECT_DIR)/Nocturnal",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Nocturnal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -516,7 +516,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Nocturnal.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Nocturnal/Nocturnal.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -530,7 +530,7 @@
 					"$(PROJECT_DIR)/Nocturnal",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Nocturnal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

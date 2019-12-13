@@ -1,6 +1,6 @@
 <p align="center">
   <br>
-  <img src="Assets.xcassets/AppIcon.appiconset/Icon-App-256x256@1x.png" alt="icon" height="145">
+  <img src="Nocturnal/Assets.xcassets/AppIcon.appiconset/Icon-App-256x256@1x.png" alt="icon" height="145">
   <h3 align="center">Nocturnal</h3>
   <p align="center">
     Have more control over your screen at night
