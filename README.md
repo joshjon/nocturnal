@@ -16,8 +16,36 @@ Nocturnal is a menu bar app for macOS that allows you to go the extra mile in co
 </p>
 
 ### System requirements
-- macOS Sierra 10.12.4 or later
-- One of the Mac computers listed [here](https://support.apple.com/en-us/HT207513#requirements)
+
+Night Shift is only supported on macOS Sierra 10.12.4 or later and requires one of the computers listed [here](https://support.apple.com/en-us/HT207513#requirements).
+
+### Installation
+
+Download the latest version of Nocturnal from the [GitHub releases page](https://github.com/joshjon/nocturnal/releases).
+
+### Built with
+
+- [Xcode 11.3](https://developer.apple.com/xcode/)
+- [Swift 5](https://developer.apple.com/swift/)
+- [Carthage](https://github.com/Carthage/Carthage) (dependency manager)
+- [LaunchAtLogin ](https://github.com/sindresorhus/LaunchAtLogin) (framework)
+- [CoreBrightness](https://github.com/w0lfschild/macOS_headers/tree/master/macOS/PrivateFrameworks/CoreBrightness/515) (private framework)
+
+### Building and running
+
+Nocturnal uses Carthage. Before building in Xcode run:
+
+    $ carthage bootstrap --platform Mac
+
+Once Carthage has finished Building Nocturnal's dependencies open the Xcode project:
+
+    $ open Nocturnal.xcodeproj
+
+After Xcode finishes loading the workspace press ⌘R to run Nocturnal.
+
+### License
+
+Distributed under the MIT License. See LICENSE for more information.
 
 ---
 
