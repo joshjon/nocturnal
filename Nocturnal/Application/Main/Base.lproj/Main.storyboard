@@ -116,7 +116,7 @@
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lGn-a5-XjO">
                                                                 <rect key="frame" x="-2" y="0.0" width="139" height="14"/>
                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Source code available on " id="O6G-bp-h58">
-                                                                    <font key="font" metaFont="menu" size="11"/>
+                                                                    <font key="font" metaFont="message" size="11"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
@@ -124,7 +124,7 @@
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fBK-Fj-PMs" customClass="HyperlinkTextField" customModule="Nocturnal" customModuleProvider="target">
                                                                 <rect key="frame" x="133" y="0.0" width="41" height="14"/>
                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="GitHub" id="aEJ-aV-IBt">
-                                                                    <font key="font" metaFont="menu" size="11"/>
+                                                                    <font key="font" metaFont="message" size="11"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
@@ -1013,7 +1013,7 @@ Gw
                                 <action selector="disableHourClicked:" target="BYB-lu-Avz" id="UoX-Jm-vMX"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Disable for custom time" id="3VP-Nv-qsM">
+                        <menuItem title="Disable for custom time..." id="3VP-Nv-qsM">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="disableCustomTimeClicked:" target="BYB-lu-Avz" id="Sd7-ux-g0e"/>
@@ -1045,135 +1045,62 @@ Gw
                     </connections>
                 </menu>
                 <customView id="Jv1-B4-R4m" userLabel="Night Shift Slider View" customClass="NightShiftSliderView" customModule="Nocturnal" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="224" height="21"/>
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OUd-bz-vIz">
-                            <rect key="frame" x="-6" y="-7" width="236" height="32"/>
+                            <rect key="frame" x="-6" y="-7" width="212" height="32"/>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="atd-71-vWH">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                         </button>
-                        <stackView distribution="fillProportionally" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-kG-fRJ">
-                            <rect key="frame" x="20" y="0.0" width="184" height="21"/>
-                            <subviews>
-                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BVc-Gd-CFf">
-                                    <rect key="frame" x="0.0" y="2" width="18" height="18"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="18" id="fLM-sz-I6C"/>
-                                        <constraint firstAttribute="height" constant="18" id="vuz-Lw-TGl"/>
-                                    </constraints>
-                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSGoBackTemplate" id="xAf-aI-qSs"/>
-                                </imageView>
-                                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rkE-dR-jgx">
-                                    <rect key="frame" x="24" y="1" width="136" height="19"/>
-                                    <sliderCell key="cell" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="NhP-Pd-yLo"/>
-                                    <connections>
-                                        <action selector="nightShiftSliderMoved:" target="Jv1-B4-R4m" id="MFU-jf-VLb"/>
-                                    </connections>
-                                </slider>
-                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hPQ-M6-q4x">
-                                    <rect key="frame" x="166" y="2" width="18" height="18"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="18" id="2zl-aR-Eld"/>
-                                        <constraint firstAttribute="width" constant="18" id="4vr-CE-etz"/>
-                                    </constraints>
-                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSGoForwardTemplate" id="8xV-Te-Dbl"/>
-                                </imageView>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="hPQ-M6-q4x" firstAttribute="centerY" secondItem="kgb-kG-fRJ" secondAttribute="centerY" id="cIS-eQ-XhS"/>
-                                <constraint firstItem="BVc-Gd-CFf" firstAttribute="centerY" secondItem="kgb-kG-fRJ" secondAttribute="centerY" id="qwf-hb-KQs"/>
-                            </constraints>
-                            <visibilityPriorities>
-                                <integer value="1000"/>
-                                <integer value="1000"/>
-                                <integer value="1000"/>
-                            </visibilityPriorities>
-                            <customSpacing>
-                                <real value="3.4028234663852886e+38"/>
-                                <real value="3.4028234663852886e+38"/>
-                                <real value="3.4028234663852886e+38"/>
-                            </customSpacing>
-                        </stackView>
+                        <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rkE-dR-jgx">
+                            <rect key="frame" x="18" y="1" width="164" height="19"/>
+                            <sliderCell key="cell" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="NhP-Pd-yLo"/>
+                            <connections>
+                                <action selector="nightShiftSliderMoved:" target="Jv1-B4-R4m" id="MFU-jf-VLb"/>
+                            </connections>
+                        </slider>
                     </subviews>
                     <constraints>
                         <constraint firstItem="OUd-bz-vIz" firstAttribute="top" secondItem="Jv1-B4-R4m" secondAttribute="top" id="5AM-9S-yvY"/>
-                        <constraint firstAttribute="bottom" secondItem="kgb-kG-fRJ" secondAttribute="bottom" id="9mw-Tn-Dov"/>
-                        <constraint firstAttribute="trailing" secondItem="kgb-kG-fRJ" secondAttribute="trailing" constant="20" id="CrC-eA-NB9"/>
+                        <constraint firstAttribute="trailing" secondItem="rkE-dR-jgx" secondAttribute="trailing" constant="20" id="ALB-gg-2f3"/>
                         <constraint firstItem="OUd-bz-vIz" firstAttribute="leading" secondItem="Jv1-B4-R4m" secondAttribute="leading" id="Ivw-MS-ijq"/>
+                        <constraint firstItem="rkE-dR-jgx" firstAttribute="leading" secondItem="Jv1-B4-R4m" secondAttribute="leading" constant="20" id="KKN-VY-Pdc"/>
                         <constraint firstAttribute="bottom" secondItem="OUd-bz-vIz" secondAttribute="bottom" id="RbL-ua-l4u"/>
-                        <constraint firstItem="kgb-kG-fRJ" firstAttribute="leading" secondItem="Jv1-B4-R4m" secondAttribute="leading" constant="20" id="bzA-wI-rgh"/>
+                        <constraint firstAttribute="bottom" secondItem="rkE-dR-jgx" secondAttribute="bottom" constant="3" id="TnV-Hr-hmP"/>
                         <constraint firstAttribute="trailing" secondItem="OUd-bz-vIz" secondAttribute="trailing" id="cEE-qp-z1P"/>
-                        <constraint firstItem="kgb-kG-fRJ" firstAttribute="top" secondItem="Jv1-B4-R4m" secondAttribute="top" id="yiS-Yp-5qv"/>
+                        <constraint firstItem="rkE-dR-jgx" firstAttribute="top" secondItem="Jv1-B4-R4m" secondAttribute="top" constant="3" id="nff-O2-kfE"/>
                     </constraints>
                     <connections>
                         <outlet property="nightShiftSlider" destination="rkE-dR-jgx" id="KOl-Sm-MVf"/>
                     </connections>
                 </customView>
                 <customView id="dQw-1Q-mAH" userLabel="Dimness Slider View" customClass="DimnessSliderView" customModule="Nocturnal" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="224" height="21"/>
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="21"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qpd-ok-h2K">
-                            <rect key="frame" x="-6" y="-7" width="236" height="32"/>
+                            <rect key="frame" x="-6" y="-7" width="212" height="32"/>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="tr8-NX-iDW">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                         </button>
-                        <stackView distribution="fillProportionally" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pz8-rr-L0g">
-                            <rect key="frame" x="20" y="0.0" width="184" height="21"/>
-                            <subviews>
-                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sNS-Ls-DmR">
-                                    <rect key="frame" x="0.0" y="2" width="18" height="18"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="18" id="9Wk-Ck-0E1"/>
-                                        <constraint firstAttribute="height" constant="18" id="pru-B4-03K"/>
-                                    </constraints>
-                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSGoBackTemplate" id="ORb-jq-jtD"/>
-                                </imageView>
-                                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nXN-Cb-kxX">
-                                    <rect key="frame" x="24" y="1" width="136" height="19"/>
-                                    <sliderCell key="cell" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="iQo-No-18n"/>
-                                    <connections>
-                                        <action selector="dimnessSliderMoved:" target="dQw-1Q-mAH" id="qrb-Kj-M9y"/>
-                                    </connections>
-                                </slider>
-                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zQd-1W-E7Q">
-                                    <rect key="frame" x="166" y="2" width="18" height="18"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="18" id="1nw-k1-Owf"/>
-                                        <constraint firstAttribute="height" constant="18" id="XHg-fo-ads"/>
-                                    </constraints>
-                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSGoForwardTemplate" id="vcq-Id-1Ii"/>
-                                </imageView>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="zQd-1W-E7Q" firstAttribute="centerY" secondItem="Pz8-rr-L0g" secondAttribute="centerY" id="wIM-w8-zGh"/>
-                                <constraint firstItem="sNS-Ls-DmR" firstAttribute="centerY" secondItem="Pz8-rr-L0g" secondAttribute="centerY" id="wTs-7D-O1t"/>
-                            </constraints>
-                            <visibilityPriorities>
-                                <integer value="1000"/>
-                                <integer value="1000"/>
-                                <integer value="1000"/>
-                            </visibilityPriorities>
-                            <customSpacing>
-                                <real value="3.4028234663852886e+38"/>
-                                <real value="3.4028234663852886e+38"/>
-                                <real value="3.4028234663852886e+38"/>
-                            </customSpacing>
-                        </stackView>
+                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXN-Cb-kxX">
+                            <rect key="frame" x="18" y="1" width="164" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <sliderCell key="cell" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="iQo-No-18n"/>
+                            <connections>
+                                <action selector="dimnessSliderMoved:" target="dQw-1Q-mAH" id="qrb-Kj-M9y"/>
+                            </connections>
+                        </slider>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="Qpd-ok-h2K" secondAttribute="bottom" id="IqY-pv-KPP"/>
-                        <constraint firstItem="Pz8-rr-L0g" firstAttribute="top" secondItem="dQw-1Q-mAH" secondAttribute="top" id="LYU-Lr-eKx"/>
                         <constraint firstItem="Qpd-ok-h2K" firstAttribute="leading" secondItem="dQw-1Q-mAH" secondAttribute="leading" id="NRi-kv-4jA"/>
-                        <constraint firstAttribute="bottom" secondItem="Pz8-rr-L0g" secondAttribute="bottom" id="Xaa-Vt-3Pa"/>
-                        <constraint firstAttribute="trailing" secondItem="Pz8-rr-L0g" secondAttribute="trailing" constant="20" id="Ys3-6D-k6m"/>
                         <constraint firstItem="Qpd-ok-h2K" firstAttribute="top" secondItem="dQw-1Q-mAH" secondAttribute="top" id="ac1-9L-jFg"/>
-                        <constraint firstItem="Pz8-rr-L0g" firstAttribute="leading" secondItem="dQw-1Q-mAH" secondAttribute="leading" constant="20" id="hMo-Wd-Fiw"/>
                         <constraint firstAttribute="trailing" secondItem="Qpd-ok-h2K" secondAttribute="trailing" id="xwj-h6-jip"/>
                     </constraints>
                     <connections>
@@ -1219,7 +1146,5 @@ Gw
     </scenes>
     <resources>
         <image name="AppIconImage" width="64" height="64"/>
-        <image name="NSGoBackTemplate" width="9" height="12"/>
-        <image name="NSGoForwardTemplate" width="9" height="12"/>
     </resources>
 </document>
