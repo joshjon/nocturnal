@@ -17,7 +17,7 @@ Nocturnal is a menu bar app for macOS that allows you to go the extra mile in co
 
 ### System requirements
 
-Night Shift is only supported on macOS Sierra 10.12.4 or later and requires one of the computers listed [here](https://support.apple.com/en-us/HT207513#requirements).
+Nocturnal is currently only supported on macOS Catalina 10.15 or later and requires one of the computers listed [here](https://support.apple.com/en-us/HT207513#requirements).
 
 ### Installation
 
