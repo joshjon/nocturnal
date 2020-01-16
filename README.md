@@ -23,6 +23,11 @@ Nocturnal is currently only supported on macOS Catalina 10.15 or later and requi
 
 Download the latest version of Nocturnal from the [GitHub releases page](https://github.com/joshjon/nocturnal/releases).
 
+If you receive the error 'Nocturnal is damaged and can't be opened', use the following command to resolve the issue:
+```
+xattr -d com.apple.quarantine /path/to/Nocturnal.app
+````
+
 ### Built with
 
 - [Xcode 11.3](https://developer.apple.com/xcode/)
