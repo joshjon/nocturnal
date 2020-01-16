@@ -23,11 +23,12 @@ Nocturnal is currently only supported on macOS Catalina 10.15 or later and requi
 
 Download the latest version of Nocturnal from the [GitHub releases page](https://github.com/joshjon/nocturnal/releases).
 
-### Troubleshooting
+When opening the app for the first time there is a chance you may see an alert stating 'Nocturnal can't be opened because Apple cannot check it for malicious software'. In order to resolve this, right-click Nocturnal.app and press 'Open', a pop-up will appear, and then click 'open' again.
 
-* 'Nocturnal can't be opened because Apple cannot check it for malicious software'
+#### Why does this alert occur?
 
-  Solution: right-click Nocturnal.app and press 'Open', a pop-up will appear, and then click 'open' again
+By default, macOS Catalina requires software to be notarized, so you can be confident that the software doesn't contain known malware. In order to have Nocturnal notarized, a $100/year subscription to the Apple Developer Program is required. Given that this is my first app for any apple device, joining the program is not currently in scope. Therefore, Nocturnal will remain unnotarized for the time being.
+
 
 ### Built with
 
