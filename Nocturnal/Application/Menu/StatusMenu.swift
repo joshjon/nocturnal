@@ -15,6 +15,7 @@ class StatusMenu: NSMenu, NSMenuDelegate{
     @IBOutlet weak var disableMenuItem: NSMenuItem!
     @IBOutlet weak var disableHourMenuItem: NSMenuItem!
     @IBOutlet weak var disableCustomMenuItem: NSMenuItem!
+    @IBOutlet weak var hideTouchBarMenuItem: NSMenuItem!
     @IBOutlet weak var preferencesMenuItem: NSMenuItem!
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -40,16 +41,18 @@ class StatusMenu: NSMenu, NSMenuDelegate{
     func updateMenu() {
         // Sliders
         if StateManager.isNocturnalEnabled {
-            nightShiftSliderView.nightShiftSlider.isEnabled = true
             disableMenuItem.title = "Disable Nocturnal"
             dimnessSliderView.dimnessSlider.isEnabled = true
+            nightShiftSliderView.nightShiftSlider.isEnabled = true
+            hideTouchBarMenuItem.isEnabled = true
         } else {
-            nightShiftSliderView.nightShiftSlider.isEnabled = false
             disableMenuItem.title = "Enable Nocturnal"
             dimnessSliderView.dimnessSlider.isEnabled = false
+            nightShiftSliderView.nightShiftSlider.isEnabled = false
+            hideTouchBarMenuItem.isEnabled = false
         }
         
-        // Button toggles
+        // Timer
         switch StateManager.disableTimer {
         case .off:
             disableHourMenuItem.state = .off
@@ -66,7 +69,10 @@ class StatusMenu: NSMenu, NSMenuDelegate{
             disableHourMenuItem.isEnabled = false
         }
         
-        setTimerText()
+        setTimerText(StateManager.isTimerEnabled)
+        
+        // TouchBar
+        hideTouchBarMenuItem.state = StateManager.isTouchBarHidden ? .on : .off
     }
     
     func setStatusMenuIcon() {
@@ -88,8 +94,8 @@ class StatusMenu: NSMenu, NSMenuDelegate{
         dimnessSliderMenuItem.view = dimnessSliderView
     }
     
-    func setTimerText(keepVisible: Bool = false) {
-        if StateManager.disabledTimer {
+    func setTimerText(_ isTimerEnabled: Bool) {
+        if isTimerEnabled {
             var disabledUntilDate: Date
             
             switch StateManager.disableTimer {
@@ -142,7 +148,15 @@ class StatusMenu: NSMenu, NSMenuDelegate{
         }
     }
     
-    @IBAction func disableHourClicked(_ sender: Any) {
+    @IBAction func disableTouchBarClicked(_ sender: NSMenuItem) {
+        if StateManager.isTouchBarHidden {
+            StateManager.respond(to: .userDisabledTouchBar)
+        } else {
+            StateManager.respond(to: .userEnabledTouchBar)
+        }
+    }
+    
+    @IBAction func disableHourClicked(_ sender: NSMenuItem) {
         if disableHourMenuItem.state == .off {
             let disableTimer = Timer.scheduledTimer(withTimeInterval: 3600, repeats: false, block: { _ in
                 StateManager.disableTimer = .off

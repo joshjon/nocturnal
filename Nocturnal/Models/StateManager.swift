@@ -11,6 +11,8 @@ import Foundation
 enum NocturnalEvent {
     case userDisabledNocturnal
     case userEnabledNocturnal
+    case userEnabledTouchBar
+    case userDisabledTouchBar
     case disableTimerStarted
     case disableTimerEnded
 }
@@ -34,8 +36,9 @@ enum DisableTimer: Equatable {
 }
 
 enum StateManager {
-    private static var userInitiatedShift = false
     private static var enabled = true
+    private static var touchBarHidden = false
+    private static var userInitiatedShift = false
     private static var fadeInAnimationActive = false
     private static var customTimeWindowOpen = false
     private static var preferencesWindowOpen = false
@@ -45,7 +48,8 @@ enum StateManager {
             switch disableTimer {
             case .hour(let timer, _), .custom(let timer, _):
                 timer.invalidate()
-            default: break
+            default:
+                break
             }
         }
     }
@@ -65,7 +69,7 @@ enum StateManager {
         set { preferencesWindowOpen = newValue}
     }
     
-    static var disabledTimer: Bool {
+    static var isTimerEnabled: Bool {
         return disableTimer != .off
     }
     
@@ -76,9 +80,25 @@ enum StateManager {
             if newValue {
                 NightShift.enable()
                 Dimness.enable()
+                if isTouchBarHidden {
+                    TouchBarController.shared.hideTouchBar()
+                }
             } else {
                 NightShift.disable()
                 Dimness.disable()
+                TouchBarController.shared.showTouchbar()
+            }
+        }
+    }
+    
+    static var isTouchBarHidden: Bool {
+        get { return touchBarHidden }
+        set {
+            touchBarHidden = newValue
+            if newValue {
+                TouchBarController.shared.hideTouchBar()
+            } else {
+                TouchBarController.shared.showTouchbar()
             }
         }
     }
@@ -90,6 +110,10 @@ enum StateManager {
             isNocturnalEnabled = true
         case .userDisabledNocturnal:
             isNocturnalEnabled = false
+        case .userEnabledTouchBar:
+            isTouchBarHidden = true
+        case .userDisabledTouchBar:
+            isTouchBarHidden = false
         case .disableTimerStarted:
             // check is required as Nocturnal can already be disabled when a timer starts
             if isNocturnalEnabled {
