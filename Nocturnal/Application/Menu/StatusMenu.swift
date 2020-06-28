@@ -52,10 +52,7 @@ class StatusMenu: NSMenu, NSMenuDelegate{
             hideTouchBarMenuItem.isEnabled = false
         }
         
-        // TouchBar
-        hideTouchBarMenuItem.state = StateManager.isTouchBarHidden ? .on : .off
-        
-        // Button toggles
+        // Timer
         switch StateManager.disableTimer {
         case .off:
             disableHourMenuItem.state = .off
@@ -73,6 +70,9 @@ class StatusMenu: NSMenu, NSMenuDelegate{
         }
         
         setTimerText(StateManager.isTimerEnabled)
+        
+        // TouchBar
+        hideTouchBarMenuItem.state = StateManager.isTouchBarHidden ? .on : .off
     }
     
     func setStatusMenuIcon() {
