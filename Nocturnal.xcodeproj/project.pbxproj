@@ -204,7 +204,6 @@
 			children = (
 				7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */,
 				7DF36EA4239E5377000CFB5A /* CustomTimeWindowController.swift */,
-				7DF36EAD239F6AED000CFB5A /* HyperLinkTextField.swift */,
 			);
 			path = "Custom Time";
 			sourceTree = "<group>";
@@ -240,6 +239,7 @@
 			children = (
 				7DF36EAB239F5793000CFB5A /* PreferencesWindowController.swift */,
 				7DF36EA9239EFB29000CFB5A /* PreferencesViewController.swift */,
+				7DF36EAD239F6AED000CFB5A /* HyperLinkTextField.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";

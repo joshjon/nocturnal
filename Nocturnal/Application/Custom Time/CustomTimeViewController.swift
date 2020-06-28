@@ -59,7 +59,7 @@ class CustomTimeViewController: NSViewController {
     }
     
     @IBAction func cancelButtonClicked(_ sender: NSButton) {
-         self.view.window?.close()
+        self.view.window?.close()
     }
     
     func setupWindow() {

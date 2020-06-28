@@ -31,7 +31,7 @@ public extension NSWindow {
             context.duration = duration
             animator().alphaValue = 0
         }, completionHandler: {
-            // Prevents race condition during animations when Nocturnal is disabled and then enabled in quick succession
+            // Prevents race condition during animation when Nocturnal is disabled and then enabled in quick succession
             if !StateManager.isFadeInAnimationActive {
                 Dimness.isDimnessEnabled = false
             }

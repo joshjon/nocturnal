@@ -15,7 +15,7 @@ class PreferencesViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         loginAtLaunchButton.state = LaunchAtLogin.isEnabled ? .on : .off
+        loginAtLaunchButton.state = LaunchAtLogin.isEnabled ? .on : .off
     }
     
     override func viewWillAppear() {
