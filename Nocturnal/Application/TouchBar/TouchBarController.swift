@@ -9,17 +9,27 @@
 import Cocoa
 
 class TouchBarController: NSObject, NSTouchBarDelegate {
-    static let touchBarController = TouchBarController()
+    static let shared = TouchBarController()
     var touchBar: NSTouchBar!
     
     func hideTouchBar() {
-        // Will need to add escape key here
         touchBar = NSTouchBar()
         presentTouchBar()
     }
     
+    func showTouchbar() {
+        touchBar = NSTouchBar()
+        dismissTouchbar()
+    }
+    
     @objc private func presentTouchBar() {
+//        updateControlStripPresence()
+//        presentSystemModal(touchBar, systemTrayItemIdentifier: .controlStripItem)
         presentSystemModal(touchBar, placement: 1, systemTrayItemIdentifier: .nocturnalControlStripItem)
+    }
+    
+    @objc private func dismissTouchbar() {
+        dismissSystemModal(touchBar)
     }
     
     func presentSystemModal(_ touchBar: NSTouchBar!, placement: Int64, systemTrayItemIdentifier identifier: NSTouchBarItem.Identifier!) {
@@ -27,6 +37,14 @@ class TouchBarController: NSObject, NSTouchBarDelegate {
             NSTouchBar.presentSystemModalTouchBar(touchBar, placement: placement, systemTrayItemIdentifier: identifier)
         } else {
             NSTouchBar.presentSystemModalFunctionBar(touchBar, placement: placement, systemTrayItemIdentifier: identifier)
+        }
+    }
+    
+    func dismissSystemModal(_ touchBar: NSTouchBar!) {
+        if #available(OSX 10.14, *) {
+            NSTouchBar.dismissSystemModalTouchBar(touchBar)
+        } else {
+            NSTouchBar.dismissSystemModalFunctionBar(touchBar)
         }
     }
     

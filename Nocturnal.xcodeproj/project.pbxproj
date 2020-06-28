@@ -21,6 +21,7 @@
 		7DA0D207248C89BE00F9C6A9 /* TouchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA0D206248C89BE00F9C6A9 /* TouchBarController.swift */; };
 		7DA0D20A248C9D8900F9C6A9 /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA0D209248C9D8900F9C6A9 /* DFRFoundation.framework */; };
 		7DA0D20B248C9D8900F9C6A9 /* DFRFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA0D209248C9D8900F9C6A9 /* DFRFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DA0D211248CB4B600F9C6A9 /* CustomButtonTouchBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA0D210248CB4B600F9C6A9 /* CustomButtonTouchBarItem.swift */; };
 		7DA5B1F4238BAC8000FE0597 /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */; };
 		7DA5B1F6238BAD6F00FE0597 /* NightShiftSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5B1F5238BAD6F00FE0597 /* NightShiftSliderView.swift */; };
 		7DA5B1F9238BAF9500FE0597 /* NightShift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5B1F8238BAF9500FE0597 /* NightShift.swift */; };
@@ -75,6 +76,7 @@
 		7DA0D205248C88E200F9C6A9 /* TouchBarPrivateApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBarPrivateApi.h; sourceTree = "<group>"; };
 		7DA0D206248C89BE00F9C6A9 /* TouchBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarController.swift; sourceTree = "<group>"; };
 		7DA0D209248C9D8900F9C6A9 /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
+		7DA0D210248CB4B600F9C6A9 /* CustomButtonTouchBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonTouchBarItem.swift; sourceTree = "<group>"; };
 		7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
 		7DA5B1F5238BAD6F00FE0597 /* NightShiftSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightShiftSliderView.swift; sourceTree = "<group>"; };
 		7DA5B1F8238BAF9500FE0597 /* NightShift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightShift.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				7DA0D206248C89BE00F9C6A9 /* TouchBarController.swift */,
+				7DA0D210248CB4B600F9C6A9 /* CustomButtonTouchBarItem.swift */,
 			);
 			path = TouchBar;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				7DA0D207248C89BE00F9C6A9 /* TouchBarController.swift in Sources */,
 				7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */,
 				7DF36EA7239E730C000CFB5A /* Preferences.swift in Sources */,
+				7DA0D211248CB4B600F9C6A9 /* CustomButtonTouchBarItem.swift in Sources */,
 				7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */,
 				7DF36EAC239F5793000CFB5A /* PreferencesWindowController.swift in Sources */,
 				7DF36EA5239E5377000CFB5A /* CustomTimeWindowController.swift in Sources */,

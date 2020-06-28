@@ -17,8 +17,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         dimnessWindow.showWindow(nil)
         NightShift.blueLightReductionAmount = 0
         NightShift.enable()
-        TouchBarController.touchBarController.hideTouchBar()
-        
     }
     
 }

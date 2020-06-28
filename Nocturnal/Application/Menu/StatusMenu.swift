@@ -40,13 +40,13 @@ class StatusMenu: NSMenu, NSMenuDelegate{
     func updateMenu() {
         // Sliders
         if StateManager.isNocturnalEnabled {
-            nightShiftSliderView.nightShiftSlider.isEnabled = true
             disableMenuItem.title = "Disable Nocturnal"
             dimnessSliderView.dimnessSlider.isEnabled = true
+            nightShiftSliderView.nightShiftSlider.isEnabled = true
         } else {
-            nightShiftSliderView.nightShiftSlider.isEnabled = false
             disableMenuItem.title = "Enable Nocturnal"
             dimnessSliderView.dimnessSlider.isEnabled = false
+            nightShiftSliderView.nightShiftSlider.isEnabled = false
         }
         
         // Button toggles
@@ -142,7 +142,15 @@ class StatusMenu: NSMenu, NSMenuDelegate{
         }
     }
     
-    @IBAction func disableHourClicked(_ sender: Any) {
+    @IBAction func disableTouchBarClicked(_ sender: NSMenuItem) {
+        if StateManager.isTouchBarHidden {
+            StateManager.respond(to: .userDisabledTouchBar)
+        } else {
+            StateManager.respond(to: .userHiddenTouchBar)
+        }
+    }
+    
+    @IBAction func disableHourClicked(_ sender: NSMenuItem) {
         if disableHourMenuItem.state == .off {
             let disableTimer = Timer.scheduledTimer(withTimeInterval: 3600, repeats: false, block: { _ in
                 StateManager.disableTimer = .off

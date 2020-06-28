@@ -11,6 +11,8 @@ import Foundation
 enum NocturnalEvent {
     case userDisabledNocturnal
     case userEnabledNocturnal
+    case userEnabledTouchBar
+    case userDisabledTouchBar
     case disableTimerStarted
     case disableTimerEnded
 }
@@ -34,8 +36,9 @@ enum DisableTimer: Equatable {
 }
 
 enum StateManager {
-    private static var userInitiatedShift = false
     private static var enabled = true
+    private static var touchBarHidden = false
+    private static var userInitiatedShift = false
     private static var fadeInAnimationActive = false
     private static var customTimeWindowOpen = false
     private static var preferencesWindowOpen = false
@@ -83,6 +86,18 @@ enum StateManager {
         }
     }
     
+    static var isTouchBarHidden: Bool {
+        get { return touchBarHidden }
+        set {
+            touchBarHidden = newValue
+            if newValue {
+                TouchBarController.shared.hideTouchBar()
+            } else {
+                TouchBarController.shared.showTouchbar()
+            }
+        }
+    }
+    
     static func respond(to event: NocturnalEvent) {
         switch event {
         case .userEnabledNocturnal:
@@ -90,6 +105,10 @@ enum StateManager {
             isNocturnalEnabled = true
         case .userDisabledNocturnal:
             isNocturnalEnabled = false
+        case .userEnabledTouchBar:
+            isTouchBarHidden = true
+        case .userDisabledTouchBar:
+            isTouchBarHidden = false
         case .disableTimerStarted:
             // check is required as Nocturnal can already be disabled when a timer starts
             if isNocturnalEnabled {
