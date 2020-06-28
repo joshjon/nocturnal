@@ -48,7 +48,8 @@ enum StateManager {
             switch disableTimer {
             case .hour(let timer, _), .custom(let timer, _):
                 timer.invalidate()
-            default: break
+            default:
+                break
             }
         }
     }
@@ -68,7 +69,7 @@ enum StateManager {
         set { preferencesWindowOpen = newValue}
     }
     
-    static var disabledTimer: Bool {
+    static var isTimerEnabled: Bool {
         return disableTimer != .off
     }
     
@@ -79,9 +80,13 @@ enum StateManager {
             if newValue {
                 NightShift.enable()
                 Dimness.enable()
+                if isTouchBarHidden {
+                    TouchBarController.shared.hideTouchBar()
+                }
             } else {
                 NightShift.disable()
                 Dimness.disable()
+                TouchBarController.shared.showTouchbar()
             }
         }
     }

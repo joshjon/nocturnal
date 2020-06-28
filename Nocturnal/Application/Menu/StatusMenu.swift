@@ -15,6 +15,7 @@ class StatusMenu: NSMenu, NSMenuDelegate{
     @IBOutlet weak var disableMenuItem: NSMenuItem!
     @IBOutlet weak var disableHourMenuItem: NSMenuItem!
     @IBOutlet weak var disableCustomMenuItem: NSMenuItem!
+    @IBOutlet weak var hideTouchBarMenuItem: NSMenuItem!
     @IBOutlet weak var preferencesMenuItem: NSMenuItem!
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -43,11 +44,16 @@ class StatusMenu: NSMenu, NSMenuDelegate{
             disableMenuItem.title = "Disable Nocturnal"
             dimnessSliderView.dimnessSlider.isEnabled = true
             nightShiftSliderView.nightShiftSlider.isEnabled = true
+            hideTouchBarMenuItem.isEnabled = true
         } else {
             disableMenuItem.title = "Enable Nocturnal"
             dimnessSliderView.dimnessSlider.isEnabled = false
             nightShiftSliderView.nightShiftSlider.isEnabled = false
+            hideTouchBarMenuItem.isEnabled = false
         }
+        
+        // TouchBar
+        hideTouchBarMenuItem.state = StateManager.isTouchBarHidden ? .on : .off
         
         // Button toggles
         switch StateManager.disableTimer {
@@ -66,7 +72,7 @@ class StatusMenu: NSMenu, NSMenuDelegate{
             disableHourMenuItem.isEnabled = false
         }
         
-        setTimerText()
+        setTimerText(StateManager.isTimerEnabled)
     }
     
     func setStatusMenuIcon() {
@@ -88,8 +94,8 @@ class StatusMenu: NSMenu, NSMenuDelegate{
         dimnessSliderMenuItem.view = dimnessSliderView
     }
     
-    func setTimerText(keepVisible: Bool = false) {
-        if StateManager.disabledTimer {
+    func setTimerText(_ isTimerEnabled: Bool) {
+        if isTimerEnabled {
             var disabledUntilDate: Date
             
             switch StateManager.disableTimer {
@@ -146,7 +152,7 @@ class StatusMenu: NSMenu, NSMenuDelegate{
         if StateManager.isTouchBarHidden {
             StateManager.respond(to: .userDisabledTouchBar)
         } else {
-            StateManager.respond(to: .userHiddenTouchBar)
+            StateManager.respond(to: .userEnabledTouchBar)
         }
     }
     

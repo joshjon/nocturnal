@@ -10,26 +10,14 @@ import Cocoa
 
 class TouchBarController: NSObject, NSTouchBarDelegate {
     static let shared = TouchBarController()
-    var touchBar: NSTouchBar!
+    var blankTouchBar = NSTouchBar()
     
     func hideTouchBar() {
-        touchBar = NSTouchBar()
-        presentTouchBar()
+        presentSystemModal(blankTouchBar, placement: 1, systemTrayItemIdentifier: .nocturnalControlStripItem)
     }
     
     func showTouchbar() {
-        touchBar = NSTouchBar()
-        dismissTouchbar()
-    }
-    
-    @objc private func presentTouchBar() {
-//        updateControlStripPresence()
-//        presentSystemModal(touchBar, systemTrayItemIdentifier: .controlStripItem)
-        presentSystemModal(touchBar, placement: 1, systemTrayItemIdentifier: .nocturnalControlStripItem)
-    }
-    
-    @objc private func dismissTouchbar() {
-        dismissSystemModal(touchBar)
+        minimizeSystemModal(blankTouchBar)
     }
     
     func presentSystemModal(_ touchBar: NSTouchBar!, placement: Int64, systemTrayItemIdentifier identifier: NSTouchBarItem.Identifier!) {
@@ -40,11 +28,11 @@ class TouchBarController: NSObject, NSTouchBarDelegate {
         }
     }
     
-    func dismissSystemModal(_ touchBar: NSTouchBar!) {
+    func minimizeSystemModal(_ touchBar: NSTouchBar!) {
         if #available(OSX 10.14, *) {
-            NSTouchBar.dismissSystemModalTouchBar(touchBar)
+            NSTouchBar.minimizeSystemModalTouchBar(touchBar)
         } else {
-            NSTouchBar.dismissSystemModalFunctionBar(touchBar)
+            NSTouchBar.minimizeSystemModalFunctionBar(touchBar)
         }
     }
     
