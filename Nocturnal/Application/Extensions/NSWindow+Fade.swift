@@ -18,7 +18,7 @@ public extension NSWindow {
         Dimness.isDimnessEnabled = true
         NSAnimationContext.runAnimationGroup({ context in
             context.duration = duration
-            animator().alphaValue = CGFloat(Dimness.getStrengthBeforeDisable())
+            animator().alphaValue = CGFloat(Dimness.dimnessStrength)
         }, completionHandler: {
             StateManager.isFadeInAnimationActive = false
             completionHandler?()
@@ -26,7 +26,6 @@ public extension NSWindow {
     }
     
     func fadeOutNew(duration: Double, completionHandler: AnimationCompletionHandler? = nil) {
-        Dimness.setStrengthBeforeDisable(strength: alphaValue)
         NSAnimationContext.runAnimationGroup({ context in
             context.duration = duration
             animator().alphaValue = 0

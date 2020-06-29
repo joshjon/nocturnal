@@ -10,38 +10,47 @@ import Cocoa
 
 enum Dimness {
     
-    private static let dimnessWindow = NSApplication.shared.windows[1]
+    private static let dimnessControllers = AppDelegate.sharedDimnessControllers
     private static let fadeDuration = 2.5
-    private static var strengthBeforeDisable: CGFloat = 0
+    private static var strength: CGFloat = 0
+    private static var isVisible: Bool = true
     
     static var dimnessStrength: Float {
-        get { return Float(dimnessWindow.alphaValue) }
-        set { dimnessWindow.alphaValue = CGFloat(newValue) }
+        get { return Float(strength) }
+        set {
+            strength = CGFloat(newValue)
+            for controller in dimnessControllers {
+                controller.setAlphaValue(strength)
+            }
+        }
     }
     
     static var isDimnessEnabled: Bool {
-        get { return dimnessWindow.isVisible }
-        set { dimnessWindow.setIsVisible(newValue)}
-    }
-    
-    static func setStrengthBeforeDisable(strength: CGFloat) {
-        strengthBeforeDisable = strength
-    }
-    
-    static func getStrengthBeforeDisable() -> CGFloat {
-        return strengthBeforeDisable
+        get { return isVisible }
+        set {
+            isVisible = newValue
+            for controller in dimnessControllers {
+                controller.setIsVisible(newValue)
+            }
+        }
     }
     
     static func previewDimnessStrength(_ value: Float) {
-        dimnessWindow.alphaValue = CGFloat(value)
+        for controller in dimnessControllers {
+            controller.setAlphaValue(CGFloat(value))
+        }
     }
     
     static func enable() {
-        dimnessWindow.fadeInNew(duration: fadeDuration)
+        for controller in dimnessControllers {
+            controller.fadeIn(fadeDuration)
+        }
     }
     
     static func disable() {
-        dimnessWindow.fadeOutNew(duration: fadeDuration)
+        for controller in dimnessControllers {
+            controller.fadeOut(fadeDuration)
+        }
     }
     
 }
