@@ -11,7 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    static var sharedDimnessControllers = [] as [DimnessWindowController]
+    static var dimnessControllers = [] as [DimnessWindowController]
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         initDimnessControllers()
@@ -22,7 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func initDimnessControllers() {
         for i in 0..<NSScreen.screens.count {
             let dimnessWindow = DimnessWindowController(NSScreen.screens[i])
-            AppDelegate.sharedDimnessControllers.append(dimnessWindow)
+            AppDelegate.dimnessControllers.append(dimnessWindow)
             dimnessWindow.showWindow(nil)
         }
     }
