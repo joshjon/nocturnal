@@ -10,38 +10,47 @@ import Cocoa
 
 enum Dimness {
     
-    private static let dimnessWindow = NSApplication.shared.windows[1]
+    private static let dimnessControllers = AppDelegate.dimnessControllers
     private static let fadeDuration = 2.5
-    private static var strengthBeforeDisable: CGFloat = 0
+    private static var dimnessStrength: CGFloat = 0
+    private static var isVisible: Bool = true
     
-    static var dimnessStrength: Float {
-        get { return Float(dimnessWindow.alphaValue) }
-        set { dimnessWindow.alphaValue = CGFloat(newValue) }
+    static var strength: Float {
+        get { return Float(dimnessStrength) }
+        set {
+            dimnessStrength = CGFloat(newValue)
+            for controller in dimnessControllers {
+                controller.setAlphaValue(dimnessStrength)
+            }
+        }
     }
     
     static var isDimnessEnabled: Bool {
-        get { return dimnessWindow.isVisible }
-        set { dimnessWindow.setIsVisible(newValue)}
-    }
-    
-    static func setStrengthBeforeDisable(strength: CGFloat) {
-        strengthBeforeDisable = strength
-    }
-    
-    static func getStrengthBeforeDisable() -> CGFloat {
-        return strengthBeforeDisable
+        get { return isVisible }
+        set {
+            isVisible = newValue
+            for controller in dimnessControllers {
+                controller.setIsVisible(newValue)
+            }
+        }
     }
     
     static func previewDimnessStrength(_ value: Float) {
-        dimnessWindow.alphaValue = CGFloat(value)
+        for controller in dimnessControllers {
+            controller.setAlphaValue(CGFloat(value))
+        }
     }
     
     static func enable() {
-        dimnessWindow.fadeInNew(duration: fadeDuration)
+        for controller in dimnessControllers {
+            controller.fadeIn(fadeDuration)
+        }
     }
     
     static func disable() {
-        dimnessWindow.fadeOutNew(duration: fadeDuration)
+        for controller in dimnessControllers {
+            controller.fadeOut(fadeDuration)
+        }
     }
     
 }

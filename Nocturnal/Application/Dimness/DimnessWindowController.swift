@@ -10,22 +10,47 @@ import Cocoa
 
 class DimnessWindowController: NSWindowController {
     
-    override func windowDidLoad() {
-        super.windowDidLoad()
-        guard let screen = NSScreen.main else { return }
-        guard let window = self.window else { return }
-        setup(window: window, frame: screen.frame)
-    }
+    var screen: NSScreen
     
-    func setup(window: NSWindow, frame: NSRect) {
-        window.setFrame(frame, display: true)
-        window.center()
+    init(_ screen: NSScreen){
+        self.screen = screen
+        let window = NSWindow()
+        window.setFrame(self.screen.frame, display: true)
         window.alphaValue = 0
         window.ignoresMouseEvents = true
         window.backgroundColor = .black
         window.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.overlayWindow)))
         window.styleMask = [.fullScreen]
         window.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
+        super.init(window: window)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        self.init(NSScreen.main!)
+    }
+    
+    func setAlphaValue(_ value: CGFloat) {
+        if let window = self.window {
+            window.alphaValue = value
+        }
+    }
+    
+    func setIsVisible(_ bool: Bool) {
+        if let window = self.window {
+            window.setIsVisible(bool)
+        }
+    }
+    
+    func fadeIn(_ duration: Double) {
+        if let window = self.window {
+            window.fadeInNew(duration: duration)
+        }
+    }
+    
+    func fadeOut(_ duration: Double) {
+        if let window = self.window {
+            window.fadeOutNew(duration: duration)
+        }
     }
     
 }
