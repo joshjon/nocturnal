@@ -18,7 +18,7 @@ public extension NSWindow {
         Dimness.isDimnessEnabled = true
         NSAnimationContext.runAnimationGroup({ context in
             context.duration = duration
-            animator().alphaValue = CGFloat(Dimness.dimnessStrength)
+            animator().alphaValue = CGFloat(Dimness.strength)
         }, completionHandler: {
             StateManager.isFadeInAnimationActive = false
             completionHandler?()

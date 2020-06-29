@@ -12,15 +12,15 @@ enum Dimness {
     
     private static let dimnessControllers = AppDelegate.sharedDimnessControllers
     private static let fadeDuration = 2.5
-    private static var strength: CGFloat = 0
+    private static var dimnessStrength: CGFloat = 0
     private static var isVisible: Bool = true
     
-    static var dimnessStrength: Float {
-        get { return Float(strength) }
+    static var strength: Float {
+        get { return Float(dimnessStrength) }
         set {
-            strength = CGFloat(newValue)
+            dimnessStrength = CGFloat(newValue)
             for controller in dimnessControllers {
-                controller.setAlphaValue(strength)
+                controller.setAlphaValue(dimnessStrength)
             }
         }
     }
