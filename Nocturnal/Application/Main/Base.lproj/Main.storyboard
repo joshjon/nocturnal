@@ -1026,6 +1026,13 @@ Gw
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="gPp-ey-kge"/>
+                        <menuItem title="Hide Touch Bar" id="5Is-7u-BIB">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="disableTouchBarClicked:" target="BYB-lu-Avz" id="bFs-bu-wHC"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="wQ6-SP-edZ"/>
                         <menuItem title="Disable for an hour" id="af8-VH-x6c">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
@@ -1039,13 +1046,6 @@ Gw
                             </connections>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="ckf-kT-Wke"/>
-                        <menuItem title="Hide Touch Bar" id="5Is-7u-BIB">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="disableTouchBarClicked:" target="BYB-lu-Avz" id="bFs-bu-wHC"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem isSeparatorItem="YES" id="wQ6-SP-edZ"/>
                         <menuItem title="Preferences..." id="bSe-cz-dnn">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
