@@ -15,8 +15,8 @@ class DimnessWindowController: NSWindowController {
     init(_ screen: NSScreen){
         self.screen = screen
         let window = NSWindow()
-        window.setFrame(self.screen.frame, display: true)
-        window.alphaValue = CGFloat(Dimness.strength)
+        window.setFrame(screen.frame, display: true)
+        window.alphaValue = 0
         window.ignoresMouseEvents = true
         window.backgroundColor = .black
         window.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.overlayWindow)))
