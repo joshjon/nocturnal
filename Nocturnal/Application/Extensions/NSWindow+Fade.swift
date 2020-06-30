@@ -9,10 +9,9 @@
 import Cocoa
 
 public extension NSWindow {
-    
     typealias AnimationCompletionHandler = () -> Void
     typealias desiredAlpha = () -> CGFloat
-    
+
     func fadeInNew(duration: Double, completionHandler: AnimationCompletionHandler? = nil) {
         StateManager.isFadeInAnimationActive = true
         Dimness.isDimnessEnabled = true
@@ -24,7 +23,7 @@ public extension NSWindow {
             completionHandler?()
         })
     }
-    
+
     func fadeOutNew(duration: Double, completionHandler: AnimationCompletionHandler? = nil) {
         NSAnimationContext.runAnimationGroup({ context in
             context.duration = duration
@@ -37,5 +36,4 @@ public extension NSWindow {
             completionHandler?()
         })
     }
-    
 }

@@ -21,7 +21,7 @@ enum DisableTimer: Equatable {
     case off
     case hour(timer: Timer, endDate: Date)
     case custom(timer: Timer, endDate: Date)
-    
+
     static func == (lhs: DisableTimer, rhs: DisableTimer) -> Bool {
         switch (lhs, rhs) {
         case (.off, .off):
@@ -42,37 +42,37 @@ enum StateManager {
     private static var fadeInAnimationActive = false
     private static var customTimeWindowOpen = false
     private static var preferencesWindowOpen = false
-    
+
     static var disableTimer = DisableTimer.off {
         willSet {
             switch disableTimer {
-            case .hour(let timer, _), .custom(let timer, _):
+            case let .hour(timer, _), let .custom(timer, _):
                 timer.invalidate()
             default:
                 break
             }
         }
     }
-    
+
     static var isFadeInAnimationActive: Bool {
         get { return fadeInAnimationActive }
-        set { fadeInAnimationActive = newValue}
+        set { fadeInAnimationActive = newValue }
     }
-    
+
     static var isCustomTimeWindowOpen: Bool {
         get { return customTimeWindowOpen }
-        set { customTimeWindowOpen = newValue}
+        set { customTimeWindowOpen = newValue }
     }
-    
+
     static var isPreferencesWindowOpen: Bool {
         get { return preferencesWindowOpen }
-        set { preferencesWindowOpen = newValue}
+        set { preferencesWindowOpen = newValue }
     }
-    
+
     static var isTimerEnabled: Bool {
         return disableTimer != .off
     }
-    
+
     static var isNocturnalEnabled: Bool {
         get { return enabled }
         set {
@@ -90,7 +90,7 @@ enum StateManager {
             }
         }
     }
-    
+
     static var isTouchBarHidden: Bool {
         get { return touchBarHidden }
         set {
@@ -102,7 +102,7 @@ enum StateManager {
             }
         }
     }
-    
+
     static func respond(to event: NocturnalEvent) {
         switch event {
         case .userEnabledNocturnal:

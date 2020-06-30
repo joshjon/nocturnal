@@ -9,10 +9,9 @@
 import Cocoa
 
 class DimnessWindowController: NSWindowController {
-    
     var screen: NSScreen
-    
-    init(screen: NSScreen){
+
+    init(screen: NSScreen) {
         self.screen = screen
         let window = NSWindow()
         window.setFrame(screen.frame, display: true)
@@ -25,37 +24,36 @@ class DimnessWindowController: NSWindowController {
         window.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
         super.init(window: window)
     }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
+
+    required convenience init?(coder _: NSCoder) {
         self.init(screen: NSScreen.main!)
     }
-    
+
     deinit {
-          self.close()
-      }
-    
+        self.close()
+    }
+
     func setAlphaValue(_ value: CGFloat) {
         if let window = self.window {
             window.alphaValue = value
         }
     }
-    
+
     func setIsVisible(_ bool: Bool) {
         if let window = self.window {
             window.setIsVisible(bool)
         }
     }
-    
+
     func fadeIn(_ duration: Double) {
         if let window = self.window {
             window.fadeInNew(duration: duration)
         }
     }
-    
+
     func fadeOut(_ duration: Double) {
         if let window = self.window {
             window.fadeOutNew(duration: duration)
         }
     }
-    
 }

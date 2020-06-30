@@ -10,23 +10,23 @@ import Cocoa
 import LaunchAtLogin
 
 class PreferencesViewController: NSViewController {
-    @IBOutlet weak var sourceCodeLabel: NSTextField!
-    @IBOutlet weak var loginAtLaunchButton: NSButton!
-    
+    @IBOutlet var sourceCodeLabel: NSTextField!
+    @IBOutlet var loginAtLaunchButton: NSButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loginAtLaunchButton.state = LaunchAtLogin.isEnabled ? .on : .off
     }
-    
+
     override func viewWillAppear() {
         StateManager.isPreferencesWindowOpen = true
     }
-    
+
     override func viewWillDisappear() {
         StateManager.isPreferencesWindowOpen = false
     }
-    
-    @IBAction func loginAtLaunchToggled(_ sender: NSButton) {
+
+    @IBAction func loginAtLaunchToggled(_: NSButton) {
         LaunchAtLogin.isEnabled = LaunchAtLogin.isEnabled ? false : true
     }
 }

@@ -8,22 +8,22 @@
 
 import Cocoa
 
-class StatusMenu: NSMenu, NSMenuDelegate{
-    @IBOutlet weak var timerMenuItem: NSMenuItem!
-    @IBOutlet weak var nightShiftSliderView: NightShiftSliderView!
-    @IBOutlet weak var dimnessSliderView: DimnessSliderView!
-    @IBOutlet weak var disableMenuItem: NSMenuItem!
-    @IBOutlet weak var disableHourMenuItem: NSMenuItem!
-    @IBOutlet weak var disableCustomMenuItem: NSMenuItem!
-    @IBOutlet weak var hideTouchBarMenuItem: NSMenuItem!
-    @IBOutlet weak var preferencesMenuItem: NSMenuItem!
-    
+class StatusMenu: NSMenu, NSMenuDelegate {
+    @IBOutlet var timerMenuItem: NSMenuItem!
+    @IBOutlet var nightShiftSliderView: NightShiftSliderView!
+    @IBOutlet var dimnessSliderView: DimnessSliderView!
+    @IBOutlet var disableMenuItem: NSMenuItem!
+    @IBOutlet var disableHourMenuItem: NSMenuItem!
+    @IBOutlet var disableCustomMenuItem: NSMenuItem!
+    @IBOutlet var hideTouchBarMenuItem: NSMenuItem!
+    @IBOutlet var preferencesMenuItem: NSMenuItem!
+
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var storyboard = NSStoryboard(name: "Main", bundle: nil)
     var nightShiftSliderMenuItem: NSMenuItem!
     var dimnessSliderMenuItem: NSMenuItem!
     let calendar = NSCalendar(identifier: .gregorian)!
-    
+
     override func awakeFromNib() {
         delegate = self
         setStatusMenuIcon()
@@ -32,18 +32,18 @@ class StatusMenu: NSMenu, NSMenuDelegate{
         timerMenuItem.isHidden = true
         setupNightShiftSliderMenuItem()
         setupDimnessSliderMenuItem()
-        
+
         // Check if Mac supports TouchBar
-        if (NSClassFromString("NSTouchBar") == nil) {
+        if NSClassFromString("NSTouchBar") == nil {
             hideTouchBarMenuItem.isEnabled = false
             hideTouchBarMenuItem.isHidden = true
         }
     }
-    
-    func menuWillOpen(_ menu: NSMenu) {
+
+    func menuWillOpen(_: NSMenu) {
         updateMenu()
     }
-    
+
     func updateMenu() {
         // Sliders
         if StateManager.isNocturnalEnabled {
@@ -57,7 +57,7 @@ class StatusMenu: NSMenu, NSMenuDelegate{
             nightShiftSliderView.nightShiftSlider.isEnabled = false
             hideTouchBarMenuItem.isEnabled = false
         }
-        
+
         // Timer
         switch StateManager.disableTimer {
         case .off:
@@ -74,61 +74,60 @@ class StatusMenu: NSMenu, NSMenuDelegate{
             disableCustomMenuItem.isEnabled = true
             disableHourMenuItem.isEnabled = false
         }
-        
+
         setTimerText(StateManager.isTimerEnabled)
-        
+
         // TouchBar
         hideTouchBarMenuItem.state = StateManager.isTouchBarHidden ? .on : .off
     }
-    
+
     func setStatusMenuIcon() {
-        if let icon = NSImage(named:NSImage.Name("StatusBarButtonImage")) {
+        if let icon = NSImage(named: NSImage.Name("StatusBarButtonImage")) {
             icon.isTemplate = true
             DispatchQueue.main.async { self.statusItem.button?.image = icon }
         }
     }
-    
+
     func setupNightShiftSliderMenuItem() {
         nightShiftSliderView.setup()
-        nightShiftSliderMenuItem = self.item(withTitle: "Night Shift Slider")
+        nightShiftSliderMenuItem = item(withTitle: "Night Shift Slider")
         nightShiftSliderMenuItem.view = nightShiftSliderView
     }
-    
+
     func setupDimnessSliderMenuItem() {
         dimnessSliderView.setup()
-        dimnessSliderMenuItem = self.item(withTitle: "Dimness Slider")
+        dimnessSliderMenuItem = item(withTitle: "Dimness Slider")
         dimnessSliderMenuItem.view = dimnessSliderView
     }
-    
+
     func setTimerText(_ isTimerEnabled: Bool) {
         if isTimerEnabled {
             var disabledUntilDate: Date
-            
+
             switch StateManager.disableTimer {
             case .hour(timer: _, endDate: let date), .custom(timer: _, endDate: let date):
                 disabledUntilDate = date
             case .off:
                 return
             }
-            
+
             let nowDate = Date()
             let dateComponentsFormatter = DateComponentsFormatter()
             dateComponentsFormatter.allowedUnits = [.second]
             let disabledTimeLeftComponents = calendar.components([.second], from: nowDate, to: disabledUntilDate, options: [])
             var disabledHoursLeft = (Double(disabledTimeLeftComponents.second!) / 3600.0).rounded(.down)
             var disabledMinutesLeft = (Double(disabledTimeLeftComponents.second!) / 60.0).truncatingRemainder(dividingBy: 60.0).rounded(.toNearestOrEven)
-            
+
             if disabledMinutesLeft == 60.0 {
                 disabledMinutesLeft = 0.0
                 disabledHoursLeft += 1.0
             }
-            
+
             var hourString = "hrs"
             var minuteString = "mins"
             if disabledHoursLeft == 1 { hourString = "hr" }
             if disabledMinutesLeft == 1 { minuteString = "min" }
-            
-            
+
             if disabledHoursLeft > 0 {
                 timerMenuItem.title = String(format: "Disabled for %01d \(hourString) %01d \(minuteString)", Int(disabledHoursLeft), Int(disabledMinutesLeft))
             } else {
@@ -140,41 +139,41 @@ class StatusMenu: NSMenu, NSMenuDelegate{
             timerMenuItem.isHidden = true
         }
     }
-    
+
     func localizedPlural(_ key: String, count: Int, comment: String) -> String {
         let format = NSLocalizedString(key, comment: comment)
         return String(format: format, locale: .current, arguments: [count])
     }
-    
-    @IBAction func disableClicked(_ sender: NSMenuItem) {
+
+    @IBAction func disableClicked(_: NSMenuItem) {
         if StateManager.isNocturnalEnabled {
             StateManager.respond(to: .userDisabledNocturnal)
         } else {
             StateManager.respond(to: .userEnabledNocturnal)
         }
     }
-    
-    @IBAction func disableTouchBarClicked(_ sender: NSMenuItem) {
+
+    @IBAction func disableTouchBarClicked(_: NSMenuItem) {
         if StateManager.isTouchBarHidden {
             StateManager.respond(to: .userDisabledTouchBar)
         } else {
             StateManager.respond(to: .userEnabledTouchBar)
         }
     }
-    
-    @IBAction func disableHourClicked(_ sender: NSMenuItem) {
+
+    @IBAction func disableHourClicked(_: NSMenuItem) {
         if disableHourMenuItem.state == .off {
             let disableTimer = Timer.scheduledTimer(withTimeInterval: 3600, repeats: false, block: { _ in
                 StateManager.disableTimer = .off
                 StateManager.respond(to: .disableTimerEnded)
             })
-            
+
             disableTimer.tolerance = 60
             let currentDate = Date()
             var addComponents = DateComponents()
             addComponents.hour = 1
             let disabledUntilDate = calendar.date(byAdding: addComponents, to: currentDate, options: [])!
-            
+
             StateManager.disableTimer = .hour(timer: disableTimer, endDate: disabledUntilDate)
             StateManager.respond(to: .disableTimerStarted)
         } else {
@@ -182,8 +181,8 @@ class StatusMenu: NSMenu, NSMenuDelegate{
             StateManager.respond(to: .disableTimerEnded)
         }
     }
-    
-    @IBAction func disableCustomTimeClicked(_ sender: NSMenuItem) {
+
+    @IBAction func disableCustomTimeClicked(_: NSMenuItem) {
         let disableCustomTimeWindow = storyboard.instantiateController(withIdentifier: "Custom Time Window Controller") as! CustomTimeWindowController
         if disableCustomMenuItem.state == .off {
             NSApp.activate(ignoringOtherApps: true)
@@ -195,20 +194,19 @@ class StatusMenu: NSMenu, NSMenuDelegate{
             StateManager.respond(to: .disableTimerEnded)
         }
     }
-    
-    @IBAction func preferencesClicked(_ sender: NSMenuItem) {
+
+    @IBAction func preferencesClicked(_: NSMenuItem) {
         let preferencesWindow = storyboard.instantiateController(withIdentifier: "Preferences Window Controller") as! PreferencesWindowController
         NSApp.activate(ignoringOtherApps: true)
         if !StateManager.isPreferencesWindowOpen {
             preferencesWindow.showWindow(nil)
         }
     }
-    
+
     @IBAction func quitClicked(_ sender: NSMenuItem) {
         StateManager.isNocturnalEnabled = false
         // reset so that night shift still works when Nocturnal is closed
         NightShift.blueLightReductionAmount = 1
         NSApplication.shared.terminate(sender)
     }
-    
 }

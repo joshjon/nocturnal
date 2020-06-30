@@ -10,10 +10,9 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
     static var dimnessControllers = [] as [DimnessWindowController]
     
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    func applicationDidFinishLaunching(_: Notification) {
         initDimnessControllers()
         NightShift.blueLightReductionAmount = 0
         NightShift.enable()
@@ -22,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func initDimnessControllers() {
-        for i in 0..<NSScreen.screens.count {
+        for i in 0 ..< NSScreen.screens.count {
             let dimnessWindow = DimnessWindowController(screen: NSScreen.screens[i])
             AppDelegate.dimnessControllers.append(dimnessWindow)
             dimnessWindow.showWindow(self)
@@ -33,5 +32,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         AppDelegate.dimnessControllers.removeAll()
         initDimnessControllers()
     }
-    
 }
