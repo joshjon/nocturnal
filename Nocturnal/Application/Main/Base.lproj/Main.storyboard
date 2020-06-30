@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="qlV-0d-Pw7">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,13 +24,13 @@
                 </windowController>
                 <customObject id="zs5-4R-SyD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="270" y="618"/>
+            <point key="canvasLocation" x="462" y="207"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="Tvt-ak-Ddu">
             <objects>
                 <windowController storyboardIdentifier="Preferences Window Controller" id="t0U-i3-kkl" customClass="PreferencesWindowController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" identifier="Preferences Window Controller" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="evA-Mp-ali">
+                    <window key="window" identifier="Preferences Window Controller" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="evA-Mp-ali">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="269" y="301" width="194" height="88"/>
@@ -45,7 +45,7 @@
                 </windowController>
                 <customObject id="hTD-20-PmB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="539" y="618"/>
+            <point key="canvasLocation" x="731" y="207"/>
         </scene>
         <!--Preferences View Controller-->
         <scene sceneID="Ikf-jW-tuJ">
@@ -90,8 +90,8 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I4j-zD-srL">
-                                                        <rect key="frame" x="-2" y="0.0" width="66" height="13"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Version 1.0.3" id="kkj-Sc-iYH">
+                                                        <rect key="frame" x="-2" y="0.0" width="67" height="13"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Version 2.0.0" id="kkj-Sc-iYH">
                                                             <font key="font" metaFont="system" size="10"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -193,7 +193,7 @@
                 </viewController>
                 <customObject id="hRa-9L-cbJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="539" y="951.5"/>
+            <point key="canvasLocation" x="731" y="541"/>
         </scene>
         <!--Custom Time View Controller-->
         <scene sceneID="6W6-9m-4ln">
@@ -307,7 +307,7 @@ Gw
                 </viewController>
                 <customObject id="Ojp-NP-A0U" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="270" y="898"/>
+            <point key="canvasLocation" x="462" y="487"/>
         </scene>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
@@ -1136,39 +1136,6 @@ Gw
                 </customView>
             </objects>
             <point key="canvasLocation" x="76" y="478"/>
-        </scene>
-        <!--Dimness Window Controller-->
-        <scene sceneID="Uyo-fz-x54">
-            <objects>
-                <windowController storyboardIdentifier="WindowController" id="qlV-0d-Pw7" userLabel="Dimness Window Controller" customClass="DimnessWindowController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="BVT-1q-Wuc">
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="403" y="296" width="255" height="122"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <connections>
-                            <outlet property="delegate" destination="qlV-0d-Pw7" id="tko-Y0-pUa"/>
-                        </connections>
-                    </window>
-                    <connections>
-                        <segue destination="KT8-VA-bZ6" kind="relationship" relationship="window.shadowedContentViewController" id="8e2-Z8-uhP"/>
-                    </connections>
-                </windowController>
-                <customObject id="c5s-9N-8I8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-16.5" y="612"/>
-        </scene>
-        <!--Dimness View Controller-->
-        <scene sceneID="dRg-lP-Vt9">
-            <objects>
-                <customObject id="Rhc-az-EaU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="ViewController" id="KT8-VA-bZ6" userLabel="Dimness View Controller" sceneMemberID="viewController">
-                    <view key="view" id="qAQ-HP-OtS">
-                        <rect key="frame" x="0.0" y="0.0" width="255" height="123"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="-17" y="898"/>
         </scene>
     </scenes>
     <resources>

@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func onDidConnectScreen(_ notification:Notification) {
         print("====== Notification received ======")
         for controller in AppDelegate.dimnessControllers {
-            controller.close()
+            controller = nil
         }
         AppDelegate.dimnessControllers.removeAll()
         initDimnessControllers()
