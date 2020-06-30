@@ -12,7 +12,7 @@ class DimnessWindowController: NSWindowController {
     
     var screen: NSScreen
     
-    init(_ screen: NSScreen){
+    init(screen: NSScreen){
         self.screen = screen
         let window = NSWindow()
         window.setFrame(screen.frame, display: true)
@@ -26,13 +26,13 @@ class DimnessWindowController: NSWindowController {
         super.init(window: window)
     }
     
-    deinit {
-        self.close()
+    required convenience init?(coder aDecoder: NSCoder) {
+        self.init(screen: NSScreen.main!)
     }
     
-    required convenience init?(coder aDecoder: NSCoder) {
-        self.init(NSScreen.main!)
-    }
+    deinit {
+          self.close()
+      }
     
     func setAlphaValue(_ value: CGFloat) {
         if let window = self.window {

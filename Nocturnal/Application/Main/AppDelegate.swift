@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func initDimnessControllers() {
         for i in 0..<NSScreen.screens.count {
-            let dimnessWindow = DimnessWindowController(NSScreen.screens[i])
+            let dimnessWindow = DimnessWindowController(screen: NSScreen.screens[i])
             AppDelegate.dimnessControllers.append(dimnessWindow)
             dimnessWindow.showWindow(self)
         }
