@@ -19,13 +19,7 @@ class DimnessSliderView: NSView {
     }
     
     @IBAction func dimnessSliderMoved(_ sender: NSSlider) {
-        let event = NSApplication.shared.currentEvent
-        
-        if event?.type == .leftMouseUp {
-            Dimness.previewDimnessStrength(sender.floatValue)
-        } else {
-            Dimness.strength = sender.floatValue
-        }
+        Dimness.strength = sender.floatValue
     }
     
 }

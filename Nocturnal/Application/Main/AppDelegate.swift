@@ -17,14 +17,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         initDimnessControllers()
         NightShift.blueLightReductionAmount = 0
         NightShift.enable()
+        NotificationCenter.default.addObserver(self, selector: #selector(onNumberOfScreensChanged),
+                                               name: NSApplication.didChangeScreenParametersNotification, object: nil)
     }
     
     func initDimnessControllers() {
         for i in 0..<NSScreen.screens.count {
-            let dimnessWindow = DimnessWindowController(NSScreen.screens[i])
+            let dimnessWindow = DimnessWindowController(screen: NSScreen.screens[i])
             AppDelegate.dimnessControllers.append(dimnessWindow)
-            dimnessWindow.showWindow(nil)
+            dimnessWindow.showWindow(self)
         }
+    }
+    
+    @objc func onNumberOfScreensChanged() {
+        AppDelegate.dimnessControllers.removeAll()
+        initDimnessControllers()
     }
     
 }

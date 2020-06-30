@@ -12,22 +12,27 @@ class DimnessWindowController: NSWindowController {
     
     var screen: NSScreen
     
-    init(_ screen: NSScreen){
+    init(screen: NSScreen){
         self.screen = screen
         let window = NSWindow()
-        window.setFrame(self.screen.frame, display: true)
-        window.alphaValue = 0
+        window.setFrame(screen.frame, display: true)
+        window.alphaValue = CGFloat(Dimness.strength)
         window.ignoresMouseEvents = true
         window.backgroundColor = .black
         window.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.overlayWindow)))
-        window.styleMask = [.fullScreen]
+        window.styleMask = [.borderless]
+        window.setFrame(screen.frame, display: true)
         window.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
         super.init(window: window)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        self.init(NSScreen.main!)
+        self.init(screen: NSScreen.main!)
     }
+    
+    deinit {
+          self.close()
+      }
     
     func setAlphaValue(_ value: CGFloat) {
         if let window = self.window {
