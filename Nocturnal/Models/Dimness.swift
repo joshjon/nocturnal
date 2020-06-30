@@ -9,39 +9,39 @@
 import Cocoa
 
 enum Dimness {
-    
-    private static let dimnessWindow = NSApplication.shared.windows[1]
     private static let fadeDuration = 2.5
-    private static var strengthBeforeDisable: CGFloat = 0
-    
-    static var dimnessStrength: Float {
-        get { return Float(dimnessWindow.alphaValue) }
-        set { dimnessWindow.alphaValue = CGFloat(newValue) }
+    private static var dimnessStrength: CGFloat = 0
+    private static var isVisible: Bool = true
+
+    static var strength: Float {
+        get { return Float(dimnessStrength) }
+        set {
+            dimnessStrength = CGFloat(newValue)
+            for controller in AppDelegate.dimnessControllers {
+                controller.setAlphaValue(dimnessStrength)
+            }
+        }
     }
-    
+
     static var isDimnessEnabled: Bool {
-        get { return dimnessWindow.isVisible }
-        set { dimnessWindow.setIsVisible(newValue)}
+        get { return isVisible }
+        set {
+            isVisible = newValue
+            for controller in AppDelegate.dimnessControllers {
+                controller.setIsVisible(newValue)
+            }
+        }
     }
-    
-    static func setStrengthBeforeDisable(strength: CGFloat) {
-        strengthBeforeDisable = strength
-    }
-    
-    static func getStrengthBeforeDisable() -> CGFloat {
-        return strengthBeforeDisable
-    }
-    
-    static func previewDimnessStrength(_ value: Float) {
-        dimnessWindow.alphaValue = CGFloat(value)
-    }
-    
+
     static func enable() {
-        dimnessWindow.fadeInNew(duration: fadeDuration)
+        for controller in AppDelegate.dimnessControllers {
+            controller.fadeIn(fadeDuration)
+        }
     }
-    
+
     static func disable() {
-        dimnessWindow.fadeOutNew(duration: fadeDuration)
+        for controller in AppDelegate.dimnessControllers {
+            controller.fadeOut(fadeDuration)
+        }
     }
-    
 }

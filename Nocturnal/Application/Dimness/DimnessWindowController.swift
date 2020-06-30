@@ -9,23 +9,51 @@
 import Cocoa
 
 class DimnessWindowController: NSWindowController {
-    
-    override func windowDidLoad() {
-        super.windowDidLoad()
-        guard let screen = NSScreen.main else { return }
-        guard let window = self.window else { return }
-        setup(window: window, frame: screen.frame)
-    }
-    
-    func setup(window: NSWindow, frame: NSRect) {
-        window.setFrame(frame, display: true)
-        window.center()
-        window.alphaValue = 0
+    var screen: NSScreen
+
+    init(screen: NSScreen) {
+        self.screen = screen
+        let window = NSWindow()
+        window.setFrame(screen.frame, display: true)
+        window.alphaValue = CGFloat(Dimness.strength)
         window.ignoresMouseEvents = true
         window.backgroundColor = .black
         window.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.overlayWindow)))
-        window.styleMask = [.fullScreen]
+        window.styleMask = [.borderless]
+        window.setFrame(screen.frame, display: true)
         window.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
+        super.init(window: window)
     }
-    
+
+    required convenience init?(coder _: NSCoder) {
+        self.init(screen: NSScreen.main!)
+    }
+
+    deinit {
+        self.close()
+    }
+
+    func setAlphaValue(_ value: CGFloat) {
+        if let window = self.window {
+            window.alphaValue = value
+        }
+    }
+
+    func setIsVisible(_ bool: Bool) {
+        if let window = self.window {
+            window.setIsVisible(bool)
+        }
+    }
+
+    func fadeIn(_ duration: Double) {
+        if let window = self.window {
+            window.fadeInNew(duration: duration)
+        }
+    }
+
+    func fadeOut(_ duration: Double) {
+        if let window = self.window {
+            window.fadeOutNew(duration: duration)
+        }
+    }
 }

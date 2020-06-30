@@ -9,7 +9,6 @@
 import Cocoa
 
 class PreferencesWindowController: NSWindowController {
-    
     override func windowDidLoad() {
         super.windowDidLoad()
         guard let window = self.window else { return }
@@ -17,5 +16,4 @@ class PreferencesWindowController: NSWindowController {
         window.center()
         window.title = "Preferences"
     }
-    
 }

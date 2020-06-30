@@ -9,12 +9,10 @@
 import Cocoa
 
 class CustomTimeWindowController: NSWindowController {
-
     override func windowDidLoad() {
         super.windowDidLoad()
         guard let window = self.window else { return }
         window.level = .floating
         window.center()
     }
-
 }
