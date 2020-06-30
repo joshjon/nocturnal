@@ -18,7 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         initDimnessControllers()
         NightShift.blueLightReductionAmount = 0
         NightShift.enable()
-        NotificationCenter.default.addObserver(self, selector: #selector(onDidConnectScreen(_:)), name: NSApplication.didChangeScreenParametersNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onNumberOfScreensChanged),
+                                               name: NSApplication.didChangeScreenParametersNotification, object: nil)
     }
     
     func initDimnessControllers() {
@@ -29,15 +30,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    @objc func onDidConnectScreen(_ notification:Notification) {
-        print("====== Notification received ======")
-        for controller in AppDelegate.dimnessControllers {
-            controller = nil
-        }
+    @objc func onNumberOfScreensChanged() {
         AppDelegate.dimnessControllers.removeAll()
         initDimnessControllers()
-        print("Controller count: \(AppDelegate.dimnessControllers.count)")
-        print("Strength: \(Dimness.strength)")
     }
     
 }

@@ -10,7 +10,6 @@ import Cocoa
 
 enum Dimness {
     
-    private static let dimnessControllers = AppDelegate.dimnessControllers
     private static let fadeDuration = 2.5
     private static var dimnessStrength: CGFloat = 0
     private static var isVisible: Bool = true
@@ -19,7 +18,7 @@ enum Dimness {
         get { return Float(dimnessStrength) }
         set {
             dimnessStrength = CGFloat(newValue)
-            for controller in dimnessControllers {
+            for controller in AppDelegate.dimnessControllers {
                 controller.setAlphaValue(dimnessStrength)
             }
         }
@@ -29,26 +28,20 @@ enum Dimness {
         get { return isVisible }
         set {
             isVisible = newValue
-            for controller in dimnessControllers {
+            for controller in AppDelegate.dimnessControllers {
                 controller.setIsVisible(newValue)
             }
         }
     }
     
-    static func previewDimnessStrength(_ value: Float) {
-        for controller in dimnessControllers {
-            controller.setAlphaValue(CGFloat(value))
-        }
-    }
-    
     static func enable() {
-        for controller in dimnessControllers {
+        for controller in AppDelegate.dimnessControllers {
             controller.fadeIn(fadeDuration)
         }
     }
     
     static func disable() {
-        for controller in dimnessControllers {
+        for controller in AppDelegate.dimnessControllers {
             controller.fadeOut(fadeDuration)
         }
     }

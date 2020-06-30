@@ -25,6 +25,10 @@ class DimnessWindowController: NSWindowController {
         super.init(window: window)
     }
     
+    deinit {
+        self.close()
+    }
+    
     required convenience init?(coder aDecoder: NSCoder) {
         self.init(NSScreen.main!)
     }
