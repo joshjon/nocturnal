@@ -15,48 +15,27 @@ Nocturnal is a menu bar app for macOS that allows you to go the extra mile in co
 <img src="Docs/Images/Nocturnal-Screenshot.png" alt="icon" height="300">
 </p>
 
-### System requirements
+### System Requirements
 
-Nocturnal is currently only supported on macOS Catalina 10.15 or later and requires one of the computers listed [here](https://support.apple.com/en-us/HT207513#requirements).
+Nocturnal is only supported on macOS Catalina 10.15 or later, and requires one of the computers listed [here](https://support.apple.com/en-us/HT207513#requirements).
 
 ### Installation
 
 Download the latest version of Nocturnal from the [GitHub releases page](https://github.com/joshjon/nocturnal/releases).
 
-When opening the app for the first time there is a chance you may see an alert stating 'Nocturnal can't be opened because Apple cannot check it for malicious software'. In order to resolve this, right-click Nocturnal.app and press 'Open', a pop-up will appear, and then click 'open' again.
+**Releases are not currently signed with an Apple developer key. To open an unsigned app follow these steps.**
 
-#### Why does this alert occur?
+1. Control-click the app icon, then choose Open from the shortcut menu.
+2. A dialog box will appear, then click Open.
 
-By default, macOS Catalina requires software to be notarized, so you can be confident that the software doesn't contain known malware. In order to have Nocturnal notarized, a $100/year subscription to the Apple Developer Program is required. Given that this is my first app for any apple device, joining the program is not currently in scope. Therefore, Nocturnal will remain unnotarized for the time being.
+For more information refer to the offical [Apple support article](https://support.apple.com/en-au/guide/mac-help/mh40616/mac).
 
 
-### Built with
+### Build and Run
 
-- [Xcode 11.3](https://developer.apple.com/xcode/)
-- [Swift 5](https://developer.apple.com/swift/)
-- [Carthage](https://github.com/Carthage/Carthage) (dependency manager)
-- [LaunchAtLogin ](https://github.com/sindresorhus/LaunchAtLogin) (framework)
-- [CoreBrightness](https://github.com/w0lfschild/macOS_headers/tree/master/macOS/PrivateFrameworks/CoreBrightness/515) (private framework)
+Build Nocturnal's dependencies using carthage and open the project in Xcode.
 
-### Building and running
-
-Nocturnal uses Carthage. Before building in Xcode run:
-
-    $ carthage bootstrap --platform Mac
-
-Once Carthage has finished Building Nocturnal's dependencies open the Xcode project:
-
-    $ open Nocturnal.xcodeproj
-
-After Xcode finishes loading the workspace press ⌘R to run Nocturnal.
-
-### License
-
-Distributed under the MIT License. See LICENSE for more information.
-
----
-
-### Author
-
-Joshua Jon<br>
-GitHub: https://github.com/joshjon
+```bash
+carthage bootstrap --platform Mac
+open Nocturnal.xcodeproj
+```
