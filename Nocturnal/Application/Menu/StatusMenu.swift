@@ -32,6 +32,12 @@ class StatusMenu: NSMenu, NSMenuDelegate{
         timerMenuItem.isHidden = true
         setupNightShiftSliderMenuItem()
         setupDimnessSliderMenuItem()
+        
+        // Check if Mac supports TouchBar
+        if (NSClassFromString("NSTouchBar") == nil) {
+            hideTouchBarMenuItem.isEnabled = false
+            hideTouchBarMenuItem.isHidden = true
+        }
     }
     
     func menuWillOpen(_ menu: NSMenu) {
