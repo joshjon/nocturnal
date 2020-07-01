@@ -16,8 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         initDimnessControllers()
         NightShift.blueLightReductionAmount = 0
         NightShift.enable()
-        NotificationCenter.default.addObserver(self, selector: #selector(onNumberOfScreensChanged),
-                                               name: NSApplication.didChangeScreenParametersNotification, object: nil)
+        addNotificationObservers()
     }
     
     func initDimnessControllers() {
@@ -28,8 +27,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    func addNotificationObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(onNumberOfScreensChanged),
+                                               name: NSApplication.didChangeScreenParametersNotification, object: nil)
+        
+        DistributedNotificationCenter.default.addObserver(self, selector: #selector(onUnlock),
+                                                          name: .init("com.apple.screenIsUnlocked"), object: nil)
+    }
+    
     @objc func onNumberOfScreensChanged() {
         AppDelegate.dimnessControllers.removeAll()
         initDimnessControllers()
+    }
+    
+    @objc func onUnlock() {
+        if (StateManager.isTouchBarHidden) {
+            do { sleep(1) } // wait for TouchBar init
+            TouchBarController.shared.hideTouchBar()
+        }
     }
 }

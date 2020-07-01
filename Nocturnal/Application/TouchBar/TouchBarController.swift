@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TouchBarController: NSObject, NSTouchBarDelegate {
+class TouchBarController: NSObject {
     static let shared = TouchBarController()
     var blankTouchBar = NSTouchBar()
 
