@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func onUnlock() {
         if StateManager.isTouchBarHidden {
             do { sleep(1) } // wait for TouchBar init
-            TouchBarController.shared.hideTouchBar()
+            TouchBar.hideTouchBar()
         }
     }
 }

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class StatusMenu: NSMenu, NSMenuDelegate {
+class MenuController: NSMenu, NSMenuDelegate {
     @IBOutlet var timerMenuItem: NSMenuItem!
     @IBOutlet var nightShiftSliderView: NightShiftSliderView!
     @IBOutlet var dimnessSliderView: DimnessSliderView!
