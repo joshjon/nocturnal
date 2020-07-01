@@ -29,6 +29,7 @@ enum NightShift {
     }
 
     static func previewBlueLightReductionAmount(_ value: Float) {
+        if (!isNightShiftEnabled) { isNightShiftEnabled = true }
         client.setStrength(value, commit: false)
     }
 
