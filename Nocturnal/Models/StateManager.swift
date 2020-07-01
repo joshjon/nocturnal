@@ -81,12 +81,12 @@ enum StateManager {
                 NightShift.enable()
                 Dimness.enable()
                 if isTouchBarHidden {
-                    TouchBarController.shared.hideTouchBar()
+                    TouchBar.hideTouchBar()
                 }
             } else {
                 NightShift.disable()
                 Dimness.disable()
-                TouchBarController.shared.showTouchbar()
+                TouchBar.showTouchbar()
             }
         }
     }
@@ -96,9 +96,9 @@ enum StateManager {
         set {
             touchBarHidden = newValue
             if newValue {
-                TouchBarController.shared.hideTouchBar()
+                TouchBar.hideTouchBar()
             } else {
-                TouchBarController.shared.showTouchbar()
+                TouchBar.showTouchbar()
             }
         }
     }

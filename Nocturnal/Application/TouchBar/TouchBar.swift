@@ -8,10 +8,9 @@
 
 import Foundation
 
-
 struct TouchBar {
     private static let blankTouchBar = NSTouchBar()
-    
+
     static func hideTouchBar() {
         presentSystemModal(blankTouchBar, placement: 1, systemTrayItemIdentifier: .nocturnalControlStripItem)
     }
@@ -19,7 +18,7 @@ struct TouchBar {
     static func showTouchbar() {
         minimizeSystemModal(blankTouchBar)
     }
-    
+
     static func presentSystemModal(_ touchBar: NSTouchBar!, placement: Int64, systemTrayItemIdentifier identifier: NSTouchBarItem.Identifier!) {
         if #available(OSX 10.14, *) {
             NSTouchBar.presentSystemModalTouchBar(touchBar, placement: placement, systemTrayItemIdentifier: identifier)
