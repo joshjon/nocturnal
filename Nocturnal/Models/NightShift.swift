@@ -46,4 +46,8 @@ enum NightShift {
     public static func disable() {
         isNightShiftEnabled = false
     }
+
+    static var supportsNightShift: Bool {
+        get { return CBBlueLightClient.supportsBlueLightReduction() }
+    }
 }
