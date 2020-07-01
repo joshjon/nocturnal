@@ -42,7 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc func onUnlock() {
         if StateManager.isTouchBarHidden {
-            do { sleep(1) } // wait for TouchBar init
+            do { sleep(1) } // Wait for macOS to init TouchBar
             TouchBar.hideTouchBar()
         }
     }

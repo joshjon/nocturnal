@@ -205,7 +205,6 @@ class MenuController: NSMenu, NSMenuDelegate {
 
     @IBAction func quitClicked(_ sender: NSMenuItem) {
         StateManager.isNocturnalEnabled = false
-        // reset so that night shift still works when Nocturnal is closed
         NightShift.blueLightReductionAmount = 1
         NSApplication.shared.terminate(sender)
     }

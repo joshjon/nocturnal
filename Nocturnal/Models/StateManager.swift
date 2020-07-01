@@ -115,10 +115,7 @@ enum StateManager {
         case .userDisabledTouchBar:
             isTouchBarHidden = false
         case .disableTimerStarted:
-            // check is required as Nocturnal can already be disabled when a timer starts
-            if isNocturnalEnabled {
                 isNocturnalEnabled = false
-            }
         case .disableTimerEnded:
             isNocturnalEnabled = true
         }
