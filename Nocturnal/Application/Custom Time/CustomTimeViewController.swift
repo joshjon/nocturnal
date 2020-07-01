@@ -18,7 +18,7 @@ class CustomTimeViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // only allow numbers
+        // Only allow numbers
         hoursTextField.formatter = NumberFormatter()
         minutesTextField.formatter = NumberFormatter()
     }

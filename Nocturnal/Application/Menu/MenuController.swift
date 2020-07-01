@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class StatusMenu: NSMenu, NSMenuDelegate {
+class MenuController: NSMenu, NSMenuDelegate {
     @IBOutlet var timerMenuItem: NSMenuItem!
     @IBOutlet var nightShiftSliderView: NightShiftSliderView!
     @IBOutlet var dimnessSliderView: DimnessSliderView!
@@ -205,7 +205,6 @@ class StatusMenu: NSMenu, NSMenuDelegate {
 
     @IBAction func quitClicked(_ sender: NSMenuItem) {
         StateManager.isNocturnalEnabled = false
-        // reset so that night shift still works when Nocturnal is closed
         NightShift.blueLightReductionAmount = 1
         NSApplication.shared.terminate(sender)
     }

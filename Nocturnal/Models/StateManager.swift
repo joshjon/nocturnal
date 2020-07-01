@@ -81,12 +81,12 @@ enum StateManager {
                 NightShift.enable()
                 Dimness.enable()
                 if isTouchBarHidden {
-                    TouchBarController.shared.hideTouchBar()
+                    TouchBar.hideTouchBar()
                 }
             } else {
                 NightShift.disable()
                 Dimness.disable()
-                TouchBarController.shared.showTouchbar()
+                TouchBar.showTouchbar()
             }
         }
     }
@@ -96,9 +96,9 @@ enum StateManager {
         set {
             touchBarHidden = newValue
             if newValue {
-                TouchBarController.shared.hideTouchBar()
+                TouchBar.hideTouchBar()
             } else {
-                TouchBarController.shared.showTouchbar()
+                TouchBar.showTouchbar()
             }
         }
     }
@@ -115,10 +115,7 @@ enum StateManager {
         case .userDisabledTouchBar:
             isTouchBarHidden = false
         case .disableTimerStarted:
-            // check is required as Nocturnal can already be disabled when a timer starts
-            if isNocturnalEnabled {
                 isNocturnalEnabled = false
-            }
         case .disableTimerEnded:
             isNocturnalEnabled = true
         }

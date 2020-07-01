@@ -18,10 +18,10 @@
 		7D6EE5DD23A088FB0011D52C /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6EE5DB23A088FB0011D52C /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D874589238BFA0F00A676F1 /* DimnessSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */; };
 		7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */; };
-		7DA0D207248C89BE00F9C6A9 /* TouchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA0D206248C89BE00F9C6A9 /* TouchBarController.swift */; };
+		7D8F091A24AC7ECA003DA62E /* TouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8F091924AC7ECA003DA62E /* TouchBar.swift */; };
 		7DA0D20A248C9D8900F9C6A9 /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA0D209248C9D8900F9C6A9 /* DFRFoundation.framework */; };
 		7DA0D20B248C9D8900F9C6A9 /* DFRFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA0D209248C9D8900F9C6A9 /* DFRFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7DA5B1F4238BAC8000FE0597 /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */; };
+		7DA5B1F4238BAC8000FE0597 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5B1F3238BAC8000FE0597 /* MenuController.swift */; };
 		7DA5B1F6238BAD6F00FE0597 /* NightShiftSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5B1F5238BAD6F00FE0597 /* NightShiftSliderView.swift */; };
 		7DA5B1F9238BAF9500FE0597 /* NightShift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5B1F8238BAF9500FE0597 /* NightShift.swift */; };
 		7DF1F92D2356AFAA0041E9CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF1F92C2356AFAA0041E9CA /* AppDelegate.swift */; };
@@ -72,10 +72,10 @@
 		7D6EE5DB23A088FB0011D52C /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimnessSliderView.swift; sourceTree = "<group>"; };
 		7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimnessWindowController.swift; sourceTree = "<group>"; };
+		7D8F091924AC7ECA003DA62E /* TouchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBar.swift; sourceTree = "<group>"; };
 		7DA0D205248C88E200F9C6A9 /* TouchBarPrivateApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBarPrivateApi.h; sourceTree = "<group>"; };
-		7DA0D206248C89BE00F9C6A9 /* TouchBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarController.swift; sourceTree = "<group>"; };
 		7DA0D209248C9D8900F9C6A9 /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
-		7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
+		7DA5B1F3238BAC8000FE0597 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		7DA5B1F5238BAD6F00FE0597 /* NightShiftSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightShiftSliderView.swift; sourceTree = "<group>"; };
 		7DA5B1F8238BAF9500FE0597 /* NightShift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightShift.swift; sourceTree = "<group>"; };
 		7DF1F9292356AFAA0041E9CA /* Nocturnal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nocturnal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +129,7 @@
 		7DA0D208248C8BE300F9C6A9 /* TouchBar */ = {
 			isa = PBXGroup;
 			children = (
-				7DA0D206248C89BE00F9C6A9 /* TouchBarController.swift */,
+				7D8F091924AC7ECA003DA62E /* TouchBar.swift */,
 			);
 			path = TouchBar;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 			children = (
 				7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */,
 				7DA5B1F5238BAD6F00FE0597 /* NightShiftSliderView.swift */,
-				7DA5B1F3238BAC8000FE0597 /* StatusMenu.swift */,
+				7DA5B1F3238BAC8000FE0597 /* MenuController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -338,8 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DA5B1F4238BAC8000FE0597 /* StatusMenu.swift in Sources */,
-				7DA0D207248C89BE00F9C6A9 /* TouchBarController.swift in Sources */,
+				7DA5B1F4238BAC8000FE0597 /* MenuController.swift in Sources */,
 				7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */,
 				7DF36EA7239E730C000CFB5A /* Preferences.swift in Sources */,
 				7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */,
@@ -349,6 +348,7 @@
 				7DF36EAA239EFB29000CFB5A /* PreferencesViewController.swift in Sources */,
 				7D1B5C372399AE770061D0CF /* NSWindow+Fade.swift in Sources */,
 				7D1B5C34239934440061D0CF /* Dimness.swift in Sources */,
+				7D8F091A24AC7ECA003DA62E /* TouchBar.swift in Sources */,
 				7DF36EAE239F6AED000CFB5A /* HyperLinkTextField.swift in Sources */,
 				7DA5B1F9238BAF9500FE0597 /* NightShift.swift in Sources */,
 				7DF1F92D2356AFAA0041E9CA /* AppDelegate.swift in Sources */,

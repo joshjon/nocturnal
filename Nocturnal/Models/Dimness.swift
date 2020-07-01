@@ -6,7 +6,7 @@
 //  Copyright © 2019 Joshua Jon. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 
 enum Dimness {
     private static let fadeDuration = 2.5
