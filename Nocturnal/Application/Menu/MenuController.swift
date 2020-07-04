@@ -216,7 +216,7 @@ class MenuController: NSMenu, NSMenuDelegate {
             window.center()
             window.styleMask = [.titled, .closable]
         }
-        if !StateManager.isPreferencesWindowOpen {
+        if !StateManager.isAboutWindowOpen {
             aboutWindowController.showWindow(self)
         }
     }

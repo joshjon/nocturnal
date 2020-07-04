@@ -29,7 +29,7 @@
         <!--Preferences Window Controller-->
         <scene sceneID="Tvt-ak-Ddu">
             <objects>
-                <windowController storyboardIdentifier="Preferences Window Controller" id="t0U-i3-kkl" userLabel="Preferences Window Controller" customClass="PreferencesWindowController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="Preferences Window Controller" id="t0U-i3-kkl" userLabel="Preferences Window Controller" sceneMemberID="viewController">
                     <window key="window" identifier="Preferences Window Controller" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="evA-Mp-ali">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -252,7 +252,7 @@
         <!--About View Controller-->
         <scene sceneID="bv3-K2-260">
             <objects>
-                <viewController id="1hM-fZ-ccd" userLabel="About View Controller" sceneMemberID="viewController">
+                <viewController id="1hM-fZ-ccd" userLabel="About View Controller" customClass="AboutViewController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="rnl-9h-kx0">
                         <rect key="frame" x="0.0" y="0.0" width="214" height="192"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -331,7 +331,7 @@
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T1m-Lg-jDf">
                                                 <rect key="frame" x="12" y="0.0" width="148" height="13"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Copyright © 2019 Joshua Jon" id="EcE-zc-1hS">
-                                                    <font key="font" metaFont="menu" size="10"/>
+                                                    <font key="font" metaFont="system" size="10"/>
                                                     <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
@@ -360,9 +360,6 @@
                             </stackView>
                         </subviews>
                     </view>
-                    <connections>
-                        <outlet property="sourceCodeLabel" destination="1qk-HA-nLV" id="29w-kx-SMY"/>
-                    </connections>
                 </viewController>
                 <customObject id="Ni2-xE-Bpb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
