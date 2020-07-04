@@ -14,7 +14,7 @@ class DimnessSliderView: NSView {
     func setup() {
         dimnessSlider.isContinuous = true
         dimnessSlider.minValue = 0
-        dimnessSlider.maxValue = 0.9
+        dimnessSlider.maxValue = Double(Dimness.maxStrength)
     }
 
     @IBAction func dimnessSliderMoved(_ sender: NSSlider) {

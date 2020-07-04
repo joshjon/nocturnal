@@ -9,6 +9,7 @@
 import Foundation
 
 enum Dimness {
+    public static let maxStrength: Float = 0.9
     private static let fadeDuration = 2.5
     private static var dimnessStrength: CGFloat = 0
     private static var isVisible: Bool = true

@@ -15,7 +15,7 @@ class MenuController: NSMenu, NSMenuDelegate {
     @IBOutlet var disableMenuItem: NSMenuItem!
     @IBOutlet var disableHourMenuItem: NSMenuItem!
     @IBOutlet var disableCustomMenuItem: NSMenuItem!
-    @IBOutlet var hideTouchBarMenuItem: NSMenuItem!
+    @IBOutlet var turnOffTouchBarMenuItem: NSMenuItem!
     @IBOutlet var preferencesMenuItem: NSMenuItem!
 
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -35,8 +35,8 @@ class MenuController: NSMenu, NSMenuDelegate {
 
         // Check if Mac supports TouchBar
         if NSClassFromString("NSTouchBar") == nil {
-            hideTouchBarMenuItem.isEnabled = false
-            hideTouchBarMenuItem.isHidden = true
+            turnOffTouchBarMenuItem.isEnabled = false
+            turnOffTouchBarMenuItem.isHidden = true
         }
     }
 
@@ -51,13 +51,13 @@ class MenuController: NSMenu, NSMenuDelegate {
             dimnessSliderView.dimnessSlider.isEnabled = true
             dimnessSliderView.dimnessSlider.floatValue = Dimness.strength
             nightShiftSliderView.nightShiftSlider.isEnabled = true
-            nightShiftSliderView.nightShiftSlider.floatValue = NightShift.blueLightReductionAmount
-            hideTouchBarMenuItem.isEnabled = true
+            nightShiftSliderView.nightShiftSlider.floatValue = NightShift.strength
+            turnOffTouchBarMenuItem.isEnabled = true
         } else {
             disableMenuItem.title = "Enable Nocturnal"
             dimnessSliderView.dimnessSlider.isEnabled = false
             nightShiftSliderView.nightShiftSlider.isEnabled = false
-            hideTouchBarMenuItem.isEnabled = false
+            turnOffTouchBarMenuItem.isEnabled = false
         }
 
         // Timer
@@ -80,7 +80,7 @@ class MenuController: NSMenu, NSMenuDelegate {
         setTimerText(StateManager.isTimerEnabled)
 
         // TouchBar
-        hideTouchBarMenuItem.state = StateManager.isTouchBarHidden ? .on : .off
+        turnOffTouchBarMenuItem.state = StateManager.isTouchBarOff ? .on : .off
     }
 
     func setStatusMenuIcon() {
@@ -155,8 +155,8 @@ class MenuController: NSMenu, NSMenuDelegate {
         }
     }
 
-    @IBAction func disableTouchBarClicked(_: NSMenuItem) {
-        if StateManager.isTouchBarHidden {
+    @IBAction func turnOffTouchBarClicked(_: NSMenuItem) {
+        if StateManager.isTouchBarOff {
             StateManager.respond(to: .userDisabledTouchBar)
         } else {
             StateManager.respond(to: .userEnabledTouchBar)
@@ -207,7 +207,7 @@ class MenuController: NSMenu, NSMenuDelegate {
 
     @IBAction func quitClicked(_ sender: NSMenuItem) {
         StateManager.isNocturnalEnabled = false
-        NightShift.blueLightReductionAmount = 1
+        NightShift.strength = 1
         NSApplication.shared.terminate(sender)
     }
 }

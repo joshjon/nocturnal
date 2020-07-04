@@ -21,9 +21,9 @@ class NightShiftSliderView: NSView {
         let event = NSApplication.shared.currentEvent
 
         if event?.type == .leftMouseUp {
-            NightShift.blueLightReductionAmount = sender.floatValue
+            NightShift.strength = sender.floatValue
         } else {
-            NightShift.previewBlueLightReductionAmount(sender.floatValue)
+            NightShift.previewStrength(sender.floatValue)
         }
     }
 }

@@ -12,19 +12,24 @@ import LaunchAtLogin
 class PreferencesViewController: NSViewController {
     @IBOutlet var sourceCodeLabel: NSTextField!
     @IBOutlet var loginAtLaunchButton: NSButton!
-    @IBOutlet var dimnessToggleShortcut: MASShortcutView!
-    
+    @IBOutlet var increaseDimnessShortcut: MASShortcutView!
+    @IBOutlet var decreaseDimnessShortcut: MASShortcutView!
+    @IBOutlet var increaseNightShiftShortcut: MASShortcutView!
+    @IBOutlet var decreaseNightShiftShortcut: MASShortcutView!
+    @IBOutlet var turnOffTouchBarShortcut: MASShortcutView!
+    @IBOutlet var disableShortcut: MASShortcutView!
+
      let statusMenuController = (NSApplication.shared.delegate as? AppDelegate)?.menu.delegate as? MenuController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loginAtLaunchButton.state = LaunchAtLogin.isEnabled ? .on : .off
-        dimnessToggleShortcut.associatedUserDefaultsKey = Shortcuts.increaseNightShift
-        dimnessToggleShortcut.associatedUserDefaultsKey = Shortcuts.increaseNightShift
-        dimnessToggleShortcut.associatedUserDefaultsKey = Shortcuts.increaseNightShift
-        dimnessToggleShortcut.associatedUserDefaultsKey = Shortcuts.increaseNightShift
-        dimnessToggleShortcut.associatedUserDefaultsKey = Shortcuts.increaseNightShift
-        dimnessToggleShortcut.associatedUserDefaultsKey = Shortcuts.increaseNightShift
+        increaseDimnessShortcut.associatedUserDefaultsKey = Shortcuts.increaseDimness
+        decreaseDimnessShortcut.associatedUserDefaultsKey = Shortcuts.decreaseDimness
+        increaseNightShiftShortcut.associatedUserDefaultsKey = Shortcuts.increaseDimness
+        decreaseNightShiftShortcut.associatedUserDefaultsKey = Shortcuts.decreaseNightShift
+        turnOffTouchBarShortcut.associatedUserDefaultsKey = Shortcuts.turnOffTouchBar
+        disableShortcut.associatedUserDefaultsKey = Shortcuts.disable
     }
     
     override func viewWillAppear() {

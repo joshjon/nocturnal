@@ -12,6 +12,17 @@ enum Keys {
     static let isAutoLaunchEnabled = "isAutoLaunchEnabled"
 }
 
+enum Shortcuts {
+    static let increaseDimness = "increaseDimness"
+    static let decreaseDimness = "decreaseDimness"
+    static let increaseNightShift = "increaseNightShiftShortcut"
+    static let decreaseNightShift = "decreaseNightShiftShortcut"
+    static let turnOffTouchBar = "turnOffTouchBar"
+    static let disable = "disableNocturnal"
+    static let disableHour = "disableHour"
+    static let disableCustom = "decreaseNightShiftShortcut"
+}
+
 class Preferences {
     static let sharedPrefs = Preferences()
 
