@@ -1026,7 +1026,7 @@ Gw
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="gPp-ey-kge"/>
-                        <menuItem title="Hide Touch Bar" id="5Is-7u-BIB">
+                        <menuItem title="Turn Off Touch Bar" id="5Is-7u-BIB">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="disableTouchBarClicked:" target="BYB-lu-Avz" id="bFs-bu-wHC"/>
