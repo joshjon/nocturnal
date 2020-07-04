@@ -26,14 +26,14 @@
             </objects>
             <point key="canvasLocation" x="462" y="207"/>
         </scene>
-        <!--Window Controller-->
+        <!--Preferences Window Controller-->
         <scene sceneID="Tvt-ak-Ddu">
             <objects>
-                <windowController storyboardIdentifier="Preferences Window Controller" id="t0U-i3-kkl" customClass="PreferencesWindowController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="Preferences Window Controller" id="t0U-i3-kkl" userLabel="Preferences Window Controller" customClass="PreferencesWindowController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" identifier="Preferences Window Controller" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="evA-Mp-ali">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="269" y="301" width="194" height="88"/>
+                        <rect key="contentRect" x="269" y="301" width="230" height="88"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="t0U-i3-kkl" id="iSU-3H-leT"/>
@@ -45,7 +45,7 @@
                 </windowController>
                 <customObject id="hTD-20-PmB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="731" y="207"/>
+            <point key="canvasLocation" x="830" y="207"/>
         </scene>
         <!--Preferences View Controller-->
         <scene sceneID="Ikf-jW-tuJ">
@@ -226,28 +226,49 @@
                 </viewController>
                 <customObject id="hRa-9L-cbJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="830" y="522.5"/>
+            <point key="canvasLocation" x="830" y="572"/>
         </scene>
-        <!--Preferences View Controller-->
+        <!--About Window Controller-->
+        <scene sceneID="cj9-v4-MSU">
+            <objects>
+                <windowController storyboardIdentifier="About Window Controller" id="dyY-Ur-sWN" userLabel="About Window Controller" sceneMemberID="viewController">
+                    <window key="window" title="About" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="ffh-pT-gcI" userLabel="About">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="488" y="313" width="203" height="88"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                        <connections>
+                            <outlet property="delegate" destination="dyY-Ur-sWN" id="0rR-nl-M5j"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="1hM-fZ-ccd" kind="relationship" relationship="window.shadowedContentViewController" id="fu0-kl-nyr"/>
+                    </connections>
+                </windowController>
+                <customObject id="8fO-q3-qSN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1171" y="207"/>
+        </scene>
+        <!--About View Controller-->
         <scene sceneID="bv3-K2-260">
             <objects>
-                <viewController id="1hM-fZ-ccd" customClass="PreferencesViewController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1hM-fZ-ccd" userLabel="About View Controller" sceneMemberID="viewController">
                     <view key="view" id="rnl-9h-kx0">
                         <rect key="frame" x="0.0" y="0.0" width="214" height="192"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9V5-30-P2a">
-                                <rect key="frame" x="20" y="20" width="172" height="152"/>
+                                <rect key="frame" x="20" y="19" width="172" height="153"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NM2-pf-5o2">
-                                        <rect key="frame" x="54" y="88" width="64" height="64"/>
+                                        <rect key="frame" x="54" y="89" width="64" height="64"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIconImage" id="j65-sS-hPB"/>
                                     </imageView>
-                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="1" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xL-6j-Oyi">
-                                        <rect key="frame" x="54" y="50" width="64" height="30"/>
+                                    <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="1" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xL-6j-Oyi">
+                                        <rect key="frame" x="54" y="50" width="64" height="31"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PR9-0C-32n">
-                                                <rect key="frame" x="-2" y="14" width="68" height="16"/>
+                                                <rect key="frame" x="-2" y="15" width="68" height="16"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Nocturnal" id="1Z1-tb-qIn">
                                                     <font key="font" metaFont="systemBold"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -255,9 +276,9 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1tA-dk-F5j">
-                                                <rect key="frame" x="-2" y="0.0" width="67" height="13"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Version 2.0.0" id="LBM-hk-c59">
-                                                    <font key="font" metaFont="system" size="10"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="14"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.1" id="LBM-hk-c59">
+                                                    <font key="font" metaFont="controlContent" size="11"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
@@ -281,7 +302,7 @@
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1qk-HA-nLV">
                                                         <rect key="frame" x="-2" y="0.0" width="139" height="14"/>
                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Source code available on " id="m5p-M5-aHD">
-                                                            <font key="font" metaFont="message" size="11"/>
+                                                            <font key="font" metaFont="controlContent" size="11"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
@@ -289,7 +310,7 @@
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fGO-DW-7WX" customClass="HyperlinkTextField" customModule="Nocturnal" customModuleProvider="target">
                                                         <rect key="frame" x="133" y="0.0" width="41" height="14"/>
                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="GitHub" id="yJv-7T-bGH">
-                                                            <font key="font" metaFont="message" size="11"/>
+                                                            <font key="font" metaFont="controlContent" size="11"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
@@ -310,7 +331,7 @@
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T1m-Lg-jDf">
                                                 <rect key="frame" x="12" y="0.0" width="148" height="13"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Copyright © 2019 Joshua Jon" id="EcE-zc-1hS">
-                                                    <font key="font" metaFont="system" size="10"/>
+                                                    <font key="font" metaFont="menu" size="10"/>
                                                     <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
@@ -345,7 +366,7 @@
                 </viewController>
                 <customObject id="Ni2-xE-Bpb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1442" y="316"/>
+            <point key="canvasLocation" x="1170" y="521"/>
         </scene>
         <!--Custom Time View Controller-->
         <scene sceneID="6W6-9m-4ln">
@@ -1139,7 +1160,7 @@ Gw
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu autoenablesItems="NO" id="BYB-lu-Avz" userLabel="StatusMenu" customClass="MenuController" customModule="Nocturnal" customModuleProvider="target">
                     <items>
-                        <menuItem title="Timer" id="ElC-uX-aHD">
+                        <menuItem title="Timer" id="ElC-uX-aHD" userLabel="Timer Menu">
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
                         <menuItem title="Disable Nocturnal" id="NLh-V4-4lh" userLabel="Disable Nocturnal">
@@ -1189,23 +1210,29 @@ Gw
                             </connections>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="wQ6-SP-edZ"/>
-                        <menuItem title="Disable for an hour" id="af8-VH-x6c">
+                        <menuItem title="Disable for an hour" id="af8-VH-x6c" userLabel="Disable Hour">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="disableHourClicked:" target="BYB-lu-Avz" id="UoX-Jm-vMX"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Disable for custom time..." id="3VP-Nv-qsM">
+                        <menuItem title="Disable for custom time..." id="3VP-Nv-qsM" userLabel="Disable Custom">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="disableCustomTimeClicked:" target="BYB-lu-Avz" id="bMm-ne-686"/>
                             </connections>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="ckf-kT-Wke"/>
-                        <menuItem title="Preferences..." id="bSe-cz-dnn">
+                        <menuItem title="Preferences..." id="bSe-cz-dnn" userLabel="Preferences">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="preferencesClicked:" target="BYB-lu-Avz" id="hVu-Nv-ezj"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="About..." id="QSi-eb-K18" userLabel="About">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="aboutClicked:" target="BYB-lu-Avz" id="rRl-H4-hAh"/>
                             </connections>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="MFU-6l-rf7"/>
