@@ -49,7 +49,9 @@ class MenuController: NSMenu, NSMenuDelegate {
         if StateManager.isNocturnalEnabled {
             disableMenuItem.title = "Disable Nocturnal"
             dimnessSliderView.dimnessSlider.isEnabled = true
+            dimnessSliderView.dimnessSlider.floatValue = Dimness.strength
             nightShiftSliderView.nightShiftSlider.isEnabled = true
+            nightShiftSliderView.nightShiftSlider.floatValue = NightShift.blueLightReductionAmount
             hideTouchBarMenuItem.isEnabled = true
         } else {
             disableMenuItem.title = "Enable Nocturnal"

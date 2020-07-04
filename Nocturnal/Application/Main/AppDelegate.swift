@@ -10,6 +10,8 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    @IBOutlet var menu: MenuController!
+    
     static var dimnessControllers = [] as [DimnessWindowController]
 
     func applicationDidFinishLaunching(_: Notification) {
@@ -19,6 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NightShift.blueLightReductionAmount = 0
         NightShift.enable()
         addNotificationObservers()
+        setupShortcuts()
     }
 
     func initDimnessControllers() {
@@ -89,5 +92,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSWorkspace.shared.open(url)
         }
         NSApplication.shared.terminate(self)
+    }
+    
+    func setupShortcuts() {
+        // Increase Dimness
+        MASShortcutBinder.shared().bindShortcut(withDefaultsKey: Shortcuts.increaseDimness) {
+            if StateManager.isNocturnalEnabled {
+                Dimness.strength += 0.1
+            } else {
+                StateManager.isNocturnalEnabled = false
+                Dimness.strength = 0.1
+            }
+        }
+        // Decrease NightShift
+        MASShortcutBinder.shared().bindShortcut(withDefaultsKey: Shortcuts.decreaseDimness) {
+            if StateManager.isNocturnalEnabled {
+                Dimness.strength += -0.1
+            }
+        }
+        // Increase NightShift
+        MASShortcutBinder.shared().bindShortcut(withDefaultsKey: Shortcuts.increaseNightShift) {
+            if StateManager.isNocturnalEnabled {
+                NightShift.blueLightReductionAmount += 0.1
+            } else {
+                StateManager.isNocturnalEnabled = true
+                NightShift.blueLightReductionAmount = 0.1
+            }
+        }
+        // Decrease NightShift
+        MASShortcutBinder.shared().bindShortcut(withDefaultsKey: Shortcuts.decreaseNightShift) {
+            if StateManager.isNocturnalEnabled {
+                NightShift.blueLightReductionAmount += -0.1
+            }
+        }
     }
 }

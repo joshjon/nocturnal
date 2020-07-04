@@ -12,12 +12,21 @@ import LaunchAtLogin
 class PreferencesViewController: NSViewController {
     @IBOutlet var sourceCodeLabel: NSTextField!
     @IBOutlet var loginAtLaunchButton: NSButton!
-
+    @IBOutlet var dimnessToggleShortcut: MASShortcutView!
+    
+     let statusMenuController = (NSApplication.shared.delegate as? AppDelegate)?.menu.delegate as? MenuController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loginAtLaunchButton.state = LaunchAtLogin.isEnabled ? .on : .off
+        dimnessToggleShortcut.associatedUserDefaultsKey = Shortcuts.increaseNightShift
+        dimnessToggleShortcut.associatedUserDefaultsKey = Shortcuts.increaseNightShift
+        dimnessToggleShortcut.associatedUserDefaultsKey = Shortcuts.increaseNightShift
+        dimnessToggleShortcut.associatedUserDefaultsKey = Shortcuts.increaseNightShift
+        dimnessToggleShortcut.associatedUserDefaultsKey = Shortcuts.increaseNightShift
+        dimnessToggleShortcut.associatedUserDefaultsKey = Shortcuts.increaseNightShift
     }
-
+    
     override func viewWillAppear() {
         StateManager.isPreferencesWindowOpen = true
     }
