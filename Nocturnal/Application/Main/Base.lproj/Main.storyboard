@@ -981,7 +981,7 @@ Gw
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Nocturnal" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <menu autoenablesItems="NO" id="BYB-lu-Avz" userLabel="StatusMenu" customClass="StatusMenu" customModule="Nocturnal" customModuleProvider="target">
+                <menu autoenablesItems="NO" id="BYB-lu-Avz" userLabel="StatusMenu" customClass="MenuController" customModule="Nocturnal" customModuleProvider="target">
                     <items>
                         <menuItem title="Timer" id="ElC-uX-aHD">
                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -1026,7 +1026,7 @@ Gw
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="gPp-ey-kge"/>
-                        <menuItem title="Hide Touch Bar" id="5Is-7u-BIB">
+                        <menuItem title="Turn Off Touch Bar" id="5Is-7u-BIB">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="disableTouchBarClicked:" target="BYB-lu-Avz" id="bFs-bu-wHC"/>

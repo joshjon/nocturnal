@@ -29,6 +29,8 @@ enum NightShift {
     }
 
     static func previewBlueLightReductionAmount(_ value: Float) {
+        // Check if user manually disabled Night Shift
+        if (!isNightShiftEnabled) { isNightShiftEnabled = true }
         client.setStrength(value, commit: false)
     }
 
@@ -43,5 +45,9 @@ enum NightShift {
 
     public static func disable() {
         isNightShiftEnabled = false
+    }
+
+    static var supportsNightShift: Bool {
+        get { return CBBlueLightClient.supportsBlueLightReduction() }
     }
 }
