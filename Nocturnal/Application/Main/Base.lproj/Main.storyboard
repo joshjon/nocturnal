@@ -52,25 +52,14 @@
             <objects>
                 <viewController id="pTt-Qm-3L9" customClass="PreferencesViewController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="ccj-LX-Sn4">
-                        <rect key="frame" x="0.0" y="0.0" width="351" height="309"/>
+                        <rect key="frame" x="0.0" y="0.0" width="392" height="294"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Kx-1x-ccv">
-                                <rect key="frame" x="18" y="18" width="178" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Launch Nocturnal at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="oOz-Zl-Tr0">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="loginAtLaunchToggled:" target="pTt-Qm-3L9" id="aE5-UJ-Ia3"/>
-                                </connections>
-                            </button>
-                            <stackView distribution="fillEqually" orientation="vertical" alignment="trailing" spacing="24" horizontalStackHuggingPriority="1000" verticalStackHuggingPriority="249.99998474121094" horizontalHuggingPriority="1000" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Suz-de-zXA">
-                                <rect key="frame" x="20" y="69" width="130" height="216"/>
+                            <stackView distribution="fillEqually" orientation="vertical" alignment="trailing" spacing="18" horizontalStackHuggingPriority="1000" verticalStackHuggingPriority="249.99998474121094" horizontalHuggingPriority="1000" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Suz-de-zXA">
+                                <rect key="frame" x="52" y="80" width="130" height="186"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="999" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="tGR-qs-yoH">
-                                        <rect key="frame" x="-2" y="200" width="134" height="16"/>
+                                        <rect key="frame" x="-2" y="170" width="134" height="16"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Disable Nocturnal:" id="yPp-vZ-B4A">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -78,7 +67,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="999" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="DaN-hH-F8m">
-                                        <rect key="frame" x="-2" y="160" width="134" height="16"/>
+                                        <rect key="frame" x="-2" y="136" width="134" height="16"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Increase dimness:" id="9sv-9F-IDs">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -86,7 +75,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="999" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="xZc-om-zd5">
-                                        <rect key="frame" x="-2" y="120" width="134" height="16"/>
+                                        <rect key="frame" x="-2" y="102" width="134" height="16"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Decrease dimness:" id="CT8-is-v8W">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -94,7 +83,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="999" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Uf7-Ej-96V">
-                                        <rect key="frame" x="-2" y="80" width="134" height="16"/>
+                                        <rect key="frame" x="-2" y="68" width="134" height="16"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Increase Night Shift:" id="Y8e-52-N0g">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -102,7 +91,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="999" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="UVG-8h-5L0">
-                                        <rect key="frame" x="-2" y="40" width="134" height="16"/>
+                                        <rect key="frame" x="-2" y="34" width="134" height="16"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Decrease Night Shift:" id="NdT-Z4-ent">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -135,40 +124,40 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="21" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1km-Lr-KtP">
-                                <rect key="frame" x="158" y="67" width="150" height="219"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1km-Lr-KtP">
+                                <rect key="frame" x="191" y="78" width="150" height="189"/>
                                 <subviews>
-                                    <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-U6-46P" customClass="MASShortcutView">
-                                        <rect key="frame" x="0.0" y="200" width="150" height="19"/>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-U6-46P" customClass="MASShortcutView">
+                                        <rect key="frame" x="0.0" y="170" width="150" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="Whh-vn-7hj"/>
                                         </constraints>
                                     </customView>
-                                    <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a4g-q8-VIT" customClass="MASShortcutView">
-                                        <rect key="frame" x="0.0" y="160" width="150" height="19"/>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="a4g-q8-VIT" customClass="MASShortcutView">
+                                        <rect key="frame" x="0.0" y="136" width="150" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="w63-LK-xoi"/>
                                         </constraints>
                                     </customView>
-                                    <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4rH-js-rkm" customClass="MASShortcutView">
-                                        <rect key="frame" x="0.0" y="120" width="150" height="19"/>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="4rH-js-rkm" customClass="MASShortcutView">
+                                        <rect key="frame" x="0.0" y="102" width="150" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="8Js-qZ-20x"/>
                                         </constraints>
                                     </customView>
-                                    <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NCJ-2c-iPz" customClass="MASShortcutView">
-                                        <rect key="frame" x="0.0" y="80" width="150" height="19"/>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="NCJ-2c-iPz" customClass="MASShortcutView">
+                                        <rect key="frame" x="0.0" y="68" width="150" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="cJq-UF-w4n"/>
                                         </constraints>
                                     </customView>
-                                    <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MDL-OL-kXJ" customClass="MASShortcutView">
-                                        <rect key="frame" x="0.0" y="40" width="150" height="19"/>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="MDL-OL-kXJ" customClass="MASShortcutView">
+                                        <rect key="frame" x="0.0" y="34" width="150" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="3lv-NY-GSM"/>
                                         </constraints>
                                     </customView>
-                                    <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b8a-yK-py8" customClass="MASShortcutView">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="b8a-yK-py8" customClass="MASShortcutView">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="F2b-vv-V0O"/>
@@ -192,7 +181,38 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Kx-1x-ccv">
+                                <rect key="frame" x="18" y="29" width="178" height="18"/>
+                                <buttonCell key="cell" type="check" title="Launch Nocturnal at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="oOz-Zl-Tr0">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="loginAtLaunchToggled:" target="pTt-Qm-3L9" id="aE5-UJ-Ia3"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pvt-0y-u6h">
+                                <rect key="frame" x="226" y="20" width="152" height="32"/>
+                                <buttonCell key="cell" type="push" title="Restore Defaults..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bYa-Hy-1xN">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="1km-Lr-KtP" firstAttribute="leading" secondItem="Suz-de-zXA" secondAttribute="trailing" constant="9" id="7cg-dm-Dv1"/>
+                            <constraint firstItem="Pvt-0y-u6h" firstAttribute="leading" secondItem="7Kx-1x-ccv" secondAttribute="trailing" constant="38" id="FDB-b6-7nU"/>
+                            <constraint firstItem="Pvt-0y-u6h" firstAttribute="top" secondItem="1km-Lr-KtP" secondAttribute="bottom" constant="30" id="RfW-sL-r5Y"/>
+                            <constraint firstItem="Suz-de-zXA" firstAttribute="top" secondItem="ccj-LX-Sn4" secondAttribute="top" constant="28" id="T67-At-xsz"/>
+                            <constraint firstItem="1km-Lr-KtP" firstAttribute="top" secondItem="ccj-LX-Sn4" secondAttribute="top" constant="27" id="bLu-uh-FDe"/>
+                            <constraint firstItem="Suz-de-zXA" firstAttribute="leading" secondItem="ccj-LX-Sn4" secondAttribute="leading" constant="52" id="hng-lM-4eP"/>
+                            <constraint firstAttribute="bottom" secondItem="Pvt-0y-u6h" secondAttribute="bottom" constant="27" id="i5u-Od-XvZ"/>
+                            <constraint firstItem="7Kx-1x-ccv" firstAttribute="leading" secondItem="ccj-LX-Sn4" secondAttribute="leading" constant="20" id="loF-d9-bB5"/>
+                            <constraint firstAttribute="trailing" secondItem="Pvt-0y-u6h" secondAttribute="trailing" constant="20" id="nM8-pP-22Q"/>
+                            <constraint firstAttribute="trailing" secondItem="1km-Lr-KtP" secondAttribute="trailing" constant="51" id="r2z-fx-hQs"/>
+                            <constraint firstItem="7Kx-1x-ccv" firstAttribute="top" secondItem="Suz-de-zXA" secondAttribute="bottom" constant="35" id="wh9-dt-gev"/>
+                            <constraint firstAttribute="bottom" secondItem="7Kx-1x-ccv" secondAttribute="bottom" constant="31" id="zEg-xw-XdC"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="decreaseDimnessShortcut" destination="4rH-js-rkm" id="PZw-0N-MrB"/>
@@ -206,7 +226,7 @@
                 </viewController>
                 <customObject id="hRa-9L-cbJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="809.5" y="529.5"/>
+            <point key="canvasLocation" x="830" y="522.5"/>
         </scene>
         <!--Preferences View Controller-->
         <scene sceneID="bv3-K2-260">
