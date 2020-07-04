@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18BB6E256E167E4821CE0EEF /* Pods_Nocturnal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 589602BDC53702BAA35B3FA8 /* Pods_Nocturnal.framework */; };
 		7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */; };
 		7D1B5C34239934440061D0CF /* Dimness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C33239934440061D0CF /* Dimness.swift */; };
 		7D1B5C372399AE770061D0CF /* NSWindow+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C362399AE770061D0CF /* NSWindow+Fade.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		589602BDC53702BAA35B3FA8 /* Pods_Nocturnal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nocturnal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeViewController.swift; sourceTree = "<group>"; };
 		7D1B5C33239934440061D0CF /* Dimness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimness.swift; sourceTree = "<group>"; };
 		7D1B5C362399AE770061D0CF /* NSWindow+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSWindow+Fade.swift"; path = "Nocturnal/Application/Extensions/NSWindow+Fade.swift"; sourceTree = SOURCE_ROOT; };
@@ -89,6 +91,8 @@
 		7DF36EA9239EFB29000CFB5A /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		7DF36EAB239F5793000CFB5A /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		7DF36EAD239F6AED000CFB5A /* HyperLinkTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HyperLinkTextField.swift; path = Nocturnal/Application/Preferences/HyperLinkTextField.swift; sourceTree = SOURCE_ROOT; };
+		91C611B98F35DFCB4C102522 /* Pods-Nocturnal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nocturnal.release.xcconfig"; path = "Target Support Files/Pods-Nocturnal/Pods-Nocturnal.release.xcconfig"; sourceTree = "<group>"; };
+		BDBC2860E719A11D9A6EF5CF /* Pods-Nocturnal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nocturnal.debug.xcconfig"; path = "Target Support Files/Pods-Nocturnal/Pods-Nocturnal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +103,23 @@
 				7D6EE5DC23A088FB0011D52C /* LaunchAtLogin.framework in Frameworks */,
 				7DA0D20A248C9D8900F9C6A9 /* DFRFoundation.framework in Frameworks */,
 				7D6A1022235F300100BB75EB /* CoreBrightness.framework in Frameworks */,
+				18BB6E256E167E4821CE0EEF /* Pods_Nocturnal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		708FCD74A9308A10A4CACE1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BDBC2860E719A11D9A6EF5CF /* Pods-Nocturnal.debug.xcconfig */,
+				91C611B98F35DFCB4C102522 /* Pods-Nocturnal.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7D56898E235EFD7D00A51FC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +127,7 @@
 				7D3E6F2623A0902700D88A16 /* LaunchAtLogin.framework.dSYM */,
 				7D6EE5DB23A088FB0011D52C /* LaunchAtLogin.framework */,
 				7D6A1021235F300100BB75EB /* CoreBrightness.framework */,
+				589602BDC53702BAA35B3FA8 /* Pods_Nocturnal.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,6 +168,7 @@
 				7D6EE5D923A088C60011D52C /* Cartfile */,
 				7DF1F92A2356AFAA0041E9CA /* Products */,
 				7D56898E235EFD7D00A51FC5 /* Frameworks */,
+				708FCD74A9308A10A4CACE1B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,12 +268,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DF1F9392356AFB00041E9CA /* Build configuration list for PBXNativeTarget "Nocturnal" */;
 			buildPhases = (
+				BC6147FCD22E0941064ADE66 /* [CP] Check Pods Manifest.lock */,
 				7DF1F9252356AFAA0041E9CA /* Sources */,
 				7DF1F9262356AFAA0041E9CA /* Frameworks */,
 				7DF1F9272356AFAA0041E9CA /* Resources */,
 				7D568993235EFE4700A51FC5 /* Embed Frameworks */,
 				7D6EE5DE23A089070011D52C /* CopyFiles */,
 				7D6EE5E223A089F00011D52C /* ShellScript */,
+				59F233FF9CAC40AA7B282FA2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,6 +333,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		59F233FF9CAC40AA7B282FA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nocturnal/Pods-Nocturnal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nocturnal/Pods-Nocturnal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nocturnal/Pods-Nocturnal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7D6EE5E223A089F00011D52C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,6 +366,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
+		};
+		BC6147FCD22E0941064ADE66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nocturnal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -500,6 +558,7 @@
 		};
 		7DF1F93A2356AFB00041E9CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDBC2860E719A11D9A6EF5CF /* Pods-Nocturnal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Nocturnal/Nocturnal.entitlements;
@@ -535,6 +594,7 @@
 		};
 		7DF1F93B2356AFB00041E9CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91C611B98F35DFCB4C102522 /* Pods-Nocturnal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Nocturnal/Nocturnal.entitlements;
