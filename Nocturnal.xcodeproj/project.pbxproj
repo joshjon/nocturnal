@@ -31,7 +31,7 @@
 		7DF1F9312356AFB00041E9CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DF1F9302356AFB00041E9CA /* Assets.xcassets */; };
 		7DF1F9342356AFB00041E9CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DF1F9322356AFB00041E9CA /* Main.storyboard */; };
 		7DF36EA5239E5377000CFB5A /* CustomTimeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EA4239E5377000CFB5A /* CustomTimeWindowController.swift */; };
-		7DF36EA7239E730C000CFB5A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EA6239E730C000CFB5A /* Preferences.swift */; };
+		7DF36EA7239E730C000CFB5A /* Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EA6239E730C000CFB5A /* Shortcuts.swift */; };
 		7DF36EAA239EFB29000CFB5A /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EA9239EFB29000CFB5A /* PreferencesViewController.swift */; };
 		7DF36EAE239F6AED000CFB5A /* HyperLinkTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EAD239F6AED000CFB5A /* HyperLinkTextField.swift */; };
 /* End PBXBuildFile section */
@@ -90,7 +90,7 @@
 		7DF1F9352356AFB00041E9CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DF1F9362356AFB00041E9CA /* Nocturnal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nocturnal.entitlements; sourceTree = "<group>"; };
 		7DF36EA4239E5377000CFB5A /* CustomTimeWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeWindowController.swift; sourceTree = "<group>"; };
-		7DF36EA6239E730C000CFB5A /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		7DF36EA6239E730C000CFB5A /* Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcuts.swift; sourceTree = "<group>"; };
 		7DF36EA9239EFB29000CFB5A /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		7DF36EAD239F6AED000CFB5A /* HyperLinkTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HyperLinkTextField.swift; path = Nocturnal/Application/Preferences/HyperLinkTextField.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -145,7 +145,7 @@
 			children = (
 				7D1B5C33239934440061D0CF /* Dimness.swift */,
 				7DA5B1F8238BAF9500FE0597 /* NightShift.swift */,
-				7DF36EA6239E730C000CFB5A /* Preferences.swift */,
+				7DF36EA6239E730C000CFB5A /* Shortcuts.swift */,
 				7D1B5C38239A39BB0061D0CF /* StateManager.swift */,
 			);
 			path = Models;
@@ -346,7 +346,7 @@
 			files = (
 				7DA5B1F4238BAC8000FE0597 /* MenuController.swift in Sources */,
 				7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */,
-				7DF36EA7239E730C000CFB5A /* Preferences.swift in Sources */,
+				7DF36EA7239E730C000CFB5A /* Shortcuts.swift in Sources */,
 				7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */,
 				7DF36EA5239E5377000CFB5A /* CustomTimeWindowController.swift in Sources */,
 				7D1B5C39239A39BB0061D0CF /* StateManager.swift in Sources */,
@@ -531,6 +531,7 @@
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/CoreBrightness.framework/Versions/A",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshua.jon.Nocturnal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -566,6 +567,7 @@
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/CoreBrightness.framework/Versions/A",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshua.jon.Nocturnal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

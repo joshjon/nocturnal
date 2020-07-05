@@ -71,27 +71,3 @@ enum Shortcuts {
         }
     }
 }
-
-class Preferences {
-    private let isAutoLaunchEnabled = "isAutoLaunchEnabled"
-    private let userDefaults = UserDefaults.standard
-
-    private init() {
-        registerFactoryDefaults()
-    }
-
-    private func registerFactoryDefaults() {
-        let factoryDefaults = [isAutoLaunchEnabled: NSNumber(value: false)] as [String: Any]
-
-        userDefaults.register(defaults: factoryDefaults)
-    }
-
-    func synchronize() {
-        userDefaults.synchronize()
-    }
-
-    func reset() {
-        userDefaults.removeObject(forKey: isAutoLaunchEnabled)
-        synchronize()
-    }
-}
