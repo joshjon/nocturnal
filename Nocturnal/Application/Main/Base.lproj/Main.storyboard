@@ -45,7 +45,7 @@
                 </windowController>
                 <customObject id="hTD-20-PmB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="830" y="207"/>
+            <point key="canvasLocation" x="817" y="207"/>
         </scene>
         <!--Preferences View Controller-->
         <scene sceneID="Ikf-jW-tuJ">
@@ -236,7 +236,7 @@
                 </viewController>
                 <customObject id="hRa-9L-cbJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831" y="572"/>
+            <point key="canvasLocation" x="818" y="572"/>
         </scene>
         <!--About Window Controller-->
         <scene sceneID="cj9-v4-MSU">
@@ -257,7 +257,7 @@
                 </windowController>
                 <customObject id="8fO-q3-qSN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1171" y="207"/>
+            <point key="canvasLocation" x="1148" y="207"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="bv3-K2-260">
@@ -373,7 +373,7 @@
                 </viewController>
                 <customObject id="Ni2-xE-Bpb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1170" y="521"/>
+            <point key="canvasLocation" x="1147" y="521"/>
         </scene>
         <!--Custom Time View Controller-->
         <scene sceneID="6W6-9m-4ln">

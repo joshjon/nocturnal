@@ -17,7 +17,7 @@ class PreferencesViewController: NSViewController {
     @IBOutlet var turnOffTouchBarShortcut: MASShortcutView!
     @IBOutlet var disableShortcut: MASShortcutView!
     @IBOutlet var loginAtLaunchButton: NSButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loginAtLaunchButton.state = LaunchAtLogin.isEnabled ? .on : .off
@@ -27,21 +27,21 @@ class PreferencesViewController: NSViewController {
         decreaseNightShiftShortcut.associatedUserDefaultsKey = Shortcuts.decreaseNightShift
         turnOffTouchBarShortcut.associatedUserDefaultsKey = Shortcuts.turnOffTouchBar
         disableShortcut.associatedUserDefaultsKey = Shortcuts.disable
-        print(increaseDimnessShortcut.frame.width)
     }
-    
+
     override func viewWillAppear() {
         StateManager.isPreferencesWindowOpen = true
     }
-    
+
     override func viewWillDisappear() {
         StateManager.isPreferencesWindowOpen = false
     }
-    
+
     @IBAction func loginAtLaunchToggled(_: NSButton) {
         LaunchAtLogin.isEnabled = LaunchAtLogin.isEnabled ? false : true
     }
-    @IBAction func clearClicked(_ sender: NSButton) {
+
+    @IBAction func clearClicked(_: NSButton) {
         let shortcuts = [Shortcuts.disable, Shortcuts.increaseDimness, Shortcuts.decreaseDimness,
                          Shortcuts.increaseNightShift, Shortcuts.decreaseNightShift, Shortcuts.turnOffTouchBar]
         for shortcut in shortcuts {

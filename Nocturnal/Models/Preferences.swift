@@ -8,10 +8,6 @@
 
 import Foundation
 
-enum Keys {
-    static let isAutoLaunchEnabled = "isAutoLaunchEnabled"
-}
-
 enum Shortcuts {
     static let increaseDimness = "increaseDimness"
     static let decreaseDimness = "decreaseDimness"
@@ -22,21 +18,70 @@ enum Shortcuts {
     static let disableHour = "disableHour"
     static let disableCustom = "decreaseNightShiftShortcut"
     static let isInitialized = "isInitialized"
+    
+    static func setupShortcuts() {
+        // Increase Dimness
+        MASShortcutBinder.shared().bindShortcut(withDefaultsKey: Shortcuts.increaseDimness) {
+            if StateManager.isNocturnalEnabled {
+                Dimness.strength < Dimness.maxStrength ? Dimness.strength += 0.1 : NSSound.beep()
+            } else {
+                NSSound.beep()
+            }
+        }
+        // Decrease Dimness
+        MASShortcutBinder.shared().bindShortcut(withDefaultsKey: Shortcuts.decreaseDimness) {
+            if StateManager.isNocturnalEnabled {
+                Dimness.strength > 0 ? Dimness.strength -= 0.1 : NSSound.beep()
+            } else {
+                NSSound.beep()
+            }
+        }
+        // Increase NightShift
+        MASShortcutBinder.shared().bindShortcut(withDefaultsKey: Shortcuts.increaseNightShift) {
+            if StateManager.isNocturnalEnabled {
+                NightShift.strength < 1 ? NightShift.strength += 0.1 : NSSound.beep()
+            } else {
+                NSSound.beep()
+            }
+        }
+        // Decrease NightShift
+        MASShortcutBinder.shared().bindShortcut(withDefaultsKey: Shortcuts.decreaseNightShift) {
+            if StateManager.isNocturnalEnabled {
+                NightShift.strength > 0 ? NightShift.strength -= 0.1 : NSSound.beep()
+            }
+        }
+        // Turn off TouchBar
+        MASShortcutBinder.shared().bindShortcut(withDefaultsKey: Shortcuts.turnOffTouchBar) {
+            // Check if Mac supports TouchBar
+            if NSClassFromString("NSTouchBar") != nil {
+                if StateManager.isTouchBarOff {
+                    StateManager.respond(to: .userDisabledTouchBar)
+                } else {
+                    StateManager.respond(to: .userEnabledTouchBar)
+                }
+            }
+        }
+        // Disable
+        MASShortcutBinder.shared().bindShortcut(withDefaultsKey: Shortcuts.disable) {
+            if StateManager.isNocturnalEnabled {
+                StateManager.respond(to: .userDisabledNocturnal)
+            } else {
+                StateManager.respond(to: .userEnabledNocturnal)
+            }
+        }
+    }
 }
 
 class Preferences {
-    static let sharedPrefs = Preferences()
-
-    private var userDefaults: UserDefaults {
-        return UserDefaults.standard
-    }
+    private let isAutoLaunchEnabled = "isAutoLaunchEnabled"
+    private let userDefaults = UserDefaults.standard
 
     private init() {
         registerFactoryDefaults()
     }
 
     private func registerFactoryDefaults() {
-        let factoryDefaults = [Keys.isAutoLaunchEnabled: NSNumber(value: false)] as [String: Any]
+        let factoryDefaults = [isAutoLaunchEnabled: NSNumber(value: false)] as [String: Any]
 
         userDefaults.register(defaults: factoryDefaults)
     }
@@ -46,7 +91,7 @@ class Preferences {
     }
 
     func reset() {
-        userDefaults.removeObject(forKey: Keys.isAutoLaunchEnabled)
+        userDefaults.removeObject(forKey: isAutoLaunchEnabled)
         synchronize()
     }
 }

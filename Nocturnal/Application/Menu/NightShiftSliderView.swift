@@ -18,12 +18,12 @@ class NightShiftSliderView: NSView {
     }
 
     @IBAction func nightShiftSliderMoved(_ sender: NSSlider) {
-        let event = NSApplication.shared.currentEvent
-
-        if event?.type == .leftMouseUp {
-            NightShift.strength = sender.floatValue
-        } else {
-            NightShift.previewStrength(sender.floatValue)
+        if let event = NSApplication.shared.currentEvent {
+            if event.type == .leftMouseUp {
+                NightShift.strength = sender.floatValue
+            } else {
+                NightShift.previewStrength(sender.floatValue)
+            }
         }
     }
 }

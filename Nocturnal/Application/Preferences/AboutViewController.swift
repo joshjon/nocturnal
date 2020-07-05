@@ -9,11 +9,10 @@
 import Cocoa
 
 class AboutViewController: NSViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func viewWillAppear() {
         StateManager.isAboutWindowOpen = true
     }
@@ -21,5 +20,4 @@ class AboutViewController: NSViewController {
     override func viewWillDisappear() {
         StateManager.isAboutWindowOpen = false
     }
-    
 }
