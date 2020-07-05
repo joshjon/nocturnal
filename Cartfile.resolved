@@ -1,1 +1,2 @@
-github "sindresorhus/LaunchAtLogin" "v2.5.0"
+github "shpakovski/MASShortcut" "2.4.0"
+github "sindresorhus/LaunchAtLogin" "v3.0.1"

@@ -16,9 +16,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         verifyMacOsVersion()
         verifySupportsNightShift()
         initDimnessControllers()
-        NightShift.blueLightReductionAmount = 0
+        NightShift.strength = 0
         NightShift.enable()
         addNotificationObservers()
+        Shortcuts.setupShortcuts()
     }
 
     func initDimnessControllers() {
@@ -43,7 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func onUnlock() {
-        if StateManager.isTouchBarHidden {
+        if StateManager.isTouchBarOff {
             do { sleep(1) } // Wait for macOS to init TouchBar
             TouchBar.hideTouchBar()
         }

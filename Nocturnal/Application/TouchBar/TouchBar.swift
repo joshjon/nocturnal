@@ -12,26 +12,18 @@ struct TouchBar {
     private static let blankTouchBar = NSTouchBar()
 
     static func hideTouchBar() {
-        presentSystemModal(blankTouchBar, placement: 1, systemTrayItemIdentifier: .nocturnalControlStripItem)
-    }
-
-    static func showTouchbar() {
-        minimizeSystemModal(blankTouchBar)
-    }
-
-    static func presentSystemModal(_ touchBar: NSTouchBar!, placement: Int64, systemTrayItemIdentifier identifier: NSTouchBarItem.Identifier!) {
         if #available(OSX 10.14, *) {
-            NSTouchBar.presentSystemModalTouchBar(touchBar, placement: placement, systemTrayItemIdentifier: identifier)
+            NSTouchBar.presentSystemModalTouchBar(blankTouchBar, placement: 1, systemTrayItemIdentifier: .nocturnalControlStripItem)
         } else {
-            NSTouchBar.presentSystemModalFunctionBar(touchBar, placement: placement, systemTrayItemIdentifier: identifier)
+            NSTouchBar.presentSystemModalFunctionBar(blankTouchBar, placement: 1, systemTrayItemIdentifier: .nocturnalControlStripItem)
         }
     }
-
-    static func minimizeSystemModal(_ touchBar: NSTouchBar!) {
+    
+    static func showTouchbar() {
         if #available(OSX 10.14, *) {
-            NSTouchBar.minimizeSystemModalTouchBar(touchBar)
+            NSTouchBar.minimizeSystemModalTouchBar(blankTouchBar)
         } else {
-            NSTouchBar.minimizeSystemModalFunctionBar(touchBar)
+            NSTouchBar.minimizeSystemModalFunctionBar(blankTouchBar)
         }
     }
 }

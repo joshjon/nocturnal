@@ -42,6 +42,7 @@ enum StateManager {
     private static var fadeInAnimationActive = false
     private static var customTimeWindowOpen = false
     private static var preferencesWindowOpen = false
+    private static var aboutWindowOpen = false
 
     static var disableTimer = DisableTimer.off {
         willSet {
@@ -68,6 +69,11 @@ enum StateManager {
         get { return preferencesWindowOpen }
         set { preferencesWindowOpen = newValue }
     }
+    
+    static var isAboutWindowOpen: Bool {
+           get { return aboutWindowOpen }
+           set { aboutWindowOpen = newValue }
+       }
 
     static var isTimerEnabled: Bool {
         return disableTimer != .off
@@ -80,7 +86,7 @@ enum StateManager {
             if newValue {
                 NightShift.enable()
                 Dimness.enable()
-                if isTouchBarHidden {
+                if isTouchBarOff {
                     TouchBar.hideTouchBar()
                 }
             } else {
@@ -91,7 +97,7 @@ enum StateManager {
         }
     }
 
-    static var isTouchBarHidden: Bool {
+    static var isTouchBarOff: Bool {
         get { return touchBarHidden }
         set {
             touchBarHidden = newValue
@@ -111,9 +117,9 @@ enum StateManager {
         case .userDisabledNocturnal:
             isNocturnalEnabled = false
         case .userEnabledTouchBar:
-            isTouchBarHidden = true
+            isTouchBarOff = true
         case .userDisabledTouchBar:
-            isTouchBarHidden = false
+            isTouchBarOff = false
         case .disableTimerStarted:
                 isNocturnalEnabled = false
         case .disableTimerEnded:

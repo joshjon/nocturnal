@@ -15,7 +15,7 @@ class MenuController: NSMenu, NSMenuDelegate {
     @IBOutlet var disableMenuItem: NSMenuItem!
     @IBOutlet var disableHourMenuItem: NSMenuItem!
     @IBOutlet var disableCustomMenuItem: NSMenuItem!
-    @IBOutlet var hideTouchBarMenuItem: NSMenuItem!
+    @IBOutlet var turnOffTouchBarMenuItem: NSMenuItem!
     @IBOutlet var preferencesMenuItem: NSMenuItem!
 
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -35,8 +35,8 @@ class MenuController: NSMenu, NSMenuDelegate {
 
         // Check if Mac supports TouchBar
         if NSClassFromString("NSTouchBar") == nil {
-            hideTouchBarMenuItem.isEnabled = false
-            hideTouchBarMenuItem.isHidden = true
+            turnOffTouchBarMenuItem.isEnabled = false
+            turnOffTouchBarMenuItem.isHidden = true
         }
     }
 
@@ -49,13 +49,15 @@ class MenuController: NSMenu, NSMenuDelegate {
         if StateManager.isNocturnalEnabled {
             disableMenuItem.title = "Disable Nocturnal"
             dimnessSliderView.dimnessSlider.isEnabled = true
+            dimnessSliderView.dimnessSlider.floatValue = Dimness.strength
             nightShiftSliderView.nightShiftSlider.isEnabled = true
-            hideTouchBarMenuItem.isEnabled = true
+            nightShiftSliderView.nightShiftSlider.floatValue = NightShift.strength
+            turnOffTouchBarMenuItem.isEnabled = true
         } else {
             disableMenuItem.title = "Enable Nocturnal"
             dimnessSliderView.dimnessSlider.isEnabled = false
             nightShiftSliderView.nightShiftSlider.isEnabled = false
-            hideTouchBarMenuItem.isEnabled = false
+            turnOffTouchBarMenuItem.isEnabled = false
         }
 
         // Timer
@@ -74,17 +76,19 @@ class MenuController: NSMenu, NSMenuDelegate {
             disableCustomMenuItem.isEnabled = true
             disableHourMenuItem.isEnabled = false
         }
-
+        
         setTimerText(StateManager.isTimerEnabled)
 
         // TouchBar
-        hideTouchBarMenuItem.state = StateManager.isTouchBarHidden ? .on : .off
+        turnOffTouchBarMenuItem.state = StateManager.isTouchBarOff ? .on : .off
     }
 
     func setStatusMenuIcon() {
         if let icon = NSImage(named: NSImage.Name("StatusBarButtonImage")) {
             icon.isTemplate = true
-            DispatchQueue.main.async { self.statusItem.button?.image = icon }
+            if let button =  self.statusItem.button {
+                DispatchQueue.main.async { button.image = icon }
+            }
         }
     }
 
@@ -140,11 +144,6 @@ class MenuController: NSMenu, NSMenuDelegate {
         }
     }
 
-    func localizedPlural(_ key: String, count: Int, comment: String) -> String {
-        let format = NSLocalizedString(key, comment: comment)
-        return String(format: format, locale: .current, arguments: [count])
-    }
-
     @IBAction func disableClicked(_: NSMenuItem) {
         if StateManager.isNocturnalEnabled {
             StateManager.respond(to: .userDisabledNocturnal)
@@ -153,8 +152,8 @@ class MenuController: NSMenu, NSMenuDelegate {
         }
     }
 
-    @IBAction func disableTouchBarClicked(_: NSMenuItem) {
-        if StateManager.isTouchBarHidden {
+    @IBAction func turnOffTouchBarClicked(_: NSMenuItem) {
+        if StateManager.isTouchBarOff {
             StateManager.respond(to: .userDisabledTouchBar)
         } else {
             StateManager.respond(to: .userEnabledTouchBar)
@@ -182,12 +181,12 @@ class MenuController: NSMenu, NSMenuDelegate {
         }
     }
 
-    @IBAction func disableCustomTimeClicked(_: NSMenuItem) {
+    @IBAction func disableCustomTimeClicked(_ sender: NSMenuItem) {
         let disableCustomTimeWindow = storyboard.instantiateController(withIdentifier: "Custom Time Window Controller") as! CustomTimeWindowController
         if disableCustomMenuItem.state == .off {
             NSApp.activate(ignoringOtherApps: true)
             if !StateManager.isCustomTimeWindowOpen {
-                disableCustomTimeWindow.showWindow(nil)
+                disableCustomTimeWindow.showWindow(sender)
             }
         } else {
             StateManager.disableTimer = .off
@@ -195,17 +194,33 @@ class MenuController: NSMenu, NSMenuDelegate {
         }
     }
 
-    @IBAction func preferencesClicked(_: NSMenuItem) {
-        let preferencesWindow = storyboard.instantiateController(withIdentifier: "Preferences Window Controller") as! PreferencesWindowController
+    @IBAction func preferencesClicked(_ sender: NSMenuItem) {
+        let preferencesWindowController = storyboard.instantiateController(withIdentifier: "Preferences Window Controller") as! NSWindowController
         NSApp.activate(ignoringOtherApps: true)
+        if let window = preferencesWindowController.window {
+            window.center()
+            window.styleMask = [.titled, .closable]
+        }
         if !StateManager.isPreferencesWindowOpen {
-            preferencesWindow.showWindow(nil)
+            preferencesWindowController.showWindow(sender)
+        }
+    }
+
+    @IBAction func aboutClicked(_ sender: NSMenuItem) {
+        let aboutWindowController = storyboard.instantiateController(withIdentifier: "About Window Controller") as! NSWindowController
+        NSApp.activate(ignoringOtherApps: true)
+        if let window = aboutWindowController.window {
+            window.center()
+            window.styleMask = [.titled, .closable]
+        }
+        if !StateManager.isAboutWindowOpen {
+            aboutWindowController.showWindow(sender)
         }
     }
 
     @IBAction func quitClicked(_ sender: NSMenuItem) {
         StateManager.isNocturnalEnabled = false
-        NightShift.blueLightReductionAmount = 1
+        NightShift.strength = 1
         NSApplication.shared.terminate(sender)
     }
 }

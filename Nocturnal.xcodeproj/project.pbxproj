@@ -19,6 +19,9 @@
 		7D874589238BFA0F00A676F1 /* DimnessSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */; };
 		7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */; };
 		7D8F091A24AC7ECA003DA62E /* TouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8F091924AC7ECA003DA62E /* TouchBar.swift */; };
+		7D980D8924B06B5F009FAF8B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D980D8824B06B5F009FAF8B /* AboutViewController.swift */; };
+		7D980D8B24B18D9B009FAF8B /* MASShortcut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D980D8A24B18D9B009FAF8B /* MASShortcut.framework */; };
+		7D980D8C24B18D9B009FAF8B /* MASShortcut.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D980D8A24B18D9B009FAF8B /* MASShortcut.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DA0D20A248C9D8900F9C6A9 /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA0D209248C9D8900F9C6A9 /* DFRFoundation.framework */; };
 		7DA0D20B248C9D8900F9C6A9 /* DFRFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA0D209248C9D8900F9C6A9 /* DFRFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DA5B1F4238BAC8000FE0597 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA5B1F3238BAC8000FE0597 /* MenuController.swift */; };
@@ -30,7 +33,6 @@
 		7DF36EA5239E5377000CFB5A /* CustomTimeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EA4239E5377000CFB5A /* CustomTimeWindowController.swift */; };
 		7DF36EA7239E730C000CFB5A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EA6239E730C000CFB5A /* Preferences.swift */; };
 		7DF36EAA239EFB29000CFB5A /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EA9239EFB29000CFB5A /* PreferencesViewController.swift */; };
-		7DF36EAC239F5793000CFB5A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EAB239F5793000CFB5A /* PreferencesWindowController.swift */; };
 		7DF36EAE239F6AED000CFB5A /* HyperLinkTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF36EAD239F6AED000CFB5A /* HyperLinkTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7D980D8C24B18D9B009FAF8B /* MASShortcut.framework in Embed Frameworks */,
 				7DA0D20B248C9D8900F9C6A9 /* DFRFoundation.framework in Embed Frameworks */,
 				7D6EE5DD23A088FB0011D52C /* LaunchAtLogin.framework in Embed Frameworks */,
 			);
@@ -73,6 +76,8 @@
 		7D874588238BFA0F00A676F1 /* DimnessSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimnessSliderView.swift; sourceTree = "<group>"; };
 		7D87458A238BFB5A00A676F1 /* DimnessWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimnessWindowController.swift; sourceTree = "<group>"; };
 		7D8F091924AC7ECA003DA62E /* TouchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBar.swift; sourceTree = "<group>"; };
+		7D980D8824B06B5F009FAF8B /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		7D980D8A24B18D9B009FAF8B /* MASShortcut.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MASShortcut.framework; path = Carthage/Build/Mac/MASShortcut.framework; sourceTree = "<group>"; };
 		7DA0D205248C88E200F9C6A9 /* TouchBarPrivateApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBarPrivateApi.h; sourceTree = "<group>"; };
 		7DA0D209248C9D8900F9C6A9 /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
 		7DA5B1F3238BAC8000FE0597 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -87,7 +92,6 @@
 		7DF36EA4239E5377000CFB5A /* CustomTimeWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeWindowController.swift; sourceTree = "<group>"; };
 		7DF36EA6239E730C000CFB5A /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		7DF36EA9239EFB29000CFB5A /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
-		7DF36EAB239F5793000CFB5A /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		7DF36EAD239F6AED000CFB5A /* HyperLinkTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HyperLinkTextField.swift; path = Nocturnal/Application/Preferences/HyperLinkTextField.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -98,6 +102,7 @@
 			files = (
 				7D6EE5DC23A088FB0011D52C /* LaunchAtLogin.framework in Frameworks */,
 				7DA0D20A248C9D8900F9C6A9 /* DFRFoundation.framework in Frameworks */,
+				7D980D8B24B18D9B009FAF8B /* MASShortcut.framework in Frameworks */,
 				7D6A1022235F300100BB75EB /* CoreBrightness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +113,7 @@
 		7D56898E235EFD7D00A51FC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D980D8A24B18D9B009FAF8B /* MASShortcut.framework */,
 				7DA0D209248C9D8900F9C6A9 /* DFRFoundation.framework */,
 				7D3E6F2623A0902700D88A16 /* LaunchAtLogin.framework.dSYM */,
 				7D6EE5DB23A088FB0011D52C /* LaunchAtLogin.framework */,
@@ -237,9 +243,9 @@
 		7DF36EA8239EFAEB000CFB5A /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				7DF36EAB239F5793000CFB5A /* PreferencesWindowController.swift */,
 				7DF36EA9239EFB29000CFB5A /* PreferencesViewController.swift */,
 				7DF36EAD239F6AED000CFB5A /* HyperLinkTextField.swift */,
+				7D980D8824B06B5F009FAF8B /* AboutViewController.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -342,7 +348,6 @@
 				7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */,
 				7DF36EA7239E730C000CFB5A /* Preferences.swift in Sources */,
 				7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */,
-				7DF36EAC239F5793000CFB5A /* PreferencesWindowController.swift in Sources */,
 				7DF36EA5239E5377000CFB5A /* CustomTimeWindowController.swift in Sources */,
 				7D1B5C39239A39BB0061D0CF /* StateManager.swift in Sources */,
 				7DF36EAA239EFB29000CFB5A /* PreferencesViewController.swift in Sources */,
@@ -353,6 +358,7 @@
 				7DA5B1F9238BAF9500FE0597 /* NightShift.swift in Sources */,
 				7DF1F92D2356AFAA0041E9CA /* AppDelegate.swift in Sources */,
 				7DA5B1F6238BAD6F00FE0597 /* NightShiftSliderView.swift in Sources */,
+				7D980D8924B06B5F009FAF8B /* AboutViewController.swift in Sources */,
 				7D874589238BFA0F00A676F1 /* DimnessSliderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

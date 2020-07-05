@@ -54,16 +54,21 @@ class CustomTimeViewController: NSViewController {
         let minutes = minutesTextField.intValue
         let timeInSeconds = hours * 3600 + minutes * 60
         disableCustomTime?(Int(timeInSeconds))
-        view.window?.close()
+        if let window = view.window {
+            window.close()
+        }
     }
 
     @IBAction func cancelButtonClicked(_: NSButton) {
-        view.window?.close()
+        if let window = view.window {
+            window.close()
+        }
     }
 
     func setupWindow() {
-        guard let window = view.window else { return }
-        window.level = .floating
-        window.orderFrontRegardless()
+        if let window = view.window {
+            window.level = .floating
+            window.orderFrontRegardless()
+        }
     }
 }

@@ -17,7 +17,7 @@ enum NightShift {
         return status
     }
 
-    static var blueLightReductionAmount: Float {
+    static var strength: Float {
         get {
             var strength: Float = 0
             client.getStrength(&strength)
@@ -28,7 +28,7 @@ enum NightShift {
         }
     }
 
-    static func previewBlueLightReductionAmount(_ value: Float) {
+    static func previewStrength(_ value: Float) {
         // Check if user manually disabled Night Shift
         if (!isNightShiftEnabled) { isNightShiftEnabled = true }
         client.setStrength(value, commit: false)
