@@ -21,6 +21,7 @@ enum Shortcuts {
     static let disable = "disableNocturnal"
     static let disableHour = "disableHour"
     static let disableCustom = "decreaseNightShiftShortcut"
+    static let isInitialized = "isInitialized"
 }
 
 class Preferences {

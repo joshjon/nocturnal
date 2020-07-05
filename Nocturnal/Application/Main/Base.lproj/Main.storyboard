@@ -52,11 +52,11 @@
             <objects>
                 <viewController id="pTt-Qm-3L9" customClass="PreferencesViewController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="ccj-LX-Sn4">
-                        <rect key="frame" x="0.0" y="0.0" width="392" height="294"/>
+                        <rect key="frame" x="0.0" y="0.0" width="367" height="294"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fillEqually" orientation="vertical" alignment="trailing" spacing="18" horizontalStackHuggingPriority="1000" verticalStackHuggingPriority="249.99998474121094" horizontalHuggingPriority="1000" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Suz-de-zXA">
-                                <rect key="frame" x="52" y="80" width="130" height="186"/>
+                                <rect key="frame" x="39" y="80" width="130" height="186"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="999" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="tGR-qs-yoH">
                                         <rect key="frame" x="-2" y="170" width="134" height="16"/>
@@ -125,17 +125,19 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1km-Lr-KtP">
-                                <rect key="frame" x="191" y="78" width="150" height="189"/>
+                                <rect key="frame" x="177" y="78" width="150" height="189"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-U6-46P" customClass="MASShortcutView">
                                         <rect key="frame" x="0.0" y="170" width="150" height="19"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="MOc-HR-W2X"/>
                                             <constraint firstAttribute="height" constant="19" id="Whh-vn-7hj"/>
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="a4g-q8-VIT" customClass="MASShortcutView">
                                         <rect key="frame" x="0.0" y="136" width="150" height="19"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="s0b-Vv-j3J"/>
                                             <constraint firstAttribute="height" constant="19" id="w63-LK-xoi"/>
                                         </constraints>
                                     </customView>
@@ -143,11 +145,13 @@
                                         <rect key="frame" x="0.0" y="102" width="150" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="8Js-qZ-20x"/>
+                                            <constraint firstAttribute="width" constant="150" id="gdr-BX-1I2"/>
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="NCJ-2c-iPz" customClass="MASShortcutView">
                                         <rect key="frame" x="0.0" y="68" width="150" height="19"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="2xt-rQ-nRd"/>
                                             <constraint firstAttribute="height" constant="19" id="cJq-UF-w4n"/>
                                         </constraints>
                                     </customView>
@@ -155,15 +159,20 @@
                                         <rect key="frame" x="0.0" y="34" width="150" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="3lv-NY-GSM"/>
+                                            <constraint firstAttribute="width" constant="150" id="xGE-kC-b1Y"/>
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="b8a-yK-py8" customClass="MASShortcutView">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="F2b-vv-V0O"/>
+                                            <constraint firstAttribute="width" constant="150" id="xuN-GU-TKk"/>
                                         </constraints>
                                     </customView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="gBb-Wh-Dr3"/>
+                                </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
@@ -182,7 +191,7 @@
                                 </customSpacing>
                             </stackView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Kx-1x-ccv">
-                                <rect key="frame" x="18" y="29" width="178" height="18"/>
+                                <rect key="frame" x="37" y="29" width="178" height="18"/>
                                 <buttonCell key="cell" type="check" title="Launch Nocturnal at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="oOz-Zl-Tr0">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -192,26 +201,27 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pvt-0y-u6h">
-                                <rect key="frame" x="226" y="20" width="152" height="32"/>
-                                <buttonCell key="cell" type="push" title="Restore Defaults..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bYa-Hy-1xN">
+                                <rect key="frame" x="250" y="20" width="83" height="32"/>
+                                <buttonCell key="cell" type="push" title="Clear..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bYa-Hy-1xN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="clearClicked:" target="pTt-Qm-3L9" id="8uM-SP-Pq5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="1km-Lr-KtP" firstAttribute="leading" secondItem="Suz-de-zXA" secondAttribute="trailing" constant="9" id="7cg-dm-Dv1"/>
-                            <constraint firstItem="Pvt-0y-u6h" firstAttribute="leading" secondItem="7Kx-1x-ccv" secondAttribute="trailing" constant="38" id="FDB-b6-7nU"/>
-                            <constraint firstItem="Pvt-0y-u6h" firstAttribute="top" secondItem="1km-Lr-KtP" secondAttribute="bottom" constant="30" id="RfW-sL-r5Y"/>
-                            <constraint firstItem="Suz-de-zXA" firstAttribute="top" secondItem="ccj-LX-Sn4" secondAttribute="top" constant="28" id="T67-At-xsz"/>
-                            <constraint firstItem="1km-Lr-KtP" firstAttribute="top" secondItem="ccj-LX-Sn4" secondAttribute="top" constant="27" id="bLu-uh-FDe"/>
-                            <constraint firstItem="Suz-de-zXA" firstAttribute="leading" secondItem="ccj-LX-Sn4" secondAttribute="leading" constant="52" id="hng-lM-4eP"/>
-                            <constraint firstAttribute="bottom" secondItem="Pvt-0y-u6h" secondAttribute="bottom" constant="27" id="i5u-Od-XvZ"/>
-                            <constraint firstItem="7Kx-1x-ccv" firstAttribute="leading" secondItem="ccj-LX-Sn4" secondAttribute="leading" constant="20" id="loF-d9-bB5"/>
-                            <constraint firstAttribute="trailing" secondItem="Pvt-0y-u6h" secondAttribute="trailing" constant="20" id="nM8-pP-22Q"/>
-                            <constraint firstAttribute="trailing" secondItem="1km-Lr-KtP" secondAttribute="trailing" constant="51" id="r2z-fx-hQs"/>
-                            <constraint firstItem="7Kx-1x-ccv" firstAttribute="top" secondItem="Suz-de-zXA" secondAttribute="bottom" constant="35" id="wh9-dt-gev"/>
-                            <constraint firstAttribute="bottom" secondItem="7Kx-1x-ccv" secondAttribute="bottom" constant="31" id="zEg-xw-XdC"/>
+                            <constraint firstAttribute="bottom" secondItem="Pvt-0y-u6h" secondAttribute="bottom" constant="27" id="743-Kv-87c"/>
+                            <constraint firstAttribute="trailing" secondItem="Pvt-0y-u6h" secondAttribute="trailing" constant="40" id="9zM-Iu-e0O"/>
+                            <constraint firstItem="7Kx-1x-ccv" firstAttribute="leading" secondItem="ccj-LX-Sn4" secondAttribute="leading" constant="39" id="E2u-qw-srv"/>
+                            <constraint firstItem="1km-Lr-KtP" firstAttribute="top" secondItem="ccj-LX-Sn4" secondAttribute="top" constant="27" id="QJx-Xu-9b8"/>
+                            <constraint firstItem="1km-Lr-KtP" firstAttribute="leading" secondItem="Suz-de-zXA" secondAttribute="trailing" constant="8" id="bfI-7Z-h3R"/>
+                            <constraint firstItem="Suz-de-zXA" firstAttribute="top" secondItem="ccj-LX-Sn4" secondAttribute="top" constant="28" id="dzK-qB-xJa"/>
+                            <constraint firstItem="Suz-de-zXA" firstAttribute="leading" secondItem="ccj-LX-Sn4" secondAttribute="leading" constant="39" id="gZz-uB-7g1"/>
+                            <constraint firstItem="Pvt-0y-u6h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Kx-1x-ccv" secondAttribute="trailing" constant="8" symbolic="YES" id="iFd-TD-3iM"/>
+                            <constraint firstAttribute="bottom" secondItem="7Kx-1x-ccv" secondAttribute="bottom" constant="31" id="kaj-cA-GqU"/>
+                            <constraint firstAttribute="trailing" secondItem="1km-Lr-KtP" secondAttribute="trailing" constant="40" id="mkf-1b-SNH"/>
                         </constraints>
                     </view>
                     <connections>
@@ -226,7 +236,7 @@
                 </viewController>
                 <customObject id="hRa-9L-cbJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="830" y="572"/>
+            <point key="canvasLocation" x="831" y="572"/>
         </scene>
         <!--About Window Controller-->
         <scene sceneID="cj9-v4-MSU">
@@ -278,7 +288,7 @@
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1tA-dk-F5j">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="14"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.1" id="LBM-hk-c59">
-                                                    <font key="font" metaFont="controlContent" size="11"/>
+                                                    <font key="font" metaFont="message" size="11"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
@@ -302,7 +312,7 @@
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1qk-HA-nLV">
                                                         <rect key="frame" x="-2" y="0.0" width="139" height="14"/>
                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Source code available on " id="m5p-M5-aHD">
-                                                            <font key="font" metaFont="controlContent" size="11"/>
+                                                            <font key="font" metaFont="message" size="11"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
@@ -310,7 +320,7 @@
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fGO-DW-7WX" customClass="HyperlinkTextField" customModule="Nocturnal" customModuleProvider="target">
                                                         <rect key="frame" x="133" y="0.0" width="41" height="14"/>
                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="GitHub" id="yJv-7T-bGH">
-                                                            <font key="font" metaFont="controlContent" size="11"/>
+                                                            <font key="font" metaFont="message" size="11"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
@@ -1148,11 +1158,7 @@ Gw
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Nocturnal" customModuleProvider="target">
-                    <connections>
-                        <outlet property="menu" destination="BYB-lu-Avz" id="Q3a-oQ-hRr"/>
-                    </connections>
-                </customObject>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Nocturnal" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu autoenablesItems="NO" id="BYB-lu-Avz" userLabel="StatusMenu" customClass="MenuController" customModule="Nocturnal" customModuleProvider="target">

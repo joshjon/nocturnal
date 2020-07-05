@@ -10,7 +10,6 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    @IBOutlet var menu: MenuController!
     
     static var dimnessControllers = [] as [DimnessWindowController]
     
