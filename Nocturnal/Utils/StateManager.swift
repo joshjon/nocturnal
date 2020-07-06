@@ -69,11 +69,11 @@ enum StateManager {
         get { return preferencesWindowOpen }
         set { preferencesWindowOpen = newValue }
     }
-    
+
     static var isAboutWindowOpen: Bool {
-           get { return aboutWindowOpen }
-           set { aboutWindowOpen = newValue }
-       }
+        get { return aboutWindowOpen }
+        set { aboutWindowOpen = newValue }
+    }
 
     static var isTimerEnabled: Bool {
         return disableTimer != .off
@@ -121,7 +121,7 @@ enum StateManager {
         case .userDisabledTouchBar:
             isTouchBarOff = false
         case .disableTimerStarted:
-                isNocturnalEnabled = false
+            isNocturnalEnabled = false
         case .disableTimerEnded:
             isNocturnalEnabled = true
         }

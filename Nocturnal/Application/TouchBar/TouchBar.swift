@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TouchBar {
+class TouchBar {
     private static let blankTouchBar = NSTouchBar()
 
     static func hideTouchBar() {

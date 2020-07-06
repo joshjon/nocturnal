@@ -8,7 +8,7 @@
         <!--Custom Time WIndow Controller-->
         <scene sceneID="tQs-Mu-yMH">
             <objects>
-                <windowController storyboardIdentifier="Custom Time Window Controller" showSeguePresentationStyle="single" id="8s1-dM-aK7" userLabel="Custom Time WIndow Controller" customClass="CustomTimeWindowController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="Custom Time Window Controller" showSeguePresentationStyle="single" id="8s1-dM-aK7" userLabel="Custom Time WIndow Controller" sceneMemberID="viewController">
                     <window key="window" identifier="Custom Time Window Controller" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" titleVisibility="hidden" id="pf3-mK-YdK">
                         <windowStyleMask key="styleMask" titled="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -257,26 +257,26 @@
                 </windowController>
                 <customObject id="8fO-q3-qSN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="207"/>
+            <point key="canvasLocation" x="1204" y="207"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="bv3-K2-260">
             <objects>
                 <viewController id="1hM-fZ-ccd" userLabel="About View Controller" customClass="AboutViewController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="rnl-9h-kx0">
-                        <rect key="frame" x="0.0" y="0.0" width="214" height="192"/>
+                        <rect key="frame" x="0.0" y="0.0" width="326" height="242"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9V5-30-P2a">
-                                <rect key="frame" x="20" y="19" width="172" height="153"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="19" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9V5-30-P2a">
+                                <rect key="frame" x="19" y="10" width="289" height="212"/>
                                 <subviews>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NM2-pf-5o2">
-                                        <rect key="frame" x="54" y="89" width="64" height="64"/>
-                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIconImage" id="j65-sS-hPB"/>
-                                    </imageView>
                                     <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="1" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xL-6j-Oyi">
-                                        <rect key="frame" x="54" y="50" width="64" height="31"/>
+                                        <rect key="frame" x="112" y="116" width="64" height="96"/>
                                         <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NM2-pf-5o2">
+                                                <rect key="frame" x="0.0" y="32" width="64" height="64"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIconImage" id="j65-sS-hPB"/>
+                                            </imageView>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PR9-0C-32n">
                                                 <rect key="frame" x="-2" y="15" width="68" height="16"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Nocturnal" id="1Z1-tb-qIn">
@@ -288,11 +288,44 @@
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1tA-dk-F5j">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="14"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.1" id="LBM-hk-c59">
-                                                    <font key="font" metaFont="message" size="11"/>
+                                                    <font key="font" metaFont="controlContent" size="11"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="75H-sI-lSv">
+                                        <rect key="frame" x="0.0" y="50" width="289" height="47"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1qk-HA-nLV">
+                                                <rect key="frame" x="-2" y="33" width="293" height="14"/>
+                                                <textFieldCell key="cell" alignment="center" title="Please consider donating if you enjoy using Nocturnal." id="m5p-M5-aHD">
+                                                    <font key="font" metaFont="controlContent" size="11"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <button focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="Cfk-nx-Hw9">
+                                                <rect key="frame" x="80" y="0.0" width="128" height="25"/>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="donate" imagePosition="only" alignment="center" focusRingType="none" imageScaling="proportionallyUpOrDown" inset="2" id="kQV-IA-uxF">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="donateButtonClicked:" target="1hM-fZ-ccd" id="t6N-Wr-wvP"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
@@ -303,24 +336,24 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                    <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLq-mK-xbo">
-                                        <rect key="frame" x="0.0" y="0.0" width="172" height="42"/>
+                                    <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLq-mK-xbo">
+                                        <rect key="frame" x="58" y="0.0" width="172" height="31"/>
                                         <subviews>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u67-2t-ihA" userLabel="Source Control Stack View">
-                                                <rect key="frame" x="0.0" y="28" width="172" height="14"/>
+                                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhm-MU-ZCr" userLabel="Source Control Stack View">
+                                                <rect key="frame" x="0.0" y="17" width="172" height="14"/>
                                                 <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1qk-HA-nLV">
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3Px-9n-GkV">
                                                         <rect key="frame" x="-2" y="0.0" width="139" height="14"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Source code available on " id="m5p-M5-aHD">
-                                                            <font key="font" metaFont="message" size="11"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Source code available on " id="ijv-VM-KUh">
+                                                            <font key="font" metaFont="controlContent" size="11"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fGO-DW-7WX" customClass="HyperlinkTextField" customModule="Nocturnal" customModuleProvider="target">
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="inM-9j-fDp" customClass="HyperlinkTextField" customModule="Nocturnal" customModuleProvider="target">
                                                         <rect key="frame" x="133" y="0.0" width="41" height="14"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="GitHub" id="yJv-7T-bGH">
-                                                            <font key="font" metaFont="message" size="11"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="GitHub" id="xn0-6S-UFA">
+                                                            <font key="font" metaFont="controlContent" size="11"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
@@ -369,11 +402,17 @@
                                 </customSpacing>
                             </stackView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="9V5-30-P2a" firstAttribute="leading" secondItem="rnl-9h-kx0" secondAttribute="leading" constant="18.5" id="Yum-rq-y5K"/>
+                            <constraint firstAttribute="trailing" secondItem="9V5-30-P2a" secondAttribute="trailing" constant="18.5" id="eWN-1G-oJr"/>
+                            <constraint firstAttribute="bottom" secondItem="9V5-30-P2a" secondAttribute="bottom" constant="10" id="kXF-8r-KPp"/>
+                            <constraint firstItem="9V5-30-P2a" firstAttribute="top" secondItem="rnl-9h-kx0" secondAttribute="top" constant="20" id="yVz-Uk-QxY"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="Ni2-xE-Bpb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1147" y="521"/>
+            <point key="canvasLocation" x="1203" y="546"/>
         </scene>
         <!--Custom Time View Controller-->
         <scene sceneID="6W6-9m-4ln">
@@ -1247,12 +1286,13 @@ Gw
                         </menuItem>
                     </items>
                     <connections>
+                        <outlet property="dimnessLabel" destination="sPV-BF-rsJ" id="lKK-U2-EoK"/>
                         <outlet property="dimnessSliderView" destination="dQw-1Q-mAH" id="8qH-ba-W9s"/>
                         <outlet property="disableCustomMenuItem" destination="3VP-Nv-qsM" id="fGY-DY-qZg"/>
                         <outlet property="disableHourMenuItem" destination="af8-VH-x6c" id="84a-9w-YY7"/>
                         <outlet property="disableMenuItem" destination="NLh-V4-4lh" id="Q9o-gZ-wO7"/>
+                        <outlet property="nightShiftLabel" destination="pXC-WU-Jc8" id="OXQ-2M-dcL"/>
                         <outlet property="nightShiftSliderView" destination="Jv1-B4-R4m" id="1kG-ef-92i"/>
-                        <outlet property="preferencesMenuItem" destination="bSe-cz-dnn" id="EPR-dX-1pV"/>
                         <outlet property="timerMenuItem" destination="ElC-uX-aHD" id="ZIf-D5-A0p"/>
                         <outlet property="turnOffTouchBarMenuItem" destination="5Is-7u-BIB" id="JMm-Of-vSM"/>
                     </connections>
@@ -1326,5 +1366,6 @@ Gw
     </scenes>
     <resources>
         <image name="AppIconImage" width="64" height="64"/>
+        <image name="donate" width="128" height="25"/>
     </resources>
 </document>

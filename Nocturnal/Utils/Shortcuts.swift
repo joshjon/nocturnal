@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Shortcuts {
+class Shortcuts {
     static let increaseDimness = "increaseDimness"
     static let decreaseDimness = "decreaseDimness"
     static let increaseNightShift = "increaseNightShiftShortcut"
@@ -18,7 +18,7 @@ enum Shortcuts {
     static let disableHour = "disableHour"
     static let disableCustom = "decreaseNightShiftShortcut"
     static let isInitialized = "isInitialized"
-    
+
     static func setupShortcuts() {
         // Increase Dimness
         MASShortcutBinder.shared().bindShortcut(withDefaultsKey: Shortcuts.increaseDimness) {
