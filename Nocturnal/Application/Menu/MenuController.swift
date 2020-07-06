@@ -10,16 +10,16 @@ import Cocoa
 
 class MenuController: NSMenu, NSMenuDelegate {
     @IBOutlet var timerMenuItem: NSMenuItem!
-    @IBOutlet var nightShiftSliderView: NightShiftSliderView!
-    @IBOutlet var dimnessSliderView: DimnessSliderView!
     @IBOutlet var disableMenuItem: NSMenuItem!
+    @IBOutlet var dimnessLabel: NSMenuItem!
+    @IBOutlet var dimnessSliderView: DimnessSliderView!
+    @IBOutlet var nightShiftLabel: NSMenuItem!
+    @IBOutlet var nightShiftSliderView: NightShiftSliderView!
     @IBOutlet var disableHourMenuItem: NSMenuItem!
     @IBOutlet var disableCustomMenuItem: NSMenuItem!
     @IBOutlet var turnOffTouchBarMenuItem: NSMenuItem!
-    @IBOutlet var preferencesMenuItem: NSMenuItem!
 
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    var storyboard = NSStoryboard(name: "Main", bundle: nil)
     var nightShiftSliderMenuItem: NSMenuItem!
     var dimnessSliderMenuItem: NSMenuItem!
     let calendar = NSCalendar(identifier: .gregorian)!
@@ -28,11 +28,9 @@ class MenuController: NSMenu, NSMenuDelegate {
         delegate = self
         setStatusMenuIcon()
         statusItem.menu = self
-        timerMenuItem.isEnabled = false
         timerMenuItem.isHidden = true
-        setupNightShiftSliderMenuItem()
-        setupDimnessSliderMenuItem()
-
+        setupNightShiftMenuItems()
+        setupDimnessMenuItems()
         // Check if Mac supports TouchBar
         if NSClassFromString("NSTouchBar") == nil {
             turnOffTouchBarMenuItem.isEnabled = false
@@ -92,16 +90,19 @@ class MenuController: NSMenu, NSMenuDelegate {
         }
     }
 
-    func setupNightShiftSliderMenuItem() {
-        nightShiftSliderView.setup()
-        nightShiftSliderMenuItem = item(withTitle: "Night Shift Slider")
-        nightShiftSliderMenuItem.view = nightShiftSliderView
-    }
-
-    func setupDimnessSliderMenuItem() {
+    func setupDimnessMenuItems() {
+        dimnessLabel.attributedTitle = NSAttributedString(string: "Dimness:", attributes: [NSAttributedString.Key.font: NSFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: Utils.getGrayscaleColorForAppearance()])
         dimnessSliderView.setup()
         dimnessSliderMenuItem = item(withTitle: "Dimness Slider")
         dimnessSliderMenuItem.view = dimnessSliderView
+    }
+    
+    func setupNightShiftMenuItems() {
+        nightShiftLabel.attributedTitle = NSAttributedString(string: "Night Shift:", attributes: [NSAttributedString.Key.font: NSFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: Utils.getGrayscaleColorForAppearance()])
+               timerMenuItem.isEnabled = false
+        nightShiftSliderView.setup()
+        nightShiftSliderMenuItem = item(withTitle: "Night Shift Slider")
+        nightShiftSliderMenuItem.view = nightShiftSliderView
     }
 
     func setTimerText(_ isTimerEnabled: Bool) {
@@ -182,10 +183,10 @@ class MenuController: NSMenu, NSMenuDelegate {
     }
 
     @IBAction func disableCustomTimeClicked(_ sender: NSMenuItem) {
-        let disableCustomTimeWindow = storyboard.instantiateController(withIdentifier: "Custom Time Window Controller") as! CustomTimeWindowController
         if disableCustomMenuItem.state == .off {
             NSApp.activate(ignoringOtherApps: true)
             if !StateManager.isCustomTimeWindowOpen {
+                let disableCustomTimeWindow = Utils.getWindowControllerFromStoryboard(identifier: "Custom Time Window Controller", floating: true)
                 disableCustomTimeWindow.showWindow(sender)
             }
         } else {
@@ -195,25 +196,17 @@ class MenuController: NSMenu, NSMenuDelegate {
     }
 
     @IBAction func preferencesClicked(_ sender: NSMenuItem) {
-        let preferencesWindowController = storyboard.instantiateController(withIdentifier: "Preferences Window Controller") as! NSWindowController
         NSApp.activate(ignoringOtherApps: true)
-        if let window = preferencesWindowController.window {
-            window.center()
-            window.styleMask = [.titled, .closable]
-        }
         if !StateManager.isPreferencesWindowOpen {
-            preferencesWindowController.showWindow(sender)
+            let aboutWindowController = Utils.getWindowControllerFromStoryboard(identifier: "Preferences Window Controller")
+            aboutWindowController.showWindow(sender)
         }
     }
 
     @IBAction func aboutClicked(_ sender: NSMenuItem) {
-        let aboutWindowController = storyboard.instantiateController(withIdentifier: "About Window Controller") as! NSWindowController
         NSApp.activate(ignoringOtherApps: true)
-        if let window = aboutWindowController.window {
-            window.center()
-            window.styleMask = [.titled, .closable]
-        }
         if !StateManager.isAboutWindowOpen {
+            let aboutWindowController = Utils.getWindowControllerFromStoryboard(identifier: "About Window Controller")
             aboutWindowController.showWindow(sender)
         }
     }

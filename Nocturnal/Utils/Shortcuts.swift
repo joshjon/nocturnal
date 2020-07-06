@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Shortcuts {
+class Shortcuts {
     static let increaseDimness = "increaseDimness"
     static let decreaseDimness = "decreaseDimness"
     static let increaseNightShift = "increaseNightShiftShortcut"
@@ -18,7 +18,7 @@ enum Shortcuts {
     static let disableHour = "disableHour"
     static let disableCustom = "decreaseNightShiftShortcut"
     static let isInitialized = "isInitialized"
-    
+
     static func setupShortcuts() {
         // Increase Dimness
         MASShortcutBinder.shared().bindShortcut(withDefaultsKey: Shortcuts.increaseDimness) {
@@ -69,29 +69,5 @@ enum Shortcuts {
                 StateManager.respond(to: .userEnabledNocturnal)
             }
         }
-    }
-}
-
-class Preferences {
-    private let isAutoLaunchEnabled = "isAutoLaunchEnabled"
-    private let userDefaults = UserDefaults.standard
-
-    private init() {
-        registerFactoryDefaults()
-    }
-
-    private func registerFactoryDefaults() {
-        let factoryDefaults = [isAutoLaunchEnabled: NSNumber(value: false)] as [String: Any]
-
-        userDefaults.register(defaults: factoryDefaults)
-    }
-
-    func synchronize() {
-        userDefaults.synchronize()
-    }
-
-    func reset() {
-        userDefaults.removeObject(forKey: isAutoLaunchEnabled)
-        synchronize()
     }
 }
