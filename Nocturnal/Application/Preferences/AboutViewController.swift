@@ -20,8 +20,8 @@ class AboutViewController: NSViewController {
     override func viewWillDisappear() {
         StateManager.isAboutWindowOpen = false
     }
-    
-    @IBAction func donateButtonClicked(_ sender: NSButton) {
+
+    @IBAction func donateButtonClicked(_: NSButton) {
         Utils.openUrl(url: "https://www.paypal.me/joshuajon")
     }
 }

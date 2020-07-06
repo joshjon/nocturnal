@@ -18,7 +18,7 @@ class TouchBar {
             NSTouchBar.presentSystemModalFunctionBar(blankTouchBar, placement: 1, systemTrayItemIdentifier: .nocturnalControlStripItem)
         }
     }
-    
+
     static func showTouchbar() {
         if #available(OSX 10.14, *) {
             NSTouchBar.minimizeSystemModalTouchBar(blankTouchBar)

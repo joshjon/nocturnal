@@ -74,7 +74,7 @@ class MenuController: NSMenu, NSMenuDelegate {
             disableCustomMenuItem.isEnabled = true
             disableHourMenuItem.isEnabled = false
         }
-        
+
         setTimerText(StateManager.isTimerEnabled)
 
         // TouchBar
@@ -84,7 +84,7 @@ class MenuController: NSMenu, NSMenuDelegate {
     func setStatusMenuIcon() {
         if let icon = NSImage(named: NSImage.Name("StatusBarButtonImage")) {
             icon.isTemplate = true
-            if let button =  self.statusItem.button {
+            if let button = statusItem.button {
                 DispatchQueue.main.async { button.image = icon }
             }
         }
@@ -96,10 +96,10 @@ class MenuController: NSMenu, NSMenuDelegate {
         dimnessSliderMenuItem = item(withTitle: "Dimness Slider")
         dimnessSliderMenuItem.view = dimnessSliderView
     }
-    
+
     func setupNightShiftMenuItems() {
         nightShiftLabel.attributedTitle = NSAttributedString(string: "Night Shift:", attributes: [NSAttributedString.Key.font: NSFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: Utils.getGrayscaleColorForAppearance()])
-               timerMenuItem.isEnabled = false
+        timerMenuItem.isEnabled = false
         nightShiftSliderView.setup()
         nightShiftSliderMenuItem = item(withTitle: "Night Shift Slider")
         nightShiftSliderMenuItem.view = nightShiftSliderView
