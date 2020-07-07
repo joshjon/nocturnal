@@ -1,5 +1,5 @@
 [![Swift Version](https://img.shields.io/badge/swift-5.0-lightgrey.svg)](https://swift.org/)
-[![macOS Version](https://img.shields.io/badge/macOS->=10.15%20Catalina-lightgrey.svg)](https://www.apple.com/macos/catalina/)
+[![macOS Version](https://img.shields.io/badge/macOS->=10.13%20High%20Sierra-lightgrey.svg)](https://support.apple.com/en-us/HT208969)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-lightgrey.svg)](https://www.gnu.org/licenses/gpl-3.0)
 <p align="center">
   <br>
@@ -12,7 +12,7 @@
 
 ### About
 
-Nocturnal is a menu bar app for macOS that allows you to go the extra mile in controlling your display settings to reduce strain on your eyes. It includes darker than dark dimming, Night Shift fine tuning, multi-monitor support, and the ability to turn off TouchBar on Macbook Pro.
+Nocturnal is a menu bar app for macOS that allows you to go the extra mile in controlling your display settings to reduce strain on your eyes. It includes darker than dark dimming, Night Shift fine tuning, multi-monitor support, and the ability to turn off Touch Bar on Macbook Pro.
 
 <p align="center">
 <img src="Docs/Images/Nocturnal-Screenshot.png" alt="icon" height="350">
@@ -20,7 +20,7 @@ Nocturnal is a menu bar app for macOS that allows you to go the extra mile in co
 
 ### System Requirements
 
-Nocturnal is only supported on macOS Catalina 10.15 or later, and requires a Mac that supports [Night Shift](https://support.apple.com/en-us/HT207513#requirements).
+Nocturnal is only supported on macOS High Sierra 10.13 or later, and requires a Mac that supports [Night Shift](https://support.apple.com/en-us/HT207513#requirements).
 
 ### Installation
 

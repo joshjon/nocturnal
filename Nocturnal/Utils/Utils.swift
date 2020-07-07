@@ -29,11 +29,11 @@ class Utils {
     }
 
     static func verifyMacOsVersion() {
-        if !ProcessInfo().isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 10, minorVersion: 15, patchVersion: 0)) {
+        if !ProcessInfo().isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 10, minorVersion: 13, patchVersion: 0)) {
             NSApplication.shared.activate(ignoringOtherApps: true)
             let version = ProcessInfo().operatingSystemVersionString
             let message = "Nocturnal is not supported on this version of macOS"
-            let info = "\(version) does not support Nocturnal. Please update macOS to version 10.15 (Catalina) or higher."
+            let info = "\(version) does not support Nocturnal. Please update macOS to version 10.13 (High Sierra) or higher."
             let alert = Utils.createAlert(message, info)
             alert.runModal()
             NSApplication.shared.terminate(self)

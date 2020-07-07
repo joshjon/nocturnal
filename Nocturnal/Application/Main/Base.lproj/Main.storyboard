@@ -271,14 +271,14 @@
                                 <rect key="frame" x="19" y="10" width="289" height="212"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="1" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xL-6j-Oyi">
-                                        <rect key="frame" x="112" y="116" width="64" height="96"/>
+                                        <rect key="frame" x="110" y="116" width="68" height="96"/>
                                         <subviews>
                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NM2-pf-5o2">
-                                                <rect key="frame" x="0.0" y="32" width="64" height="64"/>
+                                                <rect key="frame" x="2" y="32" width="64" height="64"/>
                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIconImage" id="j65-sS-hPB"/>
                                             </imageView>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PR9-0C-32n">
-                                                <rect key="frame" x="-2" y="15" width="68" height="16"/>
+                                                <rect key="frame" x="0.0" y="15" width="68" height="16"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Nocturnal" id="1Z1-tb-qIn">
                                                     <font key="font" metaFont="systemBold"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -286,8 +286,8 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1tA-dk-F5j">
-                                                <rect key="frame" x="0.0" y="0.0" width="64" height="14"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.1" id="LBM-hk-c59">
+                                                <rect key="frame" x="-2" y="0.0" width="72" height="14"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.1.1" id="LBM-hk-c59">
                                                     <font key="font" metaFont="controlContent" size="11"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
