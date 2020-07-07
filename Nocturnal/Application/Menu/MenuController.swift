@@ -31,7 +31,7 @@ class MenuController: NSMenu, NSMenuDelegate {
         timerMenuItem.isHidden = true
         setupNightShiftMenuItems()
         setupDimnessMenuItems()
-        // Check if Mac supports TouchBar
+        // Check if Mac supports Touch Bar
         if NSClassFromString("NSTouchBar") == nil {
             turnOffTouchBarMenuItem.isEnabled = false
             turnOffTouchBarMenuItem.isHidden = true
@@ -77,7 +77,7 @@ class MenuController: NSMenu, NSMenuDelegate {
 
         setTimerText(StateManager.isTimerEnabled)
 
-        // TouchBar
+        // Touch Bar
         turnOffTouchBarMenuItem.state = StateManager.isTouchBarOff ? .on : .off
     }
 
