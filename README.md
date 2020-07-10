@@ -24,9 +24,15 @@ Nocturnal is only supported on macOS High Sierra 10.13 or later, and requires a 
 
 ### Installation
 
-Download the latest version of Nocturnal from the [GitHub releases page](https://github.com/joshjon/nocturnal/releases).
+To stay up to date install Nocturnal using [Homebrew](https://brew.sh/).
 
-**Releases are not currently signed with an Apple developer account. To open an unsigned app follow these steps.**
+```
+brew cask install joshjon-nocturnal
+```
+
+Alternatively, you can manually download the latest [release](https://github.com/joshjon/nocturnal/releases).
+
+**Nocturnal is not currently signed with an Apple developer account. To open an unsigned app follow these steps.**
 
 1. Control-click the app icon, then choose Open from the shortcut menu.
 2. A dialog box will appear, then click Open.
