@@ -15,9 +15,13 @@ a {
   a:hover {
     text-decoration: underline; }
 
+h2 {
+  font-size: 1.3em;
+}
+
 .btn {
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   color: rgba(255, 255, 255, 0.7);
   background-color: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.2);
@@ -53,12 +57,17 @@ a {
       margin-top: 1rem;
       margin-left: 0; } }
 
+.logo {
+  margin-top: 0;
+  margin-bottom: 0.1rem;
+}
+
 .page-header {
   color: #fff;
   text-align: center;
   background-color: #159957;
-  background-image: linear-gradient(120deg, #155799, #159957); }
-
+  background-image: linear-gradient(120deg, #4e4896, #C08EBF); }
+  
 @media screen and (min-width: 64em) {
   .page-header {
     padding: 5rem 6rem; } }
@@ -77,20 +86,20 @@ a {
 
 @media screen and (min-width: 64em) {
   .project-name {
-    font-size: 3.25rem; } }
+    font-size: 2.25rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .project-name {
-    font-size: 2.25rem; } }
+    font-size: 2rem; } }
 
 @media screen and (max-width: 42em) {
   .project-name {
-    font-size: 1.75rem; } }
+    font-size: 1.5rem; } }
 
 .project-tagline {
   margin-bottom: 2rem;
   font-weight: normal;
-  opacity: 0.7; }
+  opacity: 0.8; }
 
 @media screen and (min-width: 64em) {
   .project-tagline {
@@ -112,7 +121,7 @@ a {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: normal;
-  color: #159957; }
+  color: #ad72bd; }
 .main-content p {
   margin-bottom: 1em; }
 .main-content code {
