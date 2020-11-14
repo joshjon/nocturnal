@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -191,7 +192,7 @@
                                 </customSpacing>
                             </stackView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Kx-1x-ccv">
-                                <rect key="frame" x="37" y="29" width="178" height="18"/>
+                                <rect key="frame" x="37" y="30" width="182" height="18"/>
                                 <buttonCell key="cell" type="check" title="Launch Nocturnal at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="oOz-Zl-Tr0">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -201,7 +202,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pvt-0y-u6h">
-                                <rect key="frame" x="250" y="20" width="83" height="32"/>
+                                <rect key="frame" x="257" y="20" width="77" height="32"/>
                                 <buttonCell key="cell" type="push" title="Clear..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bYa-Hy-1xN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -419,11 +420,11 @@
             <objects>
                 <viewController id="KWV-uX-aQb" customClass="CustomTimeViewController" customModule="Nocturnal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="pZZ-jc-a75">
-                        <rect key="frame" x="0.0" y="0.0" width="269" height="123"/>
+                        <rect key="frame" x="0.0" y="0.0" width="269" height="122"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t76-1J-uea" userLabel="Hours Text Field">
-                                <rect key="frame" x="69" y="58" width="47" height="21"/>
+                                <rect key="frame" x="69" y="57" width="47" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="Qhh-vw-hi5"/>
                                 </constraints>
@@ -434,7 +435,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RXw-zu-4QZ">
-                                <rect key="frame" x="199" y="58" width="50" height="21"/>
+                                <rect key="frame" x="199" y="57" width="50" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" drawsBackground="YES" id="ze3-D5-qwU">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -442,7 +443,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="r8m-5G-E3Q">
-                                <rect key="frame" x="18" y="87" width="120" height="16"/>
+                                <rect key="frame" x="18" y="86" width="120" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Disable Nocturnal" id="Tzt-7i-abA">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -450,7 +451,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VoQ-56-UW8">
-                                <rect key="frame" x="18" y="61" width="44" height="16"/>
+                                <rect key="frame" x="18" y="60" width="44" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Hours:" id="Z7L-0M-cz1">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -458,7 +459,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qp4-fM-vU9">
-                                <rect key="frame" x="137" y="61" width="56" height="16"/>
+                                <rect key="frame" x="137" y="60" width="56" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Minutes:" id="HJf-Ej-a0T">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -466,7 +467,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qVX-0A-WkN">
-                                <rect key="frame" x="180" y="13" width="75" height="32"/>
+                                <rect key="frame" x="187" y="13" width="69" height="32"/>
                                 <buttonCell key="cell" type="push" title="Apply" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OHJ-x1-DaU">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -479,7 +480,7 @@ DQ
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q5k-Yx-8bv">
-                                <rect key="frame" x="98" y="13" width="82" height="32"/>
+                                <rect key="frame" x="113" y="13" width="76" height="32"/>
                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IEt-23-fdu">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1213,15 +1214,7 @@ Gw
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="LgQ-3K-sLm"/>
                         <menuItem title="Dimness:" enabled="NO" id="sPV-BF-rsJ" userLabel="Dimness">
-                            <attributedString key="attributedTitle">
-                                <fragment content="Dimness:">
-                                    <attributes>
-                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
+                            <attributedString key="attributedTitle"/>
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
                         <menuItem title="Dimness Slider" id="s6g-f4-A3S" userLabel="Dimmer Slider">
@@ -1229,16 +1222,7 @@ Gw
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="0X9-gw-9nz"/>
                         <menuItem title="Night Shift:" enabled="NO" id="pXC-WU-Jc8" userLabel="Night Shift">
-                            <attributedString key="attributedTitle">
-                                <fragment content="Night Shift:">
-                                    <attributes>
-                                        <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
+                            <attributedString key="attributedTitle"/>
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
                         <menuItem title="Night Shift Slider" id="LnF-zf-yzn">
@@ -1298,18 +1282,11 @@ Gw
                     </connections>
                 </menu>
                 <customView id="Jv1-B4-R4m" userLabel="Night Shift Slider View" customClass="NightShiftSliderView" customModule="Nocturnal" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="21"/>
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OUd-bz-vIz">
-                            <rect key="frame" x="-6" y="-7" width="212" height="32"/>
-                            <buttonCell key="cell" type="push" bezelStyle="rounded" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="atd-71-vWH">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                        </button>
                         <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rkE-dR-jgx">
-                            <rect key="frame" x="18" y="1" width="164" height="19"/>
+                            <rect key="frame" x="14" y="-2" width="172" height="28"/>
                             <sliderCell key="cell" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="NhP-Pd-yLo"/>
                             <connections>
                                 <action selector="nightShiftSliderMoved:" target="Jv1-B4-R4m" id="MFU-jf-VLb"/>
@@ -1317,51 +1294,39 @@ Gw
                         </slider>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="OUd-bz-vIz" firstAttribute="top" secondItem="Jv1-B4-R4m" secondAttribute="top" id="5AM-9S-yvY"/>
-                        <constraint firstAttribute="trailing" secondItem="rkE-dR-jgx" secondAttribute="trailing" constant="20" id="ALB-gg-2f3"/>
-                        <constraint firstItem="OUd-bz-vIz" firstAttribute="leading" secondItem="Jv1-B4-R4m" secondAttribute="leading" id="Ivw-MS-ijq"/>
-                        <constraint firstItem="rkE-dR-jgx" firstAttribute="leading" secondItem="Jv1-B4-R4m" secondAttribute="leading" constant="20" id="KKN-VY-Pdc"/>
-                        <constraint firstAttribute="bottom" secondItem="OUd-bz-vIz" secondAttribute="bottom" id="RbL-ua-l4u"/>
-                        <constraint firstAttribute="bottom" secondItem="rkE-dR-jgx" secondAttribute="bottom" constant="3" id="TnV-Hr-hmP"/>
-                        <constraint firstAttribute="trailing" secondItem="OUd-bz-vIz" secondAttribute="trailing" id="cEE-qp-z1P"/>
-                        <constraint firstItem="rkE-dR-jgx" firstAttribute="top" secondItem="Jv1-B4-R4m" secondAttribute="top" constant="3" id="nff-O2-kfE"/>
+                        <constraint firstItem="rkE-dR-jgx" firstAttribute="centerX" secondItem="Jv1-B4-R4m" secondAttribute="centerX" id="27G-Tx-NYg"/>
+                        <constraint firstAttribute="trailing" secondItem="rkE-dR-jgx" secondAttribute="trailing" constant="16" id="AtQ-DH-tcq"/>
+                        <constraint firstItem="rkE-dR-jgx" firstAttribute="leading" secondItem="Jv1-B4-R4m" secondAttribute="leading" constant="16" id="PNv-TA-HvE"/>
+                        <constraint firstItem="rkE-dR-jgx" firstAttribute="centerY" secondItem="Jv1-B4-R4m" secondAttribute="centerY" id="tjY-FJ-Hu5"/>
                     </constraints>
                     <connections>
                         <outlet property="nightShiftSlider" destination="rkE-dR-jgx" id="KOl-Sm-MVf"/>
                     </connections>
                 </customView>
                 <customView id="dQw-1Q-mAH" userLabel="Dimness Slider View" customClass="DimnessSliderView" customModule="Nocturnal" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="21"/>
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="28"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qpd-ok-h2K">
-                            <rect key="frame" x="-6" y="-7" width="212" height="32"/>
-                            <buttonCell key="cell" type="push" bezelStyle="rounded" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="tr8-NX-iDW">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                        </button>
-                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXN-Cb-kxX">
-                            <rect key="frame" x="18" y="1" width="164" height="19"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <sliderCell key="cell" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="iQo-No-18n"/>
+                        <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nXN-Cb-kxX">
+                            <rect key="frame" x="14" y="-2" width="172" height="28"/>
+                            <sliderCell key="cell" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="iQo-No-18n"/>
                             <connections>
                                 <action selector="dimnessSliderMoved:" target="dQw-1Q-mAH" id="qrb-Kj-M9y"/>
                             </connections>
                         </slider>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="Qpd-ok-h2K" secondAttribute="bottom" id="IqY-pv-KPP"/>
-                        <constraint firstItem="Qpd-ok-h2K" firstAttribute="leading" secondItem="dQw-1Q-mAH" secondAttribute="leading" id="NRi-kv-4jA"/>
-                        <constraint firstItem="Qpd-ok-h2K" firstAttribute="top" secondItem="dQw-1Q-mAH" secondAttribute="top" id="ac1-9L-jFg"/>
-                        <constraint firstAttribute="trailing" secondItem="Qpd-ok-h2K" secondAttribute="trailing" id="xwj-h6-jip"/>
+                        <constraint firstItem="nXN-Cb-kxX" firstAttribute="leading" secondItem="dQw-1Q-mAH" secondAttribute="leading" constant="16" id="L8G-l4-bMj"/>
+                        <constraint firstItem="nXN-Cb-kxX" firstAttribute="centerX" secondItem="dQw-1Q-mAH" secondAttribute="centerX" id="bS5-aP-oGi"/>
+                        <constraint firstItem="nXN-Cb-kxX" firstAttribute="centerY" secondItem="dQw-1Q-mAH" secondAttribute="centerY" id="mL1-mX-8Ut"/>
+                        <constraint firstAttribute="trailing" secondItem="nXN-Cb-kxX" secondAttribute="trailing" constant="16" id="vV1-zQ-GqZ"/>
                     </constraints>
                     <connections>
                         <outlet property="dimnessSlider" destination="nXN-Cb-kxX" id="4qq-sO-Ddh"/>
                     </connections>
                 </customView>
             </objects>
-            <point key="canvasLocation" x="76" y="478"/>
+            <point key="canvasLocation" x="-40" y="477"/>
         </scene>
     </scenes>
     <resources>

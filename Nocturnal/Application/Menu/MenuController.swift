@@ -29,6 +29,7 @@ class MenuController: NSMenu, NSMenuDelegate {
         setStatusMenuIcon()
         statusItem.menu = self
         timerMenuItem.isHidden = true
+        timerMenuItem.isEnabled = false
         setupNightShiftMenuItems()
         setupDimnessMenuItems()
         // Check if Mac supports Touch Bar
@@ -91,15 +92,14 @@ class MenuController: NSMenu, NSMenuDelegate {
     }
 
     func setupDimnessMenuItems() {
-        dimnessLabel.attributedTitle = NSAttributedString(string: "Dimness:", attributes: [NSAttributedString.Key.font: NSFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: Utils.getGrayscaleColorForAppearance()])
+        dimnessLabel.attributedTitle = NSAttributedString(string: "Dimness:", attributes: [NSAttributedString.Key.foregroundColor: Utils.getGrayscaleColorForAppearance()])
         dimnessSliderView.setup()
         dimnessSliderMenuItem = item(withTitle: "Dimness Slider")
         dimnessSliderMenuItem.view = dimnessSliderView
     }
 
     func setupNightShiftMenuItems() {
-        nightShiftLabel.attributedTitle = NSAttributedString(string: "Night Shift:", attributes: [NSAttributedString.Key.font: NSFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: Utils.getGrayscaleColorForAppearance()])
-        timerMenuItem.isEnabled = false
+        nightShiftLabel.attributedTitle = NSAttributedString(string: "Night Shift:", attributes: [NSAttributedString.Key.foregroundColor: Utils.getGrayscaleColorForAppearance()])
         nightShiftSliderView.setup()
         nightShiftSliderMenuItem = item(withTitle: "Night Shift Slider")
         nightShiftSliderMenuItem.view = nightShiftSliderView
