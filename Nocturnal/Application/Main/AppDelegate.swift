@@ -44,7 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func onUnlock() {
-        if StateManager.isTouchBarOff {
+        if StateManager.isTouchBarOff && StateManager.isNocturnalEnabled {
             do { sleep(1) } // Wait for macOS to init TouchBar
             TouchBar.hideTouchBar()
         }
