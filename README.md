@@ -20,7 +20,7 @@ Nocturnal is a menu bar app for macOS that allows you to go the extra mile in co
 
 ### System Requirements
 
-Nocturnal is only supported on macOS High Sierra 10.13 or later, and requires a Mac that supports [Night Shift](https://support.apple.com/en-us/HT207513#requirements).
+Nocturnal is only supported on macOS High Sierra 10.13 or later, and requires a Mac that supports [Night Shift](https://support.apple.com/en-us/HT207513#requirements). App Silicon Macs are also not currently supported.
 
 ### Installation
 
