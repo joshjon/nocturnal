@@ -47,11 +47,10 @@ class Utils {
     }
 
     public static func getGrayscaleColorForAppearance() -> NSColor {
-        let gray = NSColor.gray
-        guard let appearance = UserDefaults.standard.string(forKey: "AppleInterfaceStyle") else { return gray }
+        let appearance = UserDefaults.standard.string(forKey: "AppleInterfaceStyle")
         // Custom colors required as default white and black do not take effect in menu
-        let white = NSColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        let black = NSColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+        let white = NSColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+        let black = NSColor(red: 0, green: 0, blue: 0, alpha: 1)
         return appearance == "Dark" ? white : black
     }
 
