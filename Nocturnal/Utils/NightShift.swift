@@ -25,6 +25,7 @@ enum NightShift {
         }
         set {
             client.setStrength(newValue, commit: true)
+            Settings.nightShiftStrength = newValue;
         }
     }
 

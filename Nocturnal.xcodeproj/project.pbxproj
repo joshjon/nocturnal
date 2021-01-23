@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E4FF22A25BB9EBB00E94F24 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4FF22925BB9EBB00E94F24 /* Settings.swift */; };
 		7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */; };
 		7D1B5C34239934440061D0CF /* Dimness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C33239934440061D0CF /* Dimness.swift */; };
 		7D1B5C372399AE770061D0CF /* NSWindow+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B5C362399AE770061D0CF /* NSWindow+Fade.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3E4FF22925BB9EBB00E94F24 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		7D1B5C2F2395340E0061D0CF /* CustomTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeViewController.swift; sourceTree = "<group>"; };
 		7D1B5C33239934440061D0CF /* Dimness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimness.swift; sourceTree = "<group>"; };
 		7D1B5C362399AE770061D0CF /* NSWindow+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSWindow+Fade.swift"; path = "Nocturnal/Application/Extensions/NSWindow+Fade.swift"; sourceTree = SOURCE_ROOT; };
@@ -148,6 +150,7 @@
 				7DA5B1F8238BAF9500FE0597 /* NightShift.swift */,
 				7DF36EA6239E730C000CFB5A /* Shortcuts.swift */,
 				7D1B5C38239A39BB0061D0CF /* StateManager.swift */,
+				3E4FF22925BB9EBB00E94F24 /* Settings.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				7DA5B1F4238BAC8000FE0597 /* MenuController.swift in Sources */,
 				7D87458B238BFB5A00A676F1 /* DimnessWindowController.swift in Sources */,
 				7DF36EA7239E730C000CFB5A /* Shortcuts.swift in Sources */,
+				3E4FF22A25BB9EBB00E94F24 /* Settings.swift in Sources */,
 				7D1B5C302395340E0061D0CF /* CustomTimeViewController.swift in Sources */,
 				7D1B5C39239A39BB0061D0CF /* StateManager.swift in Sources */,
 				7DF36EAA239EFB29000CFB5A /* PreferencesViewController.swift in Sources */,

@@ -213,7 +213,6 @@ class MenuController: NSMenu, NSMenuDelegate {
 
     @IBAction func quitClicked(_ sender: NSMenuItem) {
         StateManager.isNocturnalEnabled = false
-        NightShift.strength = 1
         NSApplication.shared.terminate(sender)
     }
 }

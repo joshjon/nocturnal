@@ -13,10 +13,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     static var dimnessControllers = [] as [DimnessWindowController]
 
     func applicationDidFinishLaunching(_: Notification) {
+        Settings.initialize()
         Utils.verifyMacOsVersion()
         Utils.verifySupportsNightShift()
         initDimnessControllers()
-        NightShift.strength = 0
+        NightShift.strength = Settings.nightShiftStrength
         NightShift.enable()
         addNotificationObservers()
         Shortcuts.setupShortcuts()
