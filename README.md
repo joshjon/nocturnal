@@ -27,7 +27,7 @@ Nocturnal is only supported on macOS High Sierra 10.13 or later, and requires a 
 To stay up to date install Nocturnal using [Homebrew](https://brew.sh/).
 
 ```
-brew cask install joshjon-nocturnal
+brew install --cask joshjon-nocturnal
 ```
 
 Alternatively, you can manually download the latest [release](https://github.com/joshjon/nocturnal/releases).
