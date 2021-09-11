@@ -11,7 +11,7 @@ import Foundation
 enum Dimness {
     public static let maxStrength: Float = 0.9
     private static let fadeDuration = 2.5
-    private static var dimnessStrength: CGFloat = 0
+    private static var dimnessStrength: CGFloat = CGFloat(Settings.dimnessStrength)
     private static var isVisible: Bool = true
 
     static var strength: Float {
@@ -21,6 +21,7 @@ enum Dimness {
             for controller in AppDelegate.dimnessControllers {
                 controller.setAlphaValue(dimnessStrength)
             }
+            Settings.dimnessStrength = newValue
         }
     }
 
